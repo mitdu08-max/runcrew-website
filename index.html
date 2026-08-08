@@ -17,9 +17,11 @@
   <style>
     :root {
       --bg: #0B0F14;
+      --bg-alt: #0F151C;
       --card: #151B23;
       --border: #1E2730;
       --accent: #8CFF3B;
+      --accent-dim: rgba(140, 255, 59, 0.15);
       --text: #EAF1F8;
       --muted: #8A99A8;
     }
@@ -30,6 +32,8 @@
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
+
+    html { scroll-behavior: smooth; }
 
     html, body {
       background: var(--bg);
@@ -48,7 +52,8 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      animation: cinematicExit 0.8s ease-in-out 3s forwards;
+      animation: cinematicExit 0.8s ease-in-out 3s forwards,
+                 shake 0.5s ease-in-out 1.8s;
     }
 
     @keyframes cinematicExit {
@@ -68,22 +73,12 @@
 
     .cine-wordmark,
     .cine-final {
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .cine-wordmark,
-    .cine-final {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
 
-    /* État 1 : wordmark ÉNORME */
     .cine-wordmark {
       opacity: 0;
       transform: scale(0.8);
@@ -91,7 +86,6 @@
                  bigExit 0.15s ease-in 1.8s forwards;
     }
 
-    /* État 2 : logo final ÉNORME */
     .cine-final {
       opacity: 0;
       transform: scale(0.5);
@@ -114,7 +108,6 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Flash blanc à l'impact */
     .flash {
       position: fixed;
       inset: 0;
@@ -131,12 +124,6 @@
       100% { opacity: 0; }
     }
 
-    /* Screen shake */
-    .cinematic {
-      animation: cinematicExit 0.8s ease-in-out 3s forwards,
-                 shake 0.5s ease-in-out 1.8s;
-    }
-
     @keyframes shake {
       0%, 100% { transform: translate(0, 0); }
       10% { transform: translate(-12px, 6px); }
@@ -150,21 +137,82 @@
       90% { transform: translate(-2px, 1px); }
     }
 
-    /* ===== PAGE PRINCIPALE (après cinématique) ===== */
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      animation: heroReveal 1s ease-out 3.5s forwards;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    nav .nav-cta {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #000 !important;
+      border-radius: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== SECTIONS ===== */
     section {
-      padding: 100px 20px;
-      max-width: 1100px;
+      padding: 120px 20px;
+      max-width: 1200px;
       margin: auto;
     }
 
     h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; }
-    h2 { font-size: 2rem; margin-bottom: 20px; }
-    p { color: var(--muted); font-size: 1.1rem; margin-top: 20px; }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    h3 { font-size: 1.3rem; font-weight: 700; }
+    p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
 
+    .accent { color: var(--accent); }
+
+    /* ===== HERO ===== */
     .hero {
       text-align: center;
-      padding-top: 80px;
-      padding-bottom: 120px;
+      padding-top: 140px;
+      padding-bottom: 100px;
       opacity: 0;
       animation: heroReveal 1s ease-out 3.5s forwards;
     }
@@ -174,22 +222,27 @@
     }
 
     .hero-logo {
-      max-width: 400px;
-      width: 80%;
+      max-width: 500px;
+      width: 85%;
       margin-bottom: 40px;
     }
 
     .hero-slogan {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: var(--text);
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 20px;
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .hero-sub {
+      max-width: 600px;
+      margin: 20px auto 40px;
     }
 
     .btn-primary {
       display: inline-block;
-      margin-top: 30px;
       padding: 18px 40px;
       background: var(--accent);
       color: #000;
@@ -208,46 +261,316 @@
       box-shadow: 0 0 60px rgba(140, 255, 59, 0.5);
     }
 
+    .btn-secondary {
+      display: inline-block;
+      padding: 18px 40px;
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-left: 15px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===== FADE-IN AU SCROLL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== SECTION POURQUOI ===== */
+    .why-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .compare-card {
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .compare-card.old {
+      background: var(--bg-alt);
+    }
+
+    .compare-card.new {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(140, 255, 59, 0.02));
+      border-color: var(--accent);
+    }
+
+    .compare-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .compare-tag.old { background: var(--border); color: var(--muted); }
+    .compare-tag.new { background: var(--accent); color: #000; }
+
+    .compare-card h3 {
+      margin-bottom: 15px;
+    }
+
+    /* ===== FEATURES ===== */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
       margin-top: 60px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      padding: 30px;
-      border-radius: 12px;
-      transition: 0.2s ease;
+      padding: 35px 30px;
+      border-radius: 16px;
+      transition: 0.3s ease;
     }
 
     .card:hover {
       border-color: var(--accent);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(140, 255, 59, 0.1);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--accent-dim);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
     }
 
     .card h3 {
       margin-bottom: 15px;
-      color: var(--accent);
+      color: var(--text);
     }
 
-    .security { text-align: center; }
+    /* ===== COMMENT ÇA MARCHE ===== */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
 
-    footer {
+    .step {
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
+      padding: 30px;
     }
 
+    .step-number {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #000;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    /* ===== SÉCURITÉ ===== */
+    .security-section {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+      padding: 140px 20px;
+    }
+
+    .security-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .security-badge {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+    }
+
+    /* ===== EARLY ACCESS ===== */
+    .early-access {
+      text-align: center;
+      padding: 100px 20px;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .early-form {
+      max-width: 500px;
+      margin: 40px auto 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .early-form input {
+      flex: 1;
+      padding: 16px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .early-form input:focus {
+      border-color: var(--accent);
+    }
+
+    .early-form button {
+      padding: 16px 30px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .early-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(140, 255, 59, 0.4);
+    }
+
+    .early-note {
+      font-size: 0.85rem;
+      margin-top: 15px;
+      color: var(--muted);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 20px 30px;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand img {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    footer h4 {
+      color: var(--text);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
+      nav { padding: 15px 20px; }
+      nav .nav-links { display: none; }
+      nav img { height: 30px; }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.8rem; }
       section { padding: 80px 20px; }
+
+      .hero { padding-top: 120px; }
+      .hero-slogan { font-size: 1.2rem; }
+      .hero-logo { max-width: 320px; }
+
+      .btn-secondary { margin-left: 0; margin-top: 15px; display: block; }
+
+      .comparison { grid-template-columns: 1fr; }
       .cinematic-stage { height: 70vh; width: 98vw; }
-      .hero-logo { max-width: 280px; }
+
+      .early-form { flex-direction: column; }
+
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
     }
   </style>
 </head>
@@ -263,52 +586,198 @@
     </div>
   </div>
 
-  <!-- Page principale -->
+  <!-- NAVIGATION -->
+  <nav>
+    <img src="runcrew-logo.png" alt="RunCrew">
+    <div class="nav-links">
+      <a href="#concept">Concept</a>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#security">Sécurité</a>
+      <a href="#download" class="nav-cta">Télécharger</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
   <section class="hero">
     <img src="runcrew-logo.png" alt="RunCrew" class="hero-logo">
     <p class="hero-slogan">
-      Courir entouré, même en solitaire.
+      Courir entouré,<br>même en solitaire.
+    </p>
+    <p class="hero-sub">
+      L'application live qui te connecte à ton crew pendant que tu cours.
+      Suivi en direct, encouragements, sécurité intelligente.
     </p>
     <div>
-      <a href="#" class="btn-primary">Télécharger sur Android</a>
+      <a href="#download" class="btn-primary">Télécharger sur Android</a>
+      <a href="#concept" class="btn-secondary">Découvrir</a>
     </div>
   </section>
 
+  <!-- POURQUOI -->
+  <section id="concept">
+    <div class="why-header reveal">
+      <h2>Les autres apps <span class="accent">enregistrent</span>.<br>RunCrew te fait <span class="accent">vivre</span> la course.</h2>
+      <p>La différence est énorme. Elle change tout.</p>
+    </div>
+
+    <div class="comparison reveal">
+      <div class="compare-card old">
+        <span class="compare-tag old">Applications classiques</span>
+        <h3>Tu cours seul.</h3>
+        <p>Elles enregistrent tes données, tu partages tes stats après. Personne ne sait ce qui se passe pendant l'effort.</p>
+      </div>
+      <div class="compare-card new">
+        <span class="compare-tag new">RunCrew</span>
+        <h3>Ton crew est avec toi.</h3>
+        <p>Tes proches te suivent en direct, t'encouragent, veillent sur toi. Tu n'es jamais seul, même à 6h du matin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
   <section>
-    <h2>Pourquoi RunCrew ?</h2>
-    <p>Les applications enregistrent ta course. RunCrew la fait vivre en direct.</p>
+    <div class="why-header reveal">
+      <h2>Comment ça marche ?</h2>
+      <p>Trois étapes. Zéro friction. Cours entouré en 60 secondes.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Prépare ta course</h3>
+        <p>Choisis ton programme, ton parcours GPX ou pars en libre. Configure ton crew de supporters.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Cours en direct</h3>
+        <p>Ton crew te suit en temps réel sur une carte. Ils voient ta position, ton allure, ta distance.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Reçois des encouragements</h3>
+        <p>Messages, réactions, présence. Le soutien arrive pendant l'effort, pas après. Ça change tout.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONCTIONNALITÉS -->
+  <section id="features">
+    <div class="why-header reveal">
+      <h2>Ce qui rend RunCrew <span class="accent">unique</span></h2>
+      <p>Chaque fonctionnalité pensée pour t'accompagner sur le terrain.</p>
+    </div>
 
     <div class="features">
-      <div class="card">
+      <div class="card reveal">
+        <div class="card-icon">📡</div>
         <h3>Live Tracking</h3>
-        <p>Ton crew te suit en temps réel pendant que tu cours.</p>
+        <p>Ton crew te suit en temps réel sur une carte pendant que tu cours.</p>
       </div>
-      <div class="card">
-        <h3>Encouragements</h3>
-        <p>Reçois du soutien pendant l'effort, pas après.</p>
+      <div class="card reveal">
+        <div class="card-icon">💬</div>
+        <h3>Encouragements Live</h3>
+        <p>Reçois du soutien pendant l'effort. Chaque message te pousse plus loin.</p>
       </div>
-      <div class="card">
-        <h3>SOS Sécurité</h3>
-        <p>Un système intelligent pour ne jamais courir seul.</p>
+      <div class="card reveal">
+        <div class="card-icon">🛡️</div>
+        <h3>SOS Intelligent</h3>
+        <p>Système de sécurité automatique en cas de problème. Ton crew est alerté immédiatement.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
+        <div class="card-icon">🎧</div>
         <h3>Programme Audio</h3>
-        <p>Blocs fractionnés annoncés en vocal, même écran verrouillé.</p>
+        <p>Blocs fractionnés annoncés en vocal, même écran verrouillé. Le coach dans l'oreille.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">👻</div>
+        <h3>Fantôme GPX</h3>
+        <p>Cours contre ton meilleur temps ou un tracé de référence. Défie-toi à chaque sortie.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🤖</div>
+        <h3>Analyse IA</h3>
+        <p>Analyse post-course intelligente. Ressenti, performance, progression. Comprends ta course.</p>
       </div>
     </div>
   </section>
 
-  <section class="security">
-    <h2>Jamais seul.</h2>
-    <p>
-      Que tu partes à 6h du matin ou à la tombée de la nuit,
-      quelqu'un peut toujours être là avec toi.
-    </p>
+  <!-- SÉCURITÉ -->
+  <section id="security" class="security-section">
+    <div class="security-inner reveal">
+      <span class="security-badge">🛡️ Sécurité</span>
+      <h2>Jamais seul.<br><span class="accent">Même si tu tombes.</span></h2>
+      <p style="font-size: 1.2rem;">
+        Que tu partes à 6h du matin ou à la tombée de la nuit,
+        quelqu'un peut toujours être là avec toi. Si tu ne réponds plus,
+        ton crew le sait immédiatement.
+      </p>
+    </div>
   </section>
 
+  <!-- EARLY ACCESS -->
+  <section id="download" class="early-access">
+    <div class="reveal">
+      <h2>Rejoins le <span class="accent">crew</span>.</h2>
+      <p>RunCrew est en cours de lancement. Sois parmi les premiers à courir entouré.</p>
+
+      <form class="early-form" onsubmit="event.preventDefault(); alert('Merci ! Nous te contacterons bientôt.');">
+        <input type="email" placeholder="Ton email" required>
+        <button type="submit">Rejoindre</button>
+      </form>
+      <p class="early-note">Aucun spam. Juste le lancement officiel.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2026 RunCrew — Android uniquement — runcrew.fr
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="runcrew-logo.png" alt="RunCrew">
+        <p>Courir entouré, même en solitaire.</p>
+      </div>
+      <div>
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#features">Fonctionnalités</a></li>
+          <li><a href="#security">Sécurité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#download">Télécharger</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Twitter / X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 RunCrew — Android uniquement — runcrew.fr
+    </div>
   </footer>
+
+  <script>
+    // Fade-in au scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
