@@ -1856,6 +1856,7 @@
       nav.classList.add('instant');
       hero.classList.add('instant');
       sessionStorage.setItem('runcrew_cinematic_seen', 'true');
+      window.scrollTo(0, 0);
       revealTeaser();
     }
 
@@ -1886,8 +1887,9 @@
     if (alreadySeen) {
       revealTeaser();
     } else {
-      // Après la cinématique (3.5s) → lancer le teaser
+      // Après la cinématique (3.5s) → forcer scroll en haut + lancer le teaser
       setTimeout(() => {
+        window.scrollTo(0, 0);
         revealTeaser();
       }, 3500);
     }
