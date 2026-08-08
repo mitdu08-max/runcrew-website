@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RunCrew — Courir entouré, même en solitaire</title>
-  <meta name="description" content="RunCrew est l'application running live qui te connecte à ton crew pendant que tu cours. Suivi en direct, supporters, sécurité SOS. Ne cours plus jamais seul." />
+  <meta name="description" content="RunCrew arrive bientôt. L'application running live qui te connecte à ton crew pendant que tu cours. Rejoins la liste d'attente." />
 
   <meta property="og:title" content="RunCrew — Courir entouré, même en solitaire">
-  <meta property="og:description" content="L'application live qui te connecte à ton crew pendant que tu cours.">
+  <meta property="og:description" content="L'application live qui te connecte à ton crew pendant que tu cours. Rejoins la liste d'attente.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://runcrew.fr">
   <meta property="og:image" content="https://runcrew.fr/runcrew-logo.png">
@@ -56,9 +56,7 @@
                  shake 0.5s ease-in-out 1.8s;
     }
 
-    .cinematic.hidden {
-      display: none !important;
-    }
+    .cinematic.hidden { display: none !important; }
 
     @keyframes cinematicExit {
       0% { opacity: 1; }
@@ -141,7 +139,6 @@
       90% { transform: translate(-2px, 1px); }
     }
 
-    /* Bouton SKIP */
     .skip-btn {
       position: fixed;
       top: 25px;
@@ -191,11 +188,7 @@
       animation: heroReveal 1s ease-out 3.5s forwards;
     }
 
-    nav.instant {
-      opacity: 1;
-      animation: none;
-    }
-
+    nav.instant { opacity: 1; animation: none; }
     nav img { height: 40px; }
 
     nav .nav-links {
@@ -232,18 +225,9 @@
     }
 
     h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; }
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
+    h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
     h3 { font-size: 1.3rem; font-weight: 700; }
-    p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-top: 20px;
-    }
+    p { color: var(--muted); font-size: 1.1rem; margin-top: 20px; }
 
     .accent { color: var(--accent); }
 
@@ -256,13 +240,37 @@
       animation: heroReveal 1s ease-out 3.5s forwards;
     }
 
-    .hero.instant {
-      opacity: 1;
-      animation: none;
+    .hero.instant { opacity: 1; animation: none; }
+
+    @keyframes heroReveal { to { opacity: 1; } }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
     }
 
-    @keyframes heroReveal {
-      to { opacity: 1; }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
     }
 
     .hero-logo {
@@ -298,6 +306,8 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       box-shadow: 0 0 40px rgba(140, 255, 59, 0.3);
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary:hover {
@@ -462,25 +472,45 @@
       margin-bottom: 30px;
     }
 
-    /* ===== EARLY ACCESS ===== */
-    .early-access {
+    /* ===== WAITLIST ===== */
+    .waitlist {
       text-align: center;
-      padding: 100px 20px;
-      background: var(--bg-alt);
+      padding: 120px 20px;
+      background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
     }
 
-    .early-form {
+    .waitlist-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .waitlist-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+    }
+
+    .waitlist-form {
       max-width: 500px;
       margin: 40px auto 0;
       display: flex;
       gap: 10px;
     }
 
-    .early-form input {
+    .waitlist-form input {
       flex: 1;
-      padding: 16px 20px;
+      padding: 18px 22px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -490,10 +520,10 @@
       transition: 0.2s;
     }
 
-    .early-form input:focus { border-color: var(--accent); }
+    .waitlist-form input:focus { border-color: var(--accent); }
 
-    .early-form button {
-      padding: 16px 30px;
+    .waitlist-form button {
+      padding: 18px 30px;
       background: var(--accent);
       color: #000;
       border: none;
@@ -503,14 +533,61 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: 0.2s;
+      white-space: nowrap;
     }
 
-    .early-form button:hover {
+    .waitlist-form button:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(140, 255, 59, 0.4);
     }
 
-    .early-note { font-size: 0.85rem; margin-top: 15px; color: var(--muted); }
+    .waitlist-note {
+      font-size: 0.85rem;
+      margin-top: 20px;
+      color: var(--muted);
+    }
+
+    .waitlist-success {
+      display: none;
+      padding: 30px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .waitlist-success h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    /* ===== TESTEUR PRIVÉ ===== */
+    .beta-tester {
+      max-width: 700px;
+      margin: 60px auto 0;
+      padding: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .beta-tester h4 {
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .beta-tester p {
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    .beta-tester a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -579,7 +656,7 @@
       .comparison { grid-template-columns: 1fr; }
       .cinematic-stage { height: 70vh; width: 98vw; }
 
-      .early-form { flex-direction: column; }
+      .waitlist-form { flex-direction: column; }
       .footer-inner { grid-template-columns: 1fr; text-align: center; }
 
       .skip-btn { top: 15px; right: 15px; padding: 8px 15px; font-size: 0.75rem; }
@@ -606,12 +683,16 @@
       <a href="#concept">Concept</a>
       <a href="#features">Fonctionnalités</a>
       <a href="#security">Sécurité</a>
-      <a href="#download" class="nav-cta">Télécharger</a>
+      <a href="#waitlist" class="nav-cta">Rejoindre</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <div class="coming-soon-badge">
+      <span class="pulse-dot"></span>
+      Bientôt sur Google Play
+    </div>
     <img src="runcrew-logo.png" alt="RunCrew" class="hero-logo">
     <p class="hero-slogan">
       Courir entouré,<br>même en solitaire.
@@ -621,7 +702,7 @@
       Suivi en direct, encouragements, sécurité intelligente.
     </p>
     <div>
-      <a href="#download" class="btn-primary">Télécharger sur Android</a>
+      <a href="#waitlist" class="btn-primary">Rejoindre la liste</a>
       <a href="#concept" class="btn-secondary">Découvrir</a>
     </div>
   </section>
@@ -727,17 +808,37 @@
     </div>
   </section>
 
-  <!-- EARLY ACCESS -->
-  <section id="download" class="early-access">
-    <div class="reveal">
-      <h2>Rejoins le <span class="accent">crew</span>.</h2>
-      <p>RunCrew est en cours de lancement. Sois parmi les premiers à courir entouré.</p>
+  <!-- WAITLIST -->
+  <section id="waitlist" class="waitlist">
+    <div class="waitlist-inner reveal">
+      <div class="waitlist-badge">
+        <span class="pulse-dot"></span>
+        Lancement imminent
+      </div>
+      <h2>Sois parmi les <span class="accent">premiers</span>.</h2>
+      <p style="font-size: 1.15rem; max-width: 500px; margin: 20px auto 0;">
+        RunCrew arrive bientôt. Inscris-toi et sois notifié dès le lancement officiel.
+        Priorité absolue aux early adopters.
+      </p>
 
-      <form class="early-form" onsubmit="event.preventDefault(); alert('Merci ! Nous te contacterons bientôt.');">
-        <input type="email" placeholder="Ton email" required>
-        <button type="submit">Rejoindre</button>
+      <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/maewqlnr" method="POST">
+        <input type="email" name="email" placeholder="Ton email" required>
+        <button type="submit">Rejoindre le crew</button>
       </form>
-      <p class="early-note">Aucun spam. Juste le lancement officiel.</p>
+      <p class="waitlist-note">Aucun spam. Uniquement l'annonce du lancement.</p>
+
+      <div class="waitlist-success" id="waitlistSuccess">
+        <h3>🎉 Tu es sur la liste !</h3>
+        <p>Bienvenue dans le crew. On te contacte dès le lancement officiel.</p>
+      </div>
+
+      <div class="beta-tester">
+        <h4>🧪 Tu veux tester RunCrew en avant-première ?</h4>
+        <p>
+          Le programme beta est ouvert à un nombre limité de runners.
+          <a href="mailto:contact@runcrew.fr?subject=Demande%20beta%20RunCrew">Demande ton accès →</a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -759,9 +860,9 @@
       <div>
         <h4>Ressources</h4>
         <ul>
-          <li><a href="#download">Télécharger</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#waitlist">Rejoindre</a></li>
+          <li><a href="mailto:contact@runcrew.fr">Contact</a></li>
+          <li><a href="#">Beta privée</a></li>
         </ul>
       </div>
       <div>
@@ -774,7 +875,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 RunCrew — Android uniquement — runcrew.fr
+      © 2026 RunCrew — Bientôt disponible sur Android — runcrew.fr
     </div>
   </footer>
 
@@ -784,22 +885,18 @@
     const nav = document.getElementById('nav');
     const hero = document.getElementById('hero');
 
-    // Check si déjà vue dans cette session
     const alreadySeen = sessionStorage.getItem('runcrew_cinematic_seen');
 
     if (alreadySeen) {
-      // Déjà vue → skip direct
       cinematic.classList.add('hidden');
       nav.classList.add('instant');
       hero.classList.add('instant');
     } else {
-      // Première visite → marquer comme vue après la cinématique
       setTimeout(() => {
         sessionStorage.setItem('runcrew_cinematic_seen', 'true');
       }, 4000);
     }
 
-    // Bouton SKIP
     function skipCinematic() {
       cinematic.classList.add('hidden');
       nav.classList.add('instant');
@@ -818,6 +915,32 @@
     }, { threshold: 0.15 });
 
     reveals.forEach(el => observer.observe(el));
+
+    // ===== FORMULAIRE WAITLIST =====
+    const form = document.getElementById('waitlistForm');
+    const success = document.getElementById('waitlistSuccess');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          alert('Une erreur est survenue. Réessaie plus tard.');
+        }
+      } catch (err) {
+        alert('Erreur réseau. Réessaie plus tard.');
+      }
+    });
   </script>
 
 </body>
