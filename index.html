@@ -6,7 +6,6 @@
   <title>RunCrew — Courir entouré, même en solitaire</title>
   <meta name="description" content="RunCrew est l'application running live qui te connecte à ton crew pendant que tu cours. Suivi en direct, supporters, sécurité SOS. Ne cours plus jamais seul." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="RunCrew — Courir entouré, même en solitaire">
   <meta property="og:description" content="L'application live qui te connecte à ton crew pendant que tu cours.">
   <meta property="og:type" content="website">
@@ -39,87 +38,69 @@
       overflow-x: hidden;
     }
 
-    section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-top: 20px;
-    }
-
-    /* ===== HERO CINÉMATIQUE ===== */
-    .hero {
-      text-align: center;
-      padding-top: 80px;
-      padding-bottom: 120px;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .logo-stage {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
+    /* ===== CINÉMATIQUE PLEIN ÉCRAN ===== */
+    .cinematic {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 40px;
+      overflow: hidden;
+      animation: cinematicExit 0.8s ease-in-out 3s forwards;
     }
 
-    .logo-wordmark,
-    .logo-final {
+    @keyframes cinematicExit {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; pointer-events: none; }
+    }
+
+    .cinematic-stage {
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cine-wordmark,
+    .cine-final {
       position: absolute;
-      max-width: 90%;
+      max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
 
-    /* État 1 : wordmark propre */
-    .logo-wordmark {
+    /* État 1 : wordmark ÉNORME */
+    .cine-wordmark {
       opacity: 0;
-      animation: wordmarkEnter 0.6s ease-out 0.3s forwards,
-                 wordmarkExit 0.15s ease-in 1.5s forwards;
+      transform: scale(0.8);
+      animation: bigEnter 0.6s ease-out 0.3s forwards,
+                 bigExit 0.15s ease-in 1.8s forwards;
     }
 
-    /* État 2 : logo final avec gorille */
-    .logo-final {
+    /* État 2 : logo final ÉNORME */
+    .cine-final {
       opacity: 0;
-      transform: scale(0.7);
-      animation: finalEnter 0.4s cubic-bezier(0.5, 1.8, 0.3, 1) 1.5s forwards;
+      transform: scale(0.5);
+      animation: finalBigEnter 0.5s cubic-bezier(0.5, 1.8, 0.3, 1) 1.8s forwards;
     }
 
-    @keyframes wordmarkEnter {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes bigEnter {
+      0% { opacity: 0; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes wordmarkExit {
+    @keyframes bigExit {
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
 
-    @keyframes finalEnter {
-      0% { opacity: 0; transform: scale(0.6); }
+    @keyframes finalBigEnter {
+      0% { opacity: 0; transform: scale(0.5); }
       60% { opacity: 1; transform: scale(1.15); }
       100% { opacity: 1; transform: scale(1); }
     }
@@ -131,51 +112,70 @@
       background: white;
       opacity: 0;
       pointer-events: none;
-      z-index: 999;
-      animation: flashImpact 0.25s ease-out 1.5s forwards;
+      z-index: 1001;
+      animation: flashImpact 0.25s ease-out 1.8s forwards;
     }
 
     @keyframes flashImpact {
       0% { opacity: 0; }
-      30% { opacity: 0.7; }
+      30% { opacity: 0.85; }
       100% { opacity: 0; }
     }
 
-    /* Screen shake au moment de l'impact */
-    .shake-container {
-      animation: shake 0.4s ease-in-out 1.5s;
+    /* Screen shake */
+    .cinematic {
+      animation: cinematicExit 0.8s ease-in-out 3s forwards,
+                 shake 0.5s ease-in-out 1.8s;
     }
 
     @keyframes shake {
       0%, 100% { transform: translate(0, 0); }
-      10% { transform: translate(-8px, 4px); }
-      20% { transform: translate(8px, -4px); }
-      30% { transform: translate(-6px, -3px); }
-      40% { transform: translate(6px, 3px); }
-      50% { transform: translate(-4px, 2px); }
-      60% { transform: translate(4px, -2px); }
-      70% { transform: translate(-3px, 1px); }
-      80% { transform: translate(3px, -1px); }
-      90% { transform: translate(-1px, 0); }
+      10% { transform: translate(-12px, 6px); }
+      20% { transform: translate(12px, -6px); }
+      30% { transform: translate(-10px, -5px); }
+      40% { transform: translate(10px, 5px); }
+      50% { transform: translate(-6px, 3px); }
+      60% { transform: translate(6px, -3px); }
+      70% { transform: translate(-4px, 2px); }
+      80% { transform: translate(4px, -2px); }
+      90% { transform: translate(-2px, 1px); }
     }
 
-    /* Slogan et CTA en fade après impact */
-    .hero-slogan {
+    /* ===== PAGE PRINCIPALE (après cinématique) ===== */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+    p { color: var(--muted); font-size: 1.1rem; margin-top: 20px; }
+
+    .hero {
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 120px;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease-out 2s forwards;
+      animation: heroReveal 1s ease-out 3.5s forwards;
+    }
+
+    @keyframes heroReveal {
+      to { opacity: 1; }
+    }
+
+    .hero-logo {
+      max-width: 400px;
+      width: 80%;
+      margin-bottom: 40px;
+    }
+
+    .hero-slogan {
+      font-size: 1.4rem;
+      color: var(--text);
       max-width: 600px;
       margin: 0 auto 20px;
-    }
-
-    .hero-cta {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease-out 2.4s forwards;
-    }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+      font-weight: 500;
     }
 
     .btn-primary {
@@ -199,7 +199,6 @@
       box-shadow: 0 0 60px rgba(140, 255, 59, 0.5);
     }
 
-    /* ===== SECTIONS ===== */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -225,9 +224,7 @@
       color: var(--accent);
     }
 
-    .security {
-      text-align: center;
-    }
+    .security { text-align: center; }
 
     footer {
       text-align: center;
@@ -240,31 +237,33 @@
     @media (max-width: 768px) {
       h1 { font-size: 2.2rem; }
       section { padding: 80px 20px; }
-      .logo-stage { height: 200px; }
+      .cinematic-stage { height: 40vh; }
+      .hero-logo { max-width: 280px; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="flash"></div>
-
-  <div class="shake-container">
-    <section class="hero">
-      <div class="logo-stage">
-        <img src="runcrew-wordmark.png" alt="RunCrew" class="logo-wordmark">
-        <img src="runcrew-logo.png" alt="RunCrew" class="logo-final">
-      </div>
-
-      <p class="hero-slogan" style="font-size: 1.3rem; color: var(--text);">
-        Courir entouré, même en solitaire.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#" class="btn-primary">Télécharger sur Android</a>
-      </div>
-    </section>
+  <!-- Cinématique plein écran -->
+  <div class="cinematic">
+    <div class="flash"></div>
+    <div class="cinematic-stage">
+      <img src="runcrew-wordmark.png" alt="RunCrew" class="cine-wordmark">
+      <img src="runcrew-logo.png" alt="RunCrew" class="cine-final">
+    </div>
   </div>
+
+  <!-- Page principale -->
+  <section class="hero">
+    <img src="runcrew-logo.png" alt="RunCrew" class="hero-logo">
+    <p class="hero-slogan">
+      Courir entouré, même en solitaire.
+    </p>
+    <div>
+      <a href="#" class="btn-primary">Télécharger sur Android</a>
+    </div>
+  </section>
 
   <section>
     <h2>Pourquoi RunCrew ?</h2>
