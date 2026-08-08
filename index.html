@@ -160,9 +160,7 @@
       animation: skipFadeIn 0.5s ease-out 0.5s forwards;
     }
 
-    @keyframes skipFadeIn {
-      to { opacity: 1; }
-    }
+    @keyframes skipFadeIn { to { opacity: 1; } }
 
     .skip-btn:hover {
       background: var(--accent);
@@ -331,6 +329,11 @@
       margin-left: 15px;
     }
 
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     /* ===== BADGES STORE ===== */
     .store-badges {
       display: flex;
@@ -409,11 +412,6 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       box-shadow: 0 4px 12px rgba(140, 255, 59, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      .store-badges { flex-direction: column; align-items: center; }
-      .store-badge { width: 100%; max-width: 280px; }
     }
 
     /* ===== SCROLL REVEAL ===== */
@@ -626,7 +624,48 @@
     .founder-text strong {
       color: var(--accent);
       font-weight: 700;
-    
+    }
+
+    .founder-quote {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      font-style: italic;
+      padding: 25px 30px;
+      background: var(--accent-dim);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .founder-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .founder-tag {
+      padding: 8px 16px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .founder-tag strong {
+      color: var(--accent);
+    }
+
+    /* ===== SÉCURITÉ ===== */
+    .security-section {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+      padding: 140px 20px;
+    }
 
     .security-inner { max-width: 800px; margin: 0 auto; text-align: center; }
 
@@ -652,10 +691,7 @@
       border-top: 1px solid var(--border);
     }
 
-    .waitlist-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
+    .waitlist-inner { max-width: 700px; margin: 0 auto; }
 
     .waitlist-badge {
       display: inline-flex;
@@ -832,6 +868,14 @@
       .footer-inner { grid-template-columns: 1fr; text-align: center; }
 
       .skip-btn { top: 15px; right: 15px; padding: 8px 15px; font-size: 0.75rem; }
+
+      .store-badges { flex-direction: column; align-items: center; }
+      .store-badge { width: 100%; max-width: 280px; }
+
+      .founder-card { padding: 30px 20px; }
+      .founder-intro { flex-direction: column; text-align: center; gap: 15px; }
+      .founder-text { font-size: 1rem; }
+      .founder-quote { font-size: 1.1rem; padding: 20px; }
     }
   </style>
 </head>
@@ -854,8 +898,8 @@
     <div class="nav-links">
       <a href="#concept">Concept</a>
       <a href="#features">Fonctionnalités</a>
-      <a href="#security">Sécurité</a>
       <a href="#founder">L'histoire</a>
+      <a href="#security">Sécurité</a>
       <a href="#waitlist" class="nav-cta">Rejoindre</a>
     </div>
   </nav>
@@ -1018,7 +1062,7 @@
 
         <p class="founder-text">
           Je vis dans le <strong>Var</strong>, je suis <strong>pompier volontaire</strong>,
-          et je développe RunCrew depuis mon salon, entre deux gardes et deux sorties running.
+          et je développe RunCrew depuis chez moi, entre deux gardes et deux sorties running.
         </p>
 
         <p class="founder-text">
@@ -1054,13 +1098,17 @@
       </div>
     </div>
   </section>
+
+  <!-- SÉCURITÉ -->
+  <section id="security" class="security-section">
     <div class="security-inner reveal">
       <span class="security-badge">🛡️ Sécurité</span>
-      <h2>Jamais seul.<br><span class="accent">Même si tu tombes.</span></h2>
+      <h2>Ton crew veille sur toi.<br><span class="accent">À chaque foulée.</span></h2>
       <p style="font-size: 1.2rem;">
         Que tu partes à 6h du matin ou à la tombée de la nuit,
-        quelqu'un peut toujours être là avec toi. Si tu ne réponds plus,
-        ton crew le sait immédiatement.
+        RunCrew garde un œil sur toi. Ta famille, tes amis, ton coach —
+        ils sont notifiés instantanément si quelque chose ne va pas.
+        Cours l'esprit libre, ils sont là.
       </p>
     </div>
   </section>
@@ -1167,12 +1215,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 RunCrew — Bientôt disponible sur Android — runcrew.fr
+      © 2026 RunCrew — Fièrement Made in France 🇫🇷 — runcrew.fr
     </div>
   </footer>
 
   <script>
-    // ===== CINÉMATIQUE INTELLIGENTE =====
     const cinematic = document.getElementById('cinematic');
     const nav = document.getElementById('nav');
     const hero = document.getElementById('hero');
@@ -1196,7 +1243,6 @@
       sessionStorage.setItem('runcrew_cinematic_seen', 'true');
     }
 
-    // ===== SCROLL REVEAL =====
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1208,7 +1254,6 @@
 
     reveals.forEach(el => observer.observe(el));
 
-    // ===== FORMULAIRE WAITLIST =====
     const form = document.getElementById('waitlistForm');
     const success = document.getElementById('waitlistSuccess');
 
