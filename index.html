@@ -1841,14 +1841,27 @@
 
     const alreadySeen = sessionStorage.getItem('runcrew_cinematic_seen');
 
+    // Forcer scroll en haut dès le chargement de la page, toujours
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
+
     if (alreadySeen) {
       cinematic.classList.add('hidden');
       nav.classList.add('instant');
       hero.classList.add('instant');
+      document.body.style.overflow = '';
+      revealTeaser();
     } else {
       setTimeout(() => {
         sessionStorage.setItem('runcrew_cinematic_seen', 'true');
       }, 4000);
+
+      // Débloquer le scroll exactement quand la cinématique finit
+      setTimeout(() => {
+        document.body.style.overflow = '';
+        window.scrollTo(0, 0);
+        revealTeaser();
+      }, 3500);
     }
 
     function skipCinematic() {
