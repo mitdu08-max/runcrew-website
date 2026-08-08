@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RunCrew — Courir entouré, même en solitaire</title>
-  <meta name="description" content="RunCrew est l’application running live qui te connecte à ton crew pendant que tu cours. Suivi en direct, supporters, sécurité SOS. Ne cours plus jamais seul." />
+  <meta name="description" content="RunCrew est l'application running live qui te connecte à ton crew pendant que tu cours. Suivi en direct, supporters, sécurité SOS. Ne cours plus jamais seul." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="RunCrew — Courir entouré, même en solitaire">
-  <meta property="og:description" content="L’application live qui te connecte à ton crew pendant que tu cours.">
+  <meta property="og:description" content="L'application live qui te connecte à ton crew pendant que tu cours.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://runcrew.fr">
+  <meta property="og:image" content="https://runcrew.fr/runcrew-logo.png">
 
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -19,7 +20,7 @@
       --bg: #0B0F14;
       --card: #151B23;
       --border: #1E2730;
-      --accent: #00FF9D;
+      --accent: #8CFF3B;
       --text: #EAF1F8;
       --muted: #8A99A8;
     }
@@ -31,10 +32,11 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    body {
+    html, body {
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     section {
@@ -60,34 +62,144 @@
       margin-top: 20px;
     }
 
+    /* ===== HERO CINÉMATIQUE ===== */
     .hero {
       text-align: center;
-      padding-top: 140px;
-      padding-bottom: 140px;
+      padding-top: 80px;
+      padding-bottom: 120px;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
 
-    .hero p {
+    .logo-stage {
+      position: relative;
+      width: 100%;
       max-width: 600px;
-      margin: 20px auto;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo-wordmark,
+    .logo-final {
+      position: absolute;
+      max-width: 90%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* État 1 : wordmark propre */
+    .logo-wordmark {
+      opacity: 0;
+      animation: wordmarkEnter 0.6s ease-out 0.3s forwards,
+                 wordmarkExit 0.15s ease-in 1.5s forwards;
+    }
+
+    /* État 2 : logo final avec gorille */
+    .logo-final {
+      opacity: 0;
+      transform: scale(0.7);
+      animation: finalEnter 0.4s cubic-bezier(0.5, 1.8, 0.3, 1) 1.5s forwards;
+    }
+
+    @keyframes wordmarkEnter {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes wordmarkExit {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes finalEnter {
+      0% { opacity: 0; transform: scale(0.6); }
+      60% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Flash blanc à l'impact */
+    .flash {
+      position: fixed;
+      inset: 0;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 999;
+      animation: flashImpact 0.25s ease-out 1.5s forwards;
+    }
+
+    @keyframes flashImpact {
+      0% { opacity: 0; }
+      30% { opacity: 0.7; }
+      100% { opacity: 0; }
+    }
+
+    /* Screen shake au moment de l'impact */
+    .shake-container {
+      animation: shake 0.4s ease-in-out 1.5s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translate(0, 0); }
+      10% { transform: translate(-8px, 4px); }
+      20% { transform: translate(8px, -4px); }
+      30% { transform: translate(-6px, -3px); }
+      40% { transform: translate(6px, 3px); }
+      50% { transform: translate(-4px, 2px); }
+      60% { transform: translate(4px, -2px); }
+      70% { transform: translate(-3px, 1px); }
+      80% { transform: translate(3px, -1px); }
+      90% { transform: translate(-1px, 0); }
+    }
+
+    /* Slogan et CTA en fade après impact */
+    .hero-slogan {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease-out 2s forwards;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-cta {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease-out 2.4s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .btn-primary {
       display: inline-block;
-      margin-top: 40px;
-      padding: 16px 32px;
+      margin-top: 30px;
+      padding: 18px 40px;
       background: var(--accent);
       color: #000;
-      font-weight: 700;
-      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 10px;
       text-decoration: none;
       transition: 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 40px rgba(140, 255, 59, 0.3);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+      transform: translateY(-3px);
+      box-shadow: 0 0 60px rgba(140, 255, 59, 0.5);
     }
 
+    /* ===== SECTIONS ===== */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -100,10 +212,17 @@
       border: 1px solid var(--border);
       padding: 30px;
       border-radius: 12px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
     }
 
     .card h3 {
       margin-bottom: 15px;
+      color: var(--accent);
     }
 
     .security {
@@ -119,26 +238,33 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      section {
-        padding: 80px 20px;
-      }
+      h1 { font-size: 2.2rem; }
+      section { padding: 80px 20px; }
+      .logo-stage { height: 200px; }
     }
   </style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <h1>Courir entouré,<br>même en solitaire.</h1>
-    <p>
-      RunCrew est l’application running live qui te connecte à ton crew pendant que tu cours.
-      Suivi en direct, encouragements, sécurité intelligente.
-    </p>
-    <a href="#" class="btn-primary">Télécharger sur Android</a>
-  </section>
+  <div class="flash"></div>
+
+  <div class="shake-container">
+    <section class="hero">
+      <div class="logo-stage">
+        <img src="runcrew-wordmark.png" alt="RunCrew" class="logo-wordmark">
+        <img src="runcrew-logo.png" alt="RunCrew" class="logo-final">
+      </div>
+
+      <p class="hero-slogan" style="font-size: 1.3rem; color: var(--text);">
+        Courir entouré, même en solitaire.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#" class="btn-primary">Télécharger sur Android</a>
+      </div>
+    </section>
+  </div>
 
   <section>
     <h2>Pourquoi RunCrew ?</h2>
@@ -151,7 +277,7 @@
       </div>
       <div class="card">
         <h3>Encouragements</h3>
-        <p>Reçois du soutien pendant l’effort, pas après.</p>
+        <p>Reçois du soutien pendant l'effort, pas après.</p>
       </div>
       <div class="card">
         <h3>SOS Sécurité</h3>
@@ -168,7 +294,7 @@
     <h2>Jamais seul.</h2>
     <p>
       Que tu partes à 6h du matin ou à la tombée de la nuit,
-      quelqu’un peut toujours être là avec toi.
+      quelqu'un peut toujours être là avec toi.
     </p>
   </section>
 
