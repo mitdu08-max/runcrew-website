@@ -2103,24 +2103,23 @@
     }
     // ===== COMPTEUR WAITLIST DYNAMIQUE =====
     function getWaitlistCount() {
-      const startDate = new Date('2025-08-26T00:00:00');
+      const startDate = new Date('2026-08-09T00:00:00');
       const today = new Date();
-      const startCount = 47;
-      const maxCount = 300;
+      const startCount = 27;
+      const maxCount = 180;
 
-      // Nombre de jours écoulés depuis le lancement
+      // Nombre de jours écoulés depuis le départ du compteur
       const diffTime = today.getTime() - startDate.getTime();
       const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
 
-      // Progression lente et réaliste
-      // Moyenne ~3.5 par jour, atteint 300 en ~72 jours
+      // Progression réaliste : +1 à +3 par jour
       let total = startCount;
       for (let i = 0; i < diffDays; i++) {
-        // Pseudo-aléatoire déterministe : même résultat toute la journée
-        const seed = Math.sin(i + 1) * 10000;
+        const seed = Math.sin((i + 1) * 12.9898) * 43758.5453;
         const decimal = seed - Math.floor(seed);
-        const dailyGain = decimal < 0.25 ? 2 : decimal < 0.5 ? 3 : decimal < 0.75 ? 4 : 5;
+        const dailyGain = decimal < 0.34 ? 1 : decimal < 0.67 ? 2 : 3;
         total += dailyGain;
+
         if (total >= maxCount) {
           total = maxCount;
           break;
