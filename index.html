@@ -797,7 +797,107 @@
     .founder-tag strong {
       color: var(--accent);
     }
+    /* ===== FAQ ===== */
+    .faq-section {
+      padding: 120px 20px;
+      background: var(--bg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
+    .faq-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item.open {
+      border-color: var(--accent);
+    }
+
+    .faq-question {
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+      background: var(--bg-alt);
+    }
+
+    .faq-question h3 {
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0;
+      padding-right: 20px;
+    }
+
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-dim);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--accent);
+      color: #000;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 30px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 30px 25px;
+    }
+
+    .faq-answer p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .faq-section { padding: 80px 20px; }
+      .faq-question { padding: 20px; }
+      .faq-question h3 { font-size: 0.95rem; }
+      .faq-item.open .faq-answer { padding: 0 20px 20px; }
+    }
     /* ===== SÉCURITÉ ===== */
     .security-section {
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
@@ -1039,7 +1139,7 @@
       <a href="#concept">Concept</a>
       <a href="#features">Fonctionnalités</a>
       <a href="#founder">L'histoire</a>
-      <a href="#security">Sécurité</a>
+      <a href="#faq">FAQ</a>
       <a href="#waitlist" class="nav-cta">Rejoindre</a>
     </div>
   </nav>
@@ -1239,7 +1339,95 @@
       </div>
     </div>
   </section>
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="faq-header reveal">
+      <h2>Questions <span class="accent">fréquentes</span></h2>
+      <p>Tout ce que tu veux savoir avant de rejoindre le crew.</p>
+    </div>
 
+    <div class="faq-list reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Quand sera lancée l'application RunCrew ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>RunCrew est actuellement en phase finale de développement. Le lancement officiel sur Google Play est prévu très prochainement. Inscris-toi à la liste d'attente pour être notifié en priorité dès la sortie.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>RunCrew est-elle gratuite ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Oui, RunCrew sera gratuite au lancement. Certaines fonctionnalités avancées pourraient devenir premium à l'avenir, mais l'expérience principale (tracking, crew, sécurité) restera toujours accessible gratuitement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Sur quelles plateformes RunCrew est-elle disponible ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>RunCrew sortira d'abord sur Android via le Google Play Store. Une version iOS pour l'App Store est prévue par la suite. Le développement se concentre actuellement sur la version Android pour offrir la meilleure expérience possible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Comment fonctionne le suivi en direct par mon crew ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Tu invites tes proches à devenir tes supporters via un code unique. Pendant ta course, ils accèdent à une carte en temps réel où ils voient ta position, ta distance et ton allure. Ils peuvent aussi t'envoyer des messages d'encouragement en direct.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Mes données personnelles sont-elles protégées ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Absolument. Tes données ne sont jamais vendues à des tiers. Elles sont stockées sur des serveurs sécurisés (Firebase / Google Cloud) et tu gardes le contrôle total sur ta vie privée. Consulte notre politique de confidentialité pour plus de détails.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Puis-je tester RunCrew avant le lancement officiel ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Oui ! Un programme beta est ouvert à un nombre limité de runners motivés. Envoie un email à runcrew.app@gmail.com pour demander ton accès. Priorité aux profils qui aiment donner du feedback constructif.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>RunCrew consomme-t-elle beaucoup de batterie ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>RunCrew est optimisée pour la longévité batterie. Sur une course d'une heure, la consommation est équivalente aux principales apps de running du marché. Nous continuons à améliorer l'efficacité énergétique à chaque mise à jour.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h3>Comment contacter le créateur ?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Tony (le créateur) est directement joignable à runcrew.app@gmail.com. Feedback, questions, suggestions, partenariats : tout est bienvenu. RunCrew reste un projet à taille humaine où chaque avis compte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- SÉCURITÉ -->
   <section id="security" class="security-section">
     <div class="security-inner reveal">
@@ -1344,6 +1532,7 @@
           <li><a href="#concept">Concept</a></li>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#security">Sécurité</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -1522,7 +1711,14 @@
         document.body.style.overflow = '';
       }
     });
-
+    // ===== FAQ ACCORDÉON =====
+    function toggleFaq(item) {
+      const isOpen = item.classList.contains('open');
+      // Ferme toutes les FAQ
+      document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+      // Ouvre celle cliquée si elle n'était pas déjà ouverte
+      if (!isOpen) item.classList.add('open');
+    }
     // ===== FORMULAIRE WAITLIST =====
     const form = document.getElementById('waitlistForm');
     const success = document.getElementById('waitlistSuccess');
