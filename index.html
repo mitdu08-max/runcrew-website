@@ -42,6 +42,21 @@
       overflow-x: hidden;
     }
 
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 999;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    body.cinema-done::before {
+      opacity: 0;
+    }
+
     /* ===== CINÉMATIQUE ===== */
     .cinematic {
       position: fixed;
@@ -1850,6 +1865,7 @@
       nav.classList.add('instant');
       hero.classList.add('instant');
       document.body.style.overflow = '';
+      document.body.classList.add('cinema-done');
       revealTeaser();
     } else {
       setTimeout(() => {
@@ -1858,9 +1874,10 @@
 
       // Débloquer le scroll exactement quand la cinématique finit
       setTimeout(() => {
-        document.body.style.overflow = '';
         window.scrollTo(0, 0);
         revealTeaser();
+        document.body.style.overflow = '';
+        document.body.classList.add('cinema-done');
       }, 3500);
     }
 
@@ -1871,6 +1888,7 @@
       sessionStorage.setItem('runcrew_cinematic_seen', 'true');
       window.scrollTo(0, 0);
       revealTeaser();
+      document.body.classList.add('cinema-done');
     }
 
     // ===== SCROLL REVEAL =====
