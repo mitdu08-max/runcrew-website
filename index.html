@@ -529,6 +529,54 @@
       .teaser-cinema::before { width: 300px; height: 300px; }
     }
 
+    /* ===== COMPTEUR WAITLIST ===== */
+    .counter-block {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      margin-bottom: 30px;
+      transition: border-color 0.3s;
+    }
+
+    .counter-block:hover {
+      border-color: var(--accent);
+    }
+
+    .counter-fire {
+      font-size: 1.3rem;
+      animation: fireGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes fireGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.15); }
+    }
+
+    .counter-number {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      min-width: 45px;
+      text-align: center;
+    }
+
+    .counter-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .counter-block { padding: 12px 22px; gap: 10px; }
+      .counter-number { font-size: 1.3rem; }
+      .counter-label { font-size: 0.8rem; }
+    }
+
     /* ===== SCROLL REVEAL ===== */
     .reveal {
       opacity: 0;
@@ -1373,8 +1421,13 @@
       Ce moment ne doit plus exister.
     </div>
     <div class="teaser-separator teaser-reveal" data-delay="600"></div>
-    <img src="runcrew-logo.png" alt="RunCrew" class="teaser-logo teaser-reveal" data-delay="700">
-    <div class="teaser-cta teaser-reveal" data-delay="800">
+    <div class="counter-block teaser-reveal" data-delay="700">
+      <span class="counter-fire">🔥</span>
+      <span class="counter-number" id="teaserCounter">0</span>
+      <span class="counter-label">runners attendent le lancement</span>
+    </div>
+    <img src="runcrew-logo.png" alt="RunCrew" class="teaser-logo teaser-reveal" data-delay="800">
+    <div class="teaser-cta teaser-reveal" data-delay="900">
       <a href="#waitlist" class="btn-primary">Rejoindre le crew</a>
     </div>
   </section>
@@ -1734,6 +1787,11 @@
         Lancement imminent
       </div>
       <h2>Sois parmi les <span class="accent">premiers</span>.</h2>
+      <div class="counter-block" style="margin-top: 25px;">
+        <span class="counter-fire">🔥</span>
+        <span class="counter-number" id="waitlistCounter">0</span>
+        <span class="counter-label">runners attendent le lancement</span>
+      </div>
       <p style="font-size: 1.15rem; max-width: 500px; margin: 20px auto 0;">
         RunCrew arrive bientôt. Inscris-toi et sois notifié dès le lancement officiel.
         Priorité absolue aux early adopters.
@@ -2043,6 +2101,84 @@
       // Ouvre celle cliquée si elle n'était pas déjà ouverte
       if (!isOpen) item.classList.add('open');
     }
+    // ===== COMPTEUR WAITLIST DYNAMIQUE =====
+    function getWaitlistCount() {
+      const startDate = new Date('2025-08-26');
+      const today = new Date();
+      const startCount = 47;
+      const maxCount = 300;
+
+      // Calcul du nombre de jours écoulés
+      const diffTime = today.getTime() - startDate.getTime();
+      const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+
+      // Progression pseudo-aléatoire déterministe par jour
+      let total = startCount;
+      for (let i = 0; i < diffDays; i++) {
+        // Seed basé sur le jour pour que le chiffre soit stable dans la journée
+        const seed = (i + 1) * 7 + (i * 13) % 17;
+        const dailyGain = 2 + (seed % 4); // Entre 2 et 5
+        total += dailyGain;
+        if (total >= maxCount) {
+          total = maxCount;
+          break;
+        }
+      }
+
+      return total;
+    }
+
+    function animateCounter(elementId, target) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+
+      let current = 0;
+      const duration = 1500;
+      const steps = 40;
+      const increment = target / steps;
+      const interval = duration / steps;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current);
+      }, interval);
+    }
+
+    // Calculer le chiffre du jour
+    const waitlistCount = getWaitlistCount();
+
+    // Animer le compteur du teaser quand il devient visible
+    const teaserCounterEl = document.getElementById('teaserCounter');
+    if (teaserCounterEl) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter('teaserCounter', waitlistCount);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counterObserver.observe(teaserCounterEl);
+    }
+
+    // Animer le compteur waitlist quand il devient visible
+    const waitlistCounterEl = document.getElementById('waitlistCounter');
+    if (waitlistCounterEl) {
+      const waitlistObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter('waitlistCounter', waitlistCount);
+            waitlistObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      waitlistObserver.observe(waitlistCounterEl);
+    }
+
     // ===== FORMULAIRE WAITLIST =====
     const form = document.getElementById('waitlistForm');
     const success = document.getElementById('waitlistSuccess');
