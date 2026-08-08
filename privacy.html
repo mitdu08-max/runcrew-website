@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité — RunCrew</title>
+  <meta name="description" content="Politique de confidentialité et gestion des données personnelles - RunCrew" />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --bg: #0B0F14;
+      --bg-alt: #0F151C;
+      --card: #151B23;
+      --border: #1E2730;
+      --accent: #8CFF3B;
+      --text: #EAF1F8;
+      --muted: #8A99A8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav img { height: 40px; }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    ul { margin-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    a.link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.link:hover { text-decoration: underline; }
+
+    .updated {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .info-card h3 {
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav img { height: 30px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
+    <a href="index.html">← Retour</a>
+  </nav>
+
+  <div class="container">
+    <span class="updated">Dernière mise à jour : 2026</span>
+    <h1>Politique de Confidentialité</h1>
+
+    <p>
+      Chez <strong>RunCrew</strong>, nous prenons la protection de tes données personnelles très au sérieux.
+      Cette politique explique clairement quelles données sont collectées, pourquoi,
+      et comment tu peux exercer tes droits.
+    </p>
+
+    <h2>1. Qui est responsable du traitement ?</h2>
+    <p>
+      Le responsable du traitement des données est :<br>
+      <strong>Tony Arragain</strong><br>
+      Roquebrune-sur-Argens, France<br>
+      Email : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
+    </p>
+
+    <h2>2. Quelles données collectons-nous ?</h2>
+
+    <div class="info-card">
+      <h3>🌐 Sur le site runcrew.fr</h3>
+      <ul>
+        <li><strong>Email</strong> : uniquement si tu t'inscris à la liste d'attente</li>
+        <li>Aucun cookie de tracking ni analytics tiers</li>
+        <li>Aucune donnée de navigation stockée</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>📱 Dans l'application RunCrew (en développement)</h3>
+      <ul>
+        <li><strong>Compte</strong> : email + nom d'utilisateur via authentification Firebase</li>
+        <li><strong>Données GPS</strong> : localisation en temps réel pendant les courses</li>
+        <li><strong>Données de course</strong> : distance, allure, altitude, tracés GPX</li>
+        <li><strong>Photos de profil</strong> : si tu en ajoutes</li>
+        <li><strong>Crew et supporters</strong> : liste des personnes autorisées à te suivre</li>
+      </ul>
+    </div>
+
+    <h2>3. Pourquoi collectons-nous ces données ?</h2>
+    <ul>
+      <li>Te notifier du lancement officiel de l'application (liste d'attente)</li>
+      <li>Faire fonctionner les fonctionnalités de l'app (tracking, crew, supporters)</li>
+      <li>Assurer ta sécurité (système SOS)</li>
+      <li>Améliorer l'expérience utilisateur</li>
+    </ul>
+
+    <h2>4. Base légale du traitement</h2>
+    <p>
+      Le traitement de tes données repose sur ton <strong>consentement explicite</strong>
+      (RGPD, article 6.1.a) lors de l'inscription à la waitlist ou à l'application.
+    </p>
+
+    <h2>5. Combien de temps sont conservées tes données ?</h2>
+    <ul>
+      <li><strong>Email waitlist</strong> : jusqu'au lancement officiel ou à ta demande de suppression</li>
+      <li><strong>Données de course</strong> : tant que ton compte est actif</li>
+      <li><strong>Compte utilisateur</strong> : jusqu'à suppression manuelle de ta part</li>
+    </ul>
+
+    <h2>6. Avec qui sont partagées tes données ?</h2>
+    <p>
+      Tes données ne sont <strong>JAMAIS vendues</strong> à des tiers.
+      Elles sont uniquement traitées par :
+    </p>
+    <ul>
+      <li><strong>Firebase (Google)</strong> : hébergement, authentification, base de données</li>
+      <li><strong>Formspree</strong> : gestion de la liste d'attente</li>
+      <li><strong>Mapbox</strong> : affichage des cartes (données GPS chiffrées)</li>
+    </ul>
+    <p>
+      Ton crew (personnes que tu ajoutes) peut voir ta position en temps réel
+      <strong>uniquement pendant tes courses</strong>, avec ton accord explicite.
+    </p>
+
+    <h2>7. Tes droits (RGPD)</h2>
+    <p>Tu disposes des droits suivants sur tes données :</p>
+    <ul>
+      <li><strong>Droit d'accès</strong> : savoir quelles données on a sur toi</li>
+      <li><strong>Droit de rectification</strong> : corriger tes données</li>
+      <li><strong>Droit à l'effacement</strong> : supprimer ton compte et tes données</li>
+      <li><strong>Droit à la portabilité</strong> : récupérer tes données</li>
+      <li><strong>Droit d'opposition</strong> : refuser certains traitements</li>
+      <li><strong>Droit de retirer ton consentement</strong> à tout moment</li>
+    </ul>
+    <p>
+      Pour exercer un de ces droits, écris à :
+      <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
+    </p>
+
+    <h2>8. Sécurité des données</h2>
+    <p>
+      Toutes tes données sont stockées sur des serveurs sécurisés (Firebase / Google Cloud).
+      Les communications sont chiffrées (HTTPS / SSL).
+      Nous mettons en œuvre toutes les mesures raisonnables pour protéger tes informations.
+    </p>
+
+    <h2>9. Cookies</h2>
+    <p>
+      Le site <strong>runcrew.fr</strong> n'utilise <strong>aucun cookie de tracking</strong>,
+      aucun outil d'analyse tiers (Google Analytics, Meta Pixel, etc.).
+      Seul un stockage local (sessionStorage) est utilisé pour ne pas rejouer
+      l'animation d'introduction à chaque visite.
+    </p>
+
+    <h2>10. Modification de cette politique</h2>
+    <p>
+      Cette politique peut être mise à jour. La date de dernière mise à jour est indiquée
+      en haut de cette page. En cas de modification importante, tu seras notifié par email.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      Pour toute question relative à la protection de tes données :<br>
+      <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
+    </p>
+
+    <h2>12. Autorité de contrôle</h2>
+    <p>
+      Si tu estimes que tes droits ne sont pas respectés, tu peux introduire une réclamation
+      auprès de la <a class="link" href="https://www.cnil.fr" target="_blank">CNIL</a>
+      (Commission Nationale de l'Informatique et des Libertés).
+    </p>
+  </div>
+
+  <footer>
+    © 2026 RunCrew — <a href="index.html">Retour à l'accueil</a>
+  </footer>
+</body>
+</html>
