@@ -414,6 +414,106 @@
       box-shadow: 0 4px 12px rgba(140, 255, 59, 0.4);
     }
 
+    /* ===== TEASER CINÉMA ===== */
+    .teaser-cinema {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px;
+      max-width: 100%;
+      margin: 0;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .teaser-cinema::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(140, 255, 59, 0.06) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .teaser-line {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .teaser-line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .teaser-line.accent-line {
+      color: var(--accent);
+      font-size: 3.2rem;
+      margin-top: 20px;
+      margin-bottom: 50px;
+      text-shadow: 0 0 60px rgba(140, 255, 59, 0.3);
+    }
+
+    .teaser-separator {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 10px;
+      margin: 0 auto 50px;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+    }
+
+    .teaser-separator.visible {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .teaser-logo {
+      width: 80px;
+      opacity: 0;
+      transform: translateY(30px) scale(0.8);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      margin-bottom: 30px;
+    }
+
+    .teaser-logo.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .teaser-cta {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .teaser-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .teaser-cinema { min-height: 80vh; padding: 80px 20px; }
+      .teaser-line { font-size: 1.8rem; }
+      .teaser-line.accent-line { font-size: 2rem; }
+      .teaser-cinema::before { width: 300px; height: 300px; }
+    }
+
     /* ===== SCROLL REVEAL ===== */
     .reveal {
       opacity: 0;
@@ -1294,6 +1394,24 @@
     </div>
   </section>
 
+  <!-- TEASER CINÉMA -->
+  <section class="teaser-cinema" id="teaser">
+    <div class="teaser-line teaser-reveal" data-delay="0">
+      Il y a un moment…
+    </div>
+    <div class="teaser-line teaser-reveal" data-delay="200">
+      où chaque runner se retrouve seul.
+    </div>
+    <div class="teaser-line accent-line teaser-reveal" data-delay="400">
+      Ce moment ne doit plus exister.
+    </div>
+    <div class="teaser-separator teaser-reveal" data-delay="600"></div>
+    <img src="runcrew-logo.png" alt="RunCrew" class="teaser-logo teaser-reveal" data-delay="700">
+    <div class="teaser-cta teaser-reveal" data-delay="800">
+      <a href="#waitlist" class="btn-primary">Rejoindre le crew</a>
+    </div>
+  </section>
+
   <!-- POURQUOI -->
   <section id="concept">
     <div class="why-header reveal">
@@ -1751,6 +1869,21 @@
     }, { threshold: 0.15 });
 
     reveals.forEach(el => observer.observe(el));
+
+    // ===== TEASER CINÉMA REVEAL =====
+    const teaserElements = document.querySelectorAll('.teaser-reveal');
+    const teaserObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.delay) || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    teaserElements.forEach(el => teaserObserver.observe(el));
 
     // ===== MODAL FEATURES =====
     const modalData = {
