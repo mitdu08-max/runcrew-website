@@ -1346,6 +1346,24 @@
     </div>
   </nav>
 
+  <!-- TEASER CINÉMA -->
+  <section class="teaser-cinema" id="teaser">
+    <div class="teaser-line teaser-reveal" data-delay="0">
+      Il y a un moment…
+    </div>
+    <div class="teaser-line teaser-reveal" data-delay="200">
+      où chaque runner se retrouve seul.
+    </div>
+    <div class="teaser-line accent-line teaser-reveal" data-delay="400">
+      Ce moment ne doit plus exister.
+    </div>
+    <div class="teaser-separator teaser-reveal" data-delay="600"></div>
+    <img src="runcrew-logo.png" alt="RunCrew" class="teaser-logo teaser-reveal" data-delay="700">
+    <div class="teaser-cta teaser-reveal" data-delay="800">
+      <a href="#waitlist" class="btn-primary">Rejoindre le crew</a>
+    </div>
+  </section>
+
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="coming-soon-badge">
@@ -1391,24 +1409,6 @@
           <span class="store-badge-bottom">App Store</span>
         </div>
       </a>
-    </div>
-  </section>
-
-  <!-- TEASER CINÉMA -->
-  <section class="teaser-cinema" id="teaser">
-    <div class="teaser-line teaser-reveal" data-delay="0">
-      Il y a un moment…
-    </div>
-    <div class="teaser-line teaser-reveal" data-delay="200">
-      où chaque runner se retrouve seul.
-    </div>
-    <div class="teaser-line accent-line teaser-reveal" data-delay="400">
-      Ce moment ne doit plus exister.
-    </div>
-    <div class="teaser-separator teaser-reveal" data-delay="600"></div>
-    <img src="runcrew-logo.png" alt="RunCrew" class="teaser-logo teaser-reveal" data-delay="700">
-    <div class="teaser-cta teaser-reveal" data-delay="800">
-      <a href="#waitlist" class="btn-primary">Rejoindre le crew</a>
     </div>
   </section>
 
@@ -1856,6 +1856,7 @@
       nav.classList.add('instant');
       hero.classList.add('instant');
       sessionStorage.setItem('runcrew_cinematic_seen', 'true');
+      revealTeaser();
     }
 
     // ===== SCROLL REVEAL =====
@@ -1871,19 +1872,25 @@
     reveals.forEach(el => observer.observe(el));
 
     // ===== TEASER CINÉMA REVEAL =====
-    const teaserElements = document.querySelectorAll('.teaser-reveal');
-    const teaserObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = parseInt(entry.target.dataset.delay) || 0;
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-        }
+    function revealTeaser() {
+      const teaserElements = document.querySelectorAll('.teaser-reveal');
+      teaserElements.forEach(el => {
+        const delay = parseInt(el.dataset.delay) || 0;
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, delay);
       });
-    }, { threshold: 0.3 });
+    }
 
-    teaserElements.forEach(el => teaserObserver.observe(el));
+    // Si cinématique déjà vue → teaser visible immédiatement
+    if (alreadySeen) {
+      revealTeaser();
+    } else {
+      // Après la cinématique (3.5s) → lancer le teaser
+      setTimeout(() => {
+        revealTeaser();
+      }, 3500);
+    }
 
     // ===== MODAL FEATURES =====
     const modalData = {
