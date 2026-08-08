@@ -530,11 +530,103 @@
       margin-bottom: 25px;
     }
 
-    /* ===== SÉCURITÉ ===== */
-    .security-section {
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
-      padding: 140px 20px;
+    /* ===== FOUNDER STORY ===== */
+    .founder-section {
+      padding: 120px 20px;
+      background: var(--bg);
     }
+
+    .founder-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .founder-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 22px;
+      background: linear-gradient(90deg,
+        rgba(0, 85, 164, 0.15),
+        rgba(255, 255, 255, 0.05),
+        rgba(239, 65, 53, 0.15));
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .founder-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-top: 40px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), transparent);
+    }
+
+    .founder-intro {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .founder-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), rgba(140, 255, 59, 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #000;
+      flex-shrink: 0;
+      border: 2px solid var(--accent);
+    }
+
+    .founder-name-block h3 {
+      font-size: 1.4rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .founder-role {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .founder-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .founder-text strong {
+      color: var(--accent);
+      font-weight: 700;
+    
 
     .security-inner { max-width: 800px; margin: 0 auto; text-align: center; }
 
@@ -763,6 +855,7 @@
       <a href="#concept">Concept</a>
       <a href="#features">Fonctionnalités</a>
       <a href="#security">Sécurité</a>
+      <a href="#founder">L'histoire</a>
       <a href="#waitlist" class="nav-cta">Rejoindre</a>
     </div>
   </nav>
@@ -903,8 +996,64 @@
     </div>
   </section>
 
-  <!-- SÉCURITÉ -->
-  <section id="security" class="security-section">
+  <!-- FOUNDER STORY -->
+  <section id="founder" class="founder-section">
+    <div class="founder-inner reveal">
+      <div class="founder-flag">
+        🇫🇷 Fièrement Made in France
+      </div>
+      <h2>L'histoire derrière <span class="accent">RunCrew</span></h2>
+      <p style="max-width: 600px; margin: 20px auto 0;">
+        Une application créée par un runner, pour les runners.
+      </p>
+
+      <div class="founder-card">
+        <div class="founder-intro">
+          <div class="founder-avatar">T</div>
+          <div class="founder-name-block">
+            <h3>Salut, moi c'est Tony 👋</h3>
+            <div class="founder-role">Créateur de RunCrew · Pompier volontaire · Runner</div>
+          </div>
+        </div>
+
+        <p class="founder-text">
+          Je vis dans le <strong>Var</strong>, je suis <strong>pompier volontaire</strong>,
+          et je développe RunCrew depuis mon salon, entre deux gardes et deux sorties running.
+        </p>
+
+        <p class="founder-text">
+          J'ai un objectif qui m'obsède : <strong>l'UTMB 2028</strong>.
+          Sur mes longues sorties, la fatigue peut arriver d'un coup, la motivation baisse,
+          et le risque de blessure augmente. Et surtout, quand je pars seul à l'aube ou tard le soir,
+          j'ai toujours voulu que ma famille et mes amis <strong>sachent où j'étais</strong>.
+        </p>
+
+        <div class="founder-quote">
+          "Personne ne devrait courir seul. C'est de cette conviction qu'est née RunCrew."
+        </div>
+
+        <p class="founder-text">
+          En tant que runner et développeur passionné, j'ai voulu créer une application qui
+          <strong>protège, connecte et motive</strong>.
+          Une app qui remet l'humain au centre, sans revendre tes données,
+          sans algorithme obscur, sans compromis.
+        </p>
+
+        <p class="founder-text">
+          RunCrew est un projet <strong>100% indépendant</strong>, développé avec
+          <strong>passion et exigence</strong>, ici en France. 🇫🇷
+        </p>
+
+        <div class="founder-tags">
+          <span class="founder-tag">🇫🇷 <strong>Made in France</strong></span>
+          <span class="founder-tag">🚒 <strong>Pompier volontaire</strong></span>
+          <span class="founder-tag">🏔️ <strong>Objectif UTMB 2028</strong></span>
+          <span class="founder-tag">💚 <strong>100% indépendant</strong></span>
+          <span class="founder-tag">🔒 <strong>Sans revente de données</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
     <div class="security-inner reveal">
       <span class="security-badge">🛡️ Sécurité</span>
       <h2>Jamais seul.<br><span class="accent">Même si tu tombes.</span></h2>
