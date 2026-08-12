@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Politique de Confidentialité — RunCrew</title>
-  <meta name="description" content="Politique de confidentialité et gestion des données personnelles - RunCrew" />
+  <meta name="description" content="Politique de confidentialité RunCrew — Protection des données personnelles, RGPD, transparence totale." />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -14,8 +14,11 @@
       --card: #151B23;
       --border: #1E2730;
       --accent: #8CFF3B;
+      --accent-alt: #00E676;
       --text: #EAF1F8;
       --muted: #8A99A8;
+      --warning: #FFAB00;
+      --danger: #FF5252;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -51,7 +54,7 @@
     nav a:hover { color: var(--accent); }
 
     .container {
-      max-width: 800px;
+      max-width: 860px;
       margin: 60px auto;
       padding: 0 20px;
     }
@@ -59,16 +62,35 @@
     h1 {
       font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 15px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 50px;
+      margin-bottom: 20px;
       color: var(--accent);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--text);
     }
 
     p, li {
@@ -77,8 +99,22 @@
       margin-bottom: 15px;
     }
 
-    ul { margin-left: 20px; }
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul { margin-left: 20px; margin-bottom: 15px; }
     li { margin-bottom: 8px; }
+
+    code {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+    }
 
     a.link {
       color: var(--accent);
@@ -98,6 +134,111 @@
       margin-bottom: 30px;
     }
 
+    .version-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(140, 255, 59, 0.1);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0 50px 0;
+    }
+
+    .intro p {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 171, 0, 0.08);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: var(--warning);
+      margin-bottom: 8px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    .danger-box {
+      background: rgba(255, 82, 82, 0.08);
+      border: 1px solid rgba(255, 82, 82, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .danger-box p {
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .danger-box p:last-child { margin-bottom: 0; }
+
+    .success-box {
+      background: rgba(140, 255, 59, 0.08);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .success-box p {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .success-box p:last-child { margin-bottom: 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
     .info-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -109,8 +250,60 @@
     .info-card h3 {
       color: var(--text);
       font-size: 1.1rem;
+      margin-top: 0;
       margin-bottom: 10px;
     }
+
+    .contact-block {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px 0 50px 0;
+    }
+
+    .toc h3 {
+      color: var(--text);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .toc ol {
+      margin-left: 20px;
+      color: var(--muted);
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--accent); }
 
     footer {
       padding: 40px 20px;
@@ -127,7 +320,11 @@
       nav { padding: 15px 20px; }
       nav img { height: 30px; }
       h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.2rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.05rem; }
+      .container { margin: 30px auto; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 10px 12px; }
     }
   </style>
 </head>
@@ -135,137 +332,490 @@
 <body>
   <nav>
     <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour</a>
+    <a href="index.html">← Retour à l'accueil</a>
   </nav>
 
   <div class="container">
-    <span class="updated">Dernière mise à jour : 2026</span>
-    <h1>Politique de Confidentialité</h1>
+    <span class="updated">Dernière mise à jour : 12 août 2026</span>
+    <h1>Politique de Confidentialité<span class="version-badge">V1.0</span></h1>
 
-    <p>
-      Chez <strong>RunCrew</strong>, nous prenons la protection de tes données personnelles très au sérieux.
-      Cette politique explique clairement quelles données sont collectées, pourquoi,
-      et comment tu peux exercer tes droits.
-    </p>
+    <div class="intro">
+      <p><strong>RunCrew</strong> est une application mobile de running social et communautaire éditée en France. La protection de vos données personnelles est au cœur de notre démarche produit. Cette Politique vous informe de manière transparente sur les données que nous collectons, la manière dont nous les utilisons, avec qui nous les partageons, les mesures techniques mises en place pour les protéger, et les droits dont vous disposez.</p>
+    </div>
 
-    <h2>1. Qui est responsable du traitement ?</h2>
-    <p>
-      Le responsable du traitement des données est :<br>
-      <strong>Tony Arragain</strong><br>
-      Roquebrune-sur-Argens, France<br>
-      Email : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
-    </p>
+    <p>Cette Politique est conforme au <strong>Règlement (UE) 2016/679 dit RGPD</strong> et à la <strong>loi n° 78-17 du 6 janvier 1978</strong> modifiée dite Loi Informatique et Libertés.</p>
 
-    <h2>2. Quelles données collectons-nous ?</h2>
+    <div class="toc">
+      <h3>📑 Sommaire</h3>
+      <ol>
+        <li><a href="#s1">Identité du Responsable de Traitement</a></li>
+        <li><a href="#s2">Champ d'Application</a></li>
+        <li><a href="#s3">Données Collectées</a></li>
+        <li><a href="#s4">Finalités et Bases Légales</a></li>
+        <li><a href="#s5">Fonctionnalités Spécifiques</a></li>
+        <li><a href="#s6">Sous-Traitants et Destinataires</a></li>
+        <li><a href="#s7">Transferts hors UE</a></li>
+        <li><a href="#s8">Durées de Conservation</a></li>
+        <li><a href="#s9">Sécurité des Données</a></li>
+        <li><a href="#s10">Vos Droits</a></li>
+        <li><a href="#s11">Mineurs</a></li>
+        <li><a href="#s12">Cookies et Traceurs</a></li>
+        <li><a href="#s13">Modifications de la Politique</a></li>
+        <li><a href="#s14">Contact</a></li>
+      </ol>
+    </div>
 
+    <h2 id="s1">1. Identité du Responsable de Traitement</h2>
     <div class="info-card">
-      <h3>🌐 Sur le site runcrew.fr</h3>
+      <p><strong>Éditeur de l'application RunCrew :</strong></p>
       <ul>
-        <li><strong>Email</strong> : uniquement si tu t'inscris à la liste d'attente</li>
-        <li>Aucun cookie de tracking ni analytics tiers</li>
-        <li>Aucune donnée de navigation stockée</li>
+        <li><strong>Nom / Raison sociale</strong> : ARRAGAIN Tony (RunCrew)</li>
+        <li><strong>Statut juridique</strong> : Micro-entreprise</li>
+        <li><strong>SIRET</strong> : [EN COURS]</li>
+        <li><strong>Code APE</strong> : 6201Z (Programmation informatique)</li>
+        <li><strong>Adresse du siège social</strong> : 131 Avenue de Verdun, 83600 Fréjus</li>
+        <li><strong>Email de contact</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+        <li><strong>Site web officiel</strong> : <a class="link" href="https://www.runcrew.fr">https://www.runcrew.fr</a></li>
+      </ul>
+      <p><strong>Responsable du traitement des données</strong> : Le fondateur de RunCrew, joignable à l'adresse <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>.</p>
+      <p>En l'absence de désignation formelle d'un Délégué à la Protection des Données (DPO), toute demande relative à vos données personnelles peut être adressée directement à cette adresse.</p>
+    </div>
+
+    <h2 id="s2">2. Champ d'Application</h2>
+    <p>La présente Politique s'applique :</p>
+    <ul>
+      <li>À l'application mobile RunCrew disponible sur le Google Play Store (package <code>fr.runcrew.app</code>)</li>
+      <li>Au site web <a class="link" href="https://www.runcrew.fr">https://www.runcrew.fr</a></li>
+      <li>À l'ensemble des services connexes fournis par RunCrew</li>
+    </ul>
+    <p><strong>Public cible</strong> : Utilisateurs âgés d'au moins <strong>16 ans</strong>.</p>
+
+    <h2 id="s3">3. Données Collectées</h2>
+
+    <h3>3.1 Données collectées obligatoirement</h3>
+    <p>Ces données sont nécessaires au fonctionnement de l'application.</p>
+    <table>
+      <thead>
+        <tr><th>Donnée</th><th>Description</th><th>Origine</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Adresse email</td><td>Authentification par code à usage unique (OTP)</td><td>Fournie par l'utilisateur</td></tr>
+        <tr><td>Identifiant utilisateur (UID)</td><td>Identifiant technique unique généré par Firebase Authentication</td><td>Généré automatiquement</td></tr>
+        <tr><td>Position GPS en temps réel</td><td>Coordonnées géographiques collectées pendant les courses (1 point/seconde)</td><td>Capteur GPS du téléphone</td></tr>
+        <tr><td>Données d'activité physique</td><td>Distance, durée, allure, vitesse, dénivelé, splits km, vitesse max</td><td>Calculées à partir du GPS</td></tr>
+        <tr><td>Estimation calorique</td><td>Calcul basé sur la distance et l'allure (sans utilisation du poids)</td><td>Calcul algorithmique local</td></tr>
+        <tr><td>Interactions dans l'application</td><td>Actions effectuées, écrans consultés (fonctionnel uniquement)</td><td>Collectées par l'app</td></tr>
+        <tr><td>Journaux techniques</td><td>Logs de plantage et diagnostics techniques</td><td>Générés par le système</td></tr>
+        <tr><td>Token de notification (FCM)</td><td>Identifiant technique de l'appareil pour les notifications push</td><td>Généré par Firebase</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 Données collectées de manière facultative</h3>
+    <p>Ces données sont collectées uniquement avec votre consentement explicite.</p>
+    <table>
+      <thead>
+        <tr><th>Donnée</th><th>Description</th><th>Contrôle utilisateur</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Prénom / nom d'affichage</td><td>Personnalisation de votre profil</td><td>Modifiable / supprimable à tout moment</td></tr>
+        <tr><td>Photo de profil</td><td>Personnalisation visuelle</td><td>Ajout / suppression libre</td></tr>
+        <tr><td>Ressenti déclaré</td><td>« en forme », « fatigué », « lourd », « difficile »</td><td>Facultatif à chaque course</td></tr>
+        <tr><td>Niveau de course</td><td>Débutant / Intermédiaire / Confirmé</td><td>Modifiable à tout moment</td></tr>
+        <tr><td>Objectif hebdomadaire</td><td>Kilométrage cible personnalisé</td><td>Modifiable à tout moment</td></tr>
+        <tr><td>Messages textuels crew</td><td>Messages temps réel pendant une course</td><td><strong>Éphémères — non stockés</strong></td></tr>
+        <tr><td>Messages vocaux crew</td><td>Messages audio temps réel pendant une course</td><td><strong>Stockage max 24h puis suppression auto</strong></td></tr>
+        <tr><td>Contenus utilisateur</td><td>Nom de crew, nom de course, description événement</td><td>Créés et supprimés librement</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 Données que RunCrew NE collecte PAS</h3>
+    <p>Par respect du principe de minimisation des données (RGPD Article 5.1.c), RunCrew a fait le choix explicite de <strong>ne pas collecter</strong> :</p>
+    <ul>
+      <li>Mot de passe (authentification par OTP uniquement)</li>
+      <li>Date de naissance</li>
+      <li>Poids</li>
+      <li>Sexe ou genre</li>
+      <li>Fréquence cardiaque</li>
+      <li>Données biométriques médicales</li>
+      <li>Numéro de téléphone</li>
+      <li>Adresse postale</li>
+      <li>Contacts de votre téléphone</li>
+      <li>Agenda ou calendrier</li>
+      <li>Historique de navigation web</li>
+      <li>Liste des applications installées</li>
+      <li>Origines raciales, ethniques ou géographiques</li>
+      <li>Opinions politiques, philosophiques, religieuses</li>
+      <li>Orientation sexuelle</li>
+      <li>Données financières ou bancaires (Google Play gère intégralement les paiements)</li>
+    </ul>
+
+    <h3>3.4 Données de santé — Position claire</h3>
+    <p>RunCrew <strong>ne collecte aucune donnée biométrique médicale</strong>. L'application ne se connecte à aucun appareil connecté (montre GPS, capteur cardiaque, ceinture pectorale) dans sa version actuelle.</p>
+    <p>Les seules informations à connotation « santé » collectées sont :</p>
+    <ul>
+      <li><strong>Un ressenti subjectif déclaré</strong> par l'utilisateur avant chaque course. Cette information n'a <strong>aucune valeur médicale</strong>.</li>
+      <li><strong>Une estimation de calories brûlées</strong> calculée à partir de la distance et de l'allure. Cette estimation n'a <strong>aucune valeur médicale ou nutritionnelle certifiée</strong>.</li>
+    </ul>
+    <div class="warning-box">
+      <p><strong>RunCrew n'est pas un dispositif médical</strong> au sens du règlement (UE) 2017/745. L'application ne peut en aucun cas être utilisée à des fins de diagnostic médical, de suivi médical ou de suivi de pathologies. En cas de besoin médical, consultez un professionnel de santé qualifié.</p>
+    </div>
+
+    <h2 id="s4">4. Finalités et Bases Légales du Traitement</h2>
+    <p>Chaque donnée collectée l'est pour une finalité précise, sur une base légale identifiée conformément à l'article 6 du RGPD.</p>
+    <table>
+      <thead>
+        <tr><th>Finalité</th><th>Données concernées</th><th>Base légale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Création et gestion du compte</td><td>Email, UID, FCM Token</td><td>Exécution du contrat</td></tr>
+        <tr><td>Authentification sécurisée par OTP</td><td>Email, code OTP temporaire</td><td>Exécution du contrat</td></tr>
+        <tr><td>Tracking GPS des courses</td><td>Position GPS, données d'activité</td><td>Exécution du contrat</td></tr>
+        <tr><td>Partage position live avec le crew</td><td>Position GPS, appartenance au crew</td><td>Consentement + Exécution contrat</td></tr>
+        <tr><td>Fonctionnalité SOS d'urgence</td><td>Position GPS instantanée</td><td>Intérêt vital + Exécution contrat</td></tr>
+        <tr><td>Envoi de notifications push</td><td>FCM Token</td><td>Consentement (permission Android)</td></tr>
+        <tr><td>Analyse IA des courses (à la demande)</td><td>Données de course anonymisées</td><td>Consentement (action explicite)</td></tr>
+        <tr><td>Personnalisation</td><td>Prénom, photo de profil</td><td>Consentement</td></tr>
+        <tr><td>Amélioration technique</td><td>Journaux, diagnostics</td><td>Intérêt légitime</td></tr>
+        <tr><td>Gestion abonnement Premium</td><td>Purchase Token Google Play</td><td>Exécution du contrat</td></tr>
+        <tr><td>Défense de nos droits</td><td>Données pertinentes</td><td>Intérêt légitime</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="s5">5. Fonctionnalités Spécifiques et Traitement des Données</h2>
+
+    <h3>5.1 Partage de position en direct avec le Crew</h3>
+    <p>Lorsque vous démarrez une course, votre position GPS actuelle est partagée en temps réel avec les membres de votre crew via un document technique dédié (<code>activeSessions/{userId}</code>). Ce document contient uniquement votre <strong>position instantanée</strong> — jamais l'historique de vos positions successives pendant la course.</p>
+    <p>Ce document est <strong>supprimé immédiatement</strong> à la fin de la course.</p>
+    <div class="success-box">
+      <p><strong>Contrôle utilisateur</strong> : Vous choisissez avant chaque course si vous voulez partager votre position live (mode normal) ou non (mode incognito).</p>
+    </div>
+
+    <h3>5.2 Mode Incognito</h3>
+    <p>En mode incognito :</p>
+    <ul>
+      <li>Votre course n'est pas partagée avec votre crew</li>
+      <li>Vos supporters ne reçoivent aucune notification de démarrage</li>
+      <li>Votre position live n'est accessible à personne</li>
+      <li>Votre tracé est enregistré uniquement dans votre historique personnel</li>
+    </ul>
+    <div class="warning-box">
+      <p><strong>Exception importante — Bouton SOS</strong> : Même en mode incognito, si vous déclenchez le bouton SOS, votre position GPS actuelle est instantanément transmise à tous les membres de votre crew. Cette exception est destinée à protéger votre sécurité en cas d'urgence.</p>
+    </div>
+
+    <h3>5.3 Bouton SOS</h3>
+    <p>Le bouton SOS envoie une notification urgente à tous les membres de votre crew avec votre position GPS exacte.</p>
+    <div class="danger-box">
+      <p><strong>⚠️ IMPORTANT</strong> : Le bouton SOS <strong>n'appelle PAS automatiquement les services de secours</strong>.</p>
+      <p>En cas d'urgence vitale, vous devez composer immédiatement :</p>
+      <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)</p>
+      <p>RunCrew ne peut être tenu responsable en cas d'incident lié à la non-intervention des secours officiels.</p>
+    </div>
+
+    <h3>5.4 Messages Supporters — Traitement temporaire</h3>
+    <p>Pendant vos courses, les membres de votre crew peuvent vous envoyer des messages textuels ou vocaux pour vous encourager.</p>
+
+    <h4>Messages textuels</h4>
+    <ul>
+      <li>Transitent via un document Firestore temporaire</li>
+      <li>Lus par synthèse vocale (Text-To-Speech natif du téléphone) au runner</li>
+      <li>Non persistés durablement en base de données</li>
+      <li>Aucun historique conservé après lecture</li>
+    </ul>
+
+    <h4>Messages vocaux</h4>
+    <ul>
+      <li>Enregistrés côté supporter puis transmis via Firebase Storage</li>
+      <li>Stockés temporairement dans le dossier <code>voice_messages/</code> pour garantir leur transmission fiable</li>
+      <li><strong>Supprimés automatiquement dans un délai maximal de 24 heures</strong> via une règle de cycle de vie Google Cloud Storage active depuis août 2026</li>
+      <li>Le nom du fichier ne contient aucun identifiant utilisateur permanent</li>
+    </ul>
+
+    <h4>Identification de l'émetteur</h4>
+    <p>Les documents Firestore associés à chaque message incluent le prénom du supporter émetteur, afin que le runner puisse identifier vocalement qui lui parle.</p>
+
+    <h4>Absence d'historique</h4>
+    <p>Aucun historique de communication n'est conservé après lecture. RunCrew ne peut fournir aucune fonctionnalité de signalement rétroactif ou de consultation d'historique des messages échangés.</p>
+
+    <h3>5.5 Analyse par Intelligence Artificielle</h3>
+    <p>RunCrew utilise l'intelligence artificielle <strong>OpenAI GPT-4o-mini</strong> pour deux fonctionnalités :</p>
+
+    <h4>1. Analyse d'une course individuelle</h4>
+    <ul>
+      <li>Déclenchée uniquement à votre demande explicite via un bouton dédié</li>
+      <li>L'IA reçoit uniquement des données anonymisées (splits, dénivelé, allure, ressenti)</li>
+      <li><strong>Aucune donnée identifiante n'est transmise</strong> (ni nom, ni email, ni identifiant)</li>
+      <li>L'analyse est stockée et affichée depuis le cache lors des consultations ultérieures</li>
+    </ul>
+
+    <h4>2. Bilan de progression global</h4>
+    <ul>
+      <li>Déclenché uniquement à votre demande explicite</li>
+      <li>Rate limiting technique de 24 heures entre deux demandes</li>
+      <li>Basé sur des statistiques agrégées anonymisées</li>
+    </ul>
+
+    <h4>Engagements OpenAI</h4>
+    <ul>
+      <li>Un contrat de traitement de données (DPA) a été signé avec OpenAI (Article 28 du RGPD)</li>
+      <li>L'option d'utilisation des données pour l'entraînement des modèles OpenAI est <strong>désactivée</strong></li>
+      <li>OpenAI n'utilise pas vos données pour améliorer ses modèles</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>Nature indicative</strong> : Les commentaires générés par l'IA sont fournis à titre indicatif et motivationnel uniquement. Ils ne remplacent en aucun cas les conseils d'un coach sportif diplômé ou d'un professionnel de santé.</p>
+    </div>
+
+    <h3>5.6 Partage de statistiques dans le Crew</h3>
+    <p>Vous pouvez, si vous le souhaitez, activer le partage de vos statistiques avec votre crew. Cette fonctionnalité est <strong>désactivée par défaut</strong> et nécessite une action explicite de votre part.</p>
+    <p>Lorsque activée, sont partagées :</p>
+    <ul>
+      <li>Distance totale cumulée</li>
+      <li>Nombre de courses</li>
+      <li>Allure moyenne</li>
+      <li>Rang et badges</li>
+      <li>Streak (série de courses)</li>
+      <li>Progression vers l'objectif hebdomadaire</li>
+    </ul>
+    <p><strong>Ne sont JAMAIS partagés</strong> : vos tracés GPS détaillés, ni aucune donnée de santé détaillée.</p>
+
+    <h3>5.7 Export de vos données de course</h3>
+    <p>RunCrew met à disposition une fonctionnalité d'export au format <strong>GPX standard</strong> :</p>
+    <ul>
+      <li>Activée par un appui long sur une course dans votre historique</li>
+      <li><strong>Traitement 100% local</strong> : le fichier GPX est généré directement sur votre téléphone</li>
+      <li>Enregistré dans le dossier <code>RunCrew/</code> de votre appareil</li>
+      <li><strong>Aucun transfert vers nos serveurs</strong> n'a lieu</li>
+      <li><strong>Aucun fichier GPX n'est stocké</strong> sur notre infrastructure</li>
+    </ul>
+    <p>Cette approche garantit la souveraineté totale de vos données de course.</p>
+
+    <h2 id="s6">6. Sous-Traitants et Destinataires des Données</h2>
+    <p>Pour fonctionner, RunCrew fait appel à des prestataires techniques (sous-traitants au sens de l'Article 28 du RGPD).</p>
+
+    <h3>6.1 Google Ireland Limited / Google Cloud (Firebase)</h3>
+    <div class="info-card">
+      <ul>
+        <li><strong>Rôle</strong> : Base de données, authentification, stockage, notifications push, fonctions serveur</li>
+        <li><strong>Services utilisés</strong> : Firestore, Firebase Authentication, Firebase Storage, Cloud Functions, Firebase Cloud Messaging</li>
+        <li><strong>Localisation des données</strong> : Union Européenne — <strong>europe-west1 (Belgique)</strong></li>
+        <li><strong>Encadrement</strong> : Google Cloud Data Processing Addendum accepté</li>
       </ul>
     </div>
 
+    <h3>6.2 OpenAI OpCo, LLC</h3>
     <div class="info-card">
-      <h3>📱 Dans l'application RunCrew (en développement)</h3>
       <ul>
-        <li><strong>Compte</strong> : email + nom d'utilisateur via authentification Firebase</li>
-        <li><strong>Données GPS</strong> : localisation en temps réel pendant les courses</li>
-        <li><strong>Données de course</strong> : distance, allure, altitude, tracés GPX</li>
-        <li><strong>Photos de profil</strong> : si tu en ajoutes</li>
-        <li><strong>Crew et supporters</strong> : liste des personnes autorisées à te suivre</li>
+        <li><strong>Rôle</strong> : Analyse par intelligence artificielle des courses</li>
+        <li><strong>Localisation</strong> : États-Unis</li>
+        <li><strong>Données transmises</strong> : Uniquement données anonymisées — <strong>aucun identifiant personnel</strong></li>
+        <li><strong>Encadrement</strong> : Data Processing Addendum signé (Article 28 RGPD)</li>
+        <li><strong>Certification</strong> : Data Privacy Framework (mécanisme de transfert UE-USA)</li>
+        <li><strong>Opt-out training</strong> : Confirmé</li>
       </ul>
     </div>
 
-    <h2>3. Pourquoi collectons-nous ces données ?</h2>
+    <h3>6.3 Twilio Inc. (SendGrid)</h3>
+    <div class="info-card">
+      <ul>
+        <li><strong>Rôle</strong> : Envoi des emails transactionnels (codes OTP + notifications d'export de données)</li>
+        <li><strong>Localisation</strong> : États-Unis</li>
+        <li><strong>Données transmises</strong> : Adresse email + code OTP à usage unique + lien d'export sécurisé</li>
+        <li><strong>Encadrement</strong> : Data Processing Addendum Twilio applicable automatiquement depuis 2020</li>
+        <li><strong>Certification</strong> : Data Privacy Framework</li>
+      </ul>
+    </div>
+
+    <h3>6.4 Mapbox, Inc.</h3>
+    <div class="info-card">
+      <ul>
+        <li><strong>Rôle</strong> : Affichage des cartes et rendu des tracés GPS</li>
+        <li><strong>Localisation</strong> : États-Unis</li>
+        <li><strong>Données transmises</strong> : Coordonnées géographiques nécessaires à l'affichage des cartes</li>
+        <li><strong>Certification</strong> : Data Privacy Framework</li>
+      </ul>
+    </div>
+
+    <h3>6.5 Google LLC (Google Play Store)</h3>
+    <div class="info-card">
+      <ul>
+        <li><strong>Rôle</strong> : Distribution de l'application et gestion des abonnements Premium</li>
+        <li><strong>Données transmises</strong> : Purchase Token pour la vérification des abonnements</li>
+        <li><strong>Aucune donnée bancaire</strong> ne transite par RunCrew</li>
+      </ul>
+    </div>
+
+    <h3>6.6 Absence de trackers et d'analytics tiers</h3>
+    <div class="success-box">
+      <p>RunCrew fait le choix explicite de <strong>ne pas utiliser d'outil d'analytics tiers</strong> (Firebase Analytics, Mixpanel, Amplitude, etc.) et <strong>d'aucun tracker publicitaire</strong>.</p>
+    </div>
+
+    <h2 id="s7">7. Transferts de Données hors Union Européenne</h2>
+    <p>Certains sous-traitants (OpenAI, SendGrid, Mapbox) sont établis aux États-Unis. Ces transferts sont encadrés par :</p>
     <ul>
-      <li>Te notifier du lancement officiel de l'application (liste d'attente)</li>
-      <li>Faire fonctionner les fonctionnalités de l'app (tracking, crew, supporters)</li>
-      <li>Assurer ta sécurité (système SOS)</li>
-      <li>Améliorer l'expérience utilisateur</li>
+      <li><strong>Le Data Privacy Framework UE-USA</strong> (décision d'adéquation du 10 juillet 2023)</li>
+      <li><strong>Les Clauses Contractuelles Types</strong> (CCT) adoptées par la Commission européenne</li>
+      <li><strong>Les Data Processing Addendums</strong> signés avec chaque sous-traitant</li>
+    </ul>
+    <p><strong>Les données principales de RunCrew (profils, courses, tracés, photos) sont hébergées exclusivement en Union Européenne (Belgique), sur l'infrastructure Google Cloud.</strong></p>
+
+    <h2 id="s8">8. Durées de Conservation</h2>
+    <table>
+      <thead>
+        <tr><th>Type de données</th><th>Durée de conservation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Profil utilisateur</td><td>Tant que le compte est actif</td></tr>
+        <tr><td>Historique des courses</td><td>Tant que le compte est actif</td></tr>
+        <tr><td>Photo de profil</td><td>Tant que le compte est actif</td></tr>
+        <tr><td>Position live (activeSessions)</td><td>Supprimée immédiatement à la fin de chaque course</td></tr>
+        <tr><td>Messages textuels supporters</td><td>Aucune conservation (éphémère)</td></tr>
+        <tr><td>Messages vocaux supporters</td><td>24 heures maximum (suppression automatique)</td></tr>
+        <tr><td>Codes OTP</td><td>Maximum 10 minutes, ou immédiatement après utilisation</td></tr>
+        <tr><td>Token FCM</td><td>Supprimé immédiatement à la suppression du compte</td></tr>
+        <tr><td>Classements d'événements</td><td>2 ans après la fin de l'événement</td></tr>
+        <tr><td>Analyses IA générées</td><td>Tant que la course associée existe</td></tr>
+        <tr><td>Archives d'export de données</td><td>48 heures maximum</td></tr>
+        <tr><td>Journaux techniques</td><td>30 jours (rétention Google Cloud)</td></tr>
+      </tbody>
+    </table>
+    <p>À la suppression de votre compte, l'ensemble de vos données personnelles est supprimé immédiatement et de manière définitive.</p>
+
+    <h2 id="s9">9. Sécurité des Données</h2>
+    <p>Nous mettons en œuvre les mesures techniques et organisationnelles suivantes pour protéger vos données (RGPD Article 32) :</p>
+    <ul>
+      <li><strong>Chiffrement en transit</strong> : Communications HTTPS/TLS</li>
+      <li><strong>Chiffrement au repos</strong> : Firebase AES-256</li>
+      <li><strong>Authentification sans mot de passe</strong> : Système OTP par email</li>
+      <li><strong>Aucun mot de passe stocké</strong> : aucun risque de vol de mot de passe</li>
+      <li><strong>Rate limiting</strong> : Limitation des appels sensibles</li>
+    </ul>
+    <div class="success-box">
+      <p><strong>Contrôle d'accès renforcé au niveau serveur</strong> : Depuis août 2026, les règles de sécurité Firestore ont été durcies pour garantir techniquement que seuls les membres autorisés du crew d'un utilisateur peuvent accéder à sa position en direct et à ses alertes SOS. Le mode incognito est désormais imposé au niveau serveur : lorsqu'il est activé, aucun membre du crew ne peut techniquement accéder à la position live, indépendamment de l'interface utilisée.</p>
+    </div>
+    <ul>
+      <li><strong>Fonctions serveur sécurisées</strong> : Vérification systématique de l'authentification pour toute opération sensible</li>
+      <li><strong>Hébergement européen</strong> : Infrastructure principale en Belgique</li>
+      <li><strong>Aucun tracker tiers</strong> : Réduction de la surface d'exposition</li>
     </ul>
 
-    <h2>4. Base légale du traitement</h2>
-    <p>
-      Le traitement de tes données repose sur ton <strong>consentement explicite</strong>
-      (RGPD, article 6.1.a) lors de l'inscription à la waitlist ou à l'application.
-    </p>
+    <h2 id="s10">10. Vos Droits</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
 
-    <h2>5. Combien de temps sont conservées tes données ?</h2>
+    <h3>Droit d'accès (Art. 15)</h3>
+    <p>Vous pouvez consulter vos données à tout moment dans l'application.</p>
+
+    <h3>Droit de rectification (Art. 16)</h3>
+    <p>Vous pouvez modifier vos données de profil depuis les paramètres.</p>
+
+    <h3>Droit à l'effacement (Art. 17)</h3>
+    <p>Vous pouvez supprimer intégralement votre compte et l'ensemble de vos données depuis <strong>Paramètres > Application > Supprimer mon compte</strong>.</p>
+    <p>La suppression est soumise à une double confirmation utilisateur (avertissement + saisie textuelle de confirmation).</p>
+    <p>Une fois confirmée, un traitement serveur automatique effectue les opérations suivantes :</p>
     <ul>
-      <li><strong>Email waitlist</strong> : jusqu'au lancement officiel ou à ta demande de suppression</li>
-      <li><strong>Données de course</strong> : tant que ton compte est actif</li>
-      <li><strong>Compte utilisateur</strong> : jusqu'à suppression manuelle de ta part</li>
+      <li>Suppression de toutes les données personnelles (profil, courses, chaussures, badges, intégrations)</li>
+      <li>Retrait effectif de tous les crews auxquels vous apparteniez (dans les deux sens)</li>
+      <li>Suppression des sessions actives et alertes en cours</li>
+      <li>Anonymisation de votre nom dans les classements d'événements passés (remplacé par « Utilisateur supprimé »)</li>
+      <li>Suppression de votre photo de profil et de tout fichier associé</li>
+      <li>Suppression de votre document utilisateur en base</li>
+      <li>Suppression de votre compte Firebase Auth</li>
+    </ul>
+    <div class="danger-box">
+      <p>La suppression est <strong>immédiate, définitive et irréversible</strong>. Aucune donnée orpheline n'est conservée.</p>
+    </div>
+
+    <h3>Droit à la portabilité (Art. 20)</h3>
+    <p>Vous pouvez demander l'export complet de vos données depuis <strong>Paramètres > Application > Télécharger mes données</strong>.</p>
+    <p>Le traitement génère automatiquement une archive ZIP contenant :</p>
+    <ul>
+      <li>Votre profil complet au format JSON</li>
+      <li>L'historique complet de vos courses (métadonnées JSON)</li>
+      <li>Un fichier GPX par course au format standard, compatible avec les principaux services concurrents (Strava, Garmin Connect, Komoot, Google Earth)</li>
+      <li>Vos chaussures, crews, supporters, badges</li>
+      <li>Un fichier README.txt expliquant le contenu et vos droits RGPD</li>
+    </ul>
+    <p>Vous recevez automatiquement un email contenant un <strong>lien de téléchargement sécurisé valable 48 heures</strong>. Passé ce délai, le lien expire et le fichier est automatiquement supprimé de nos serveurs.</p>
+
+    <h3>Droit d'opposition (Art. 21)</h3>
+    <p>Vous pouvez vous opposer à certains traitements :</p>
+    <ul>
+      <li>Désactiver le partage de position via le mode incognito</li>
+      <li>Désactiver le partage de statistiques avec votre crew</li>
+      <li>Désactiver les notifications</li>
+      <li>Désactiver les fonctionnalités d'intelligence artificielle</li>
     </ul>
 
-    <h2>6. Avec qui sont partagées tes données ?</h2>
-    <p>
-      Tes données ne sont <strong>JAMAIS vendues</strong> à des tiers.
-      Elles sont uniquement traitées par :
-    </p>
+    <h3>Droit à la limitation (Art. 18)</h3>
+    <p>Vous pouvez demander la limitation du traitement de vos données dans certains cas.</p>
+
+    <h3>Droit de retirer votre consentement</h3>
+    <p>Pour toute donnée traitée sur la base du consentement, vous pouvez le retirer à tout moment.</p>
+
+    <h3>Comment exercer vos droits</h3>
     <ul>
-      <li><strong>Firebase (Google)</strong> : hébergement, authentification, base de données</li>
-      <li><strong>Formspree</strong> : gestion de la liste d'attente</li>
-      <li><strong>Mapbox</strong> : affichage des cartes (données GPS chiffrées)</li>
+      <li><strong>Directement dans l'application</strong> : Paramètres > Application</li>
+      <li><strong>Par email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
     </ul>
-    <p>
-      Ton crew (personnes que tu ajoutes) peut voir ta position en temps réel
-      <strong>uniquement pendant tes courses</strong>, avec ton accord explicite.
-    </p>
+    <p>Nous nous engageons à répondre dans un délai maximal d'<strong>un mois</strong>.</p>
 
-    <h2>7. Tes droits (RGPD)</h2>
-    <p>Tu disposes des droits suivants sur tes données :</p>
+    <h3>Droit d'introduire une réclamation auprès de la CNIL</h3>
+    <div class="info-card">
+      <ul>
+        <li><strong>Site web</strong> : <a class="link" href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a></li>
+        <li><strong>Adresse</strong> : 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07</li>
+        <li><strong>Téléphone</strong> : 01 53 73 22 22</li>
+      </ul>
+    </div>
+
+    <h2 id="s11">11. Mineurs</h2>
+    <p>RunCrew est réservé aux utilisateurs âgés d'<strong>au moins 16 ans</strong>.</p>
+
+    <h3>Consentement explicite obligatoire à l'inscription</h3>
+    <p>Depuis août 2026, l'inscription à RunCrew est <strong>techniquement conditionnée</strong> à deux consentements explicites :</p>
     <ul>
-      <li><strong>Droit d'accès</strong> : savoir quelles données on a sur toi</li>
-      <li><strong>Droit de rectification</strong> : corriger tes données</li>
-      <li><strong>Droit à l'effacement</strong> : supprimer ton compte et tes données</li>
-      <li><strong>Droit à la portabilité</strong> : récupérer tes données</li>
-      <li><strong>Droit d'opposition</strong> : refuser certains traitements</li>
-      <li><strong>Droit de retirer ton consentement</strong> à tout moment</li>
+      <li>La confirmation d'un âge d'au moins 16 ans (<code>ageConfirmed</code>)</li>
+      <li>L'acceptation des Conditions Générales d'Utilisation et de la Politique de Confidentialité (<code>termsAccepted</code>)</li>
     </ul>
-    <p>
-      Pour exercer un de ces droits, écris à :
-      <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
-    </p>
+    <p>Ces consentements sont <strong>horodatés</strong> (<code>consentedAt</code>) et liés à la version documentée des documents contractuels (<code>termsVersion</code>). Le bouton d'inscription est <strong>techniquement désactivé</strong> tant que ces deux cases ne sont pas cochées.</p>
 
-    <h2>8. Sécurité des données</h2>
-    <p>
-      Toutes tes données sont stockées sur des serveurs sécurisés (Firebase / Google Cloud).
-      Les communications sont chiffrées (HTTPS / SSL).
-      Nous mettons en œuvre toutes les mesures raisonnables pour protéger tes informations.
-    </p>
+    <h3>Vérification systématique du consentement</h3>
+    <p>À chaque démarrage de l'application, RunCrew vérifie la présence effective des consentements utilisateur dans notre base de données (source de vérité serveur). Si l'un des consentements est absent — notamment en cas de recréation d'un compte après suppression — l'application relance automatiquement le processus d'onboarding et de recueil de consentement.</p>
+    <p>Cette architecture garantit qu'aucun compte utilisateur ne peut exister dans RunCrew sans un consentement RGPD explicite, horodaté et documenté, conformément aux Articles 7 et 8 du RGPD.</p>
 
-    <h2>9. Cookies</h2>
-    <p>
-      Le site <strong>runcrew.fr</strong> n'utilise <strong>aucun cookie de tracking</strong>,
-      aucun outil d'analyse tiers (Google Analytics, Meta Pixel, etc.).
-      Seul un stockage local (sessionStorage) est utilisé pour ne pas rejouer
-      l'animation d'introduction à chaque visite.
-    </p>
+    <h3>Enfants de moins de 16 ans</h3>
+    <p>Nous ne collectons pas sciemment les données d'utilisateurs de moins de 16 ans. Si vous êtes parent ou tuteur légal et que vous découvrez que votre enfant a créé un compte, contactez-nous immédiatement à <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a> pour demander la suppression du compte.</p>
 
-    <h2>10. Modification de cette politique</h2>
-    <p>
-      Cette politique peut être mise à jour. La date de dernière mise à jour est indiquée
-      en haut de cette page. En cas de modification importante, tu seras notifié par email.
-    </p>
+    <h2 id="s12">12. Cookies et Traceurs</h2>
+    <ul>
+      <li><strong>Application mobile</strong> : RunCrew n'utilise aucun cookie</li>
+      <li><strong>Site web www.runcrew.fr</strong> : Le site n'utilise aucun cookie de tracking ni cookie marketing</li>
+    </ul>
 
-    <h2>11. Contact</h2>
-    <p>
-      Pour toute question relative à la protection de tes données :<br>
-      <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
-    </p>
+    <h2 id="s13">13. Modifications de la Politique</h2>
+    <p>Nous pouvons être amenés à modifier la présente Politique pour l'adapter aux évolutions de l'application ou de la réglementation.</p>
+    <p>En cas de modification substantielle, nous vous en informerons :</p>
+    <ul>
+      <li>Par une notification dans l'application</li>
+      <li>Le cas échéant, par email</li>
+    </ul>
+    <p>La date de dernière mise à jour est indiquée en haut du document.</p>
 
-    <h2>12. Autorité de contrôle</h2>
-    <p>
-      Si tu estimes que tes droits ne sont pas respectés, tu peux introduire une réclamation
-      auprès de la <a class="link" href="https://www.cnil.fr" target="_blank">CNIL</a>
-      (Commission Nationale de l'Informatique et des Libertés).
+    <h2 id="s14">14. Contact</h2>
+    <div class="contact-block">
+      <h3>Pour toute question relative à cette Politique</h3>
+      <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+      <p>Site web : <a href="https://www.runcrew.fr">https://www.runcrew.fr</a></p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
+      <em>Dernière mise à jour : 12 août 2026 — Version 1.0</em>
     </p>
   </div>
 
   <footer>
-    © 2026 RunCrew — <a href="index.html">Retour à l'accueil</a>
+    <p>RunCrew — Courir entouré, même en solitaire.</p>
+    <p><a href="index.html">Retour à l'accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
   </footer>
+
 </body>
 </html>
