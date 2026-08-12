@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suppression de compte — RunCrew</title>
+  <meta name="description" content="Comment supprimer votre compte RunCrew et vos données personnelles." />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --bg: #0B0F14;
+      --bg-alt: #0F151C;
+      --card: #151B23;
+      --border: #1E2730;
+      --accent: #8CFF3B;
+      --accent-alt: #00E676;
+      --text: #EAF1F8;
+      --muted: #8A99A8;
+      --warning: #FFAB00;
+      --danger: #FF5252;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav img { height: 40px; }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul { margin-left: 20px; margin-bottom: 15px; }
+    li { margin-bottom: 8px; }
+
+    a.link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.link:hover { text-decoration: underline; }
+
+    .updated {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0 50px 0;
+    }
+
+    .intro p {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .steps {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 20px 0;
+    }
+
+    .steps ol {
+      counter-reset: step;
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .steps ol li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 45px;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .steps ol li:before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .warning-box {
+      background: rgba(255, 171, 0, 0.08);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: var(--warning);
+      margin-bottom: 8px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    .danger-box {
+      background: rgba(255, 82, 82, 0.08);
+      border: 1px solid rgba(255, 82, 82, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .danger-box p {
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .danger-box p:last-child { margin-bottom: 0; }
+
+    .success-box {
+      background: rgba(140, 255, 59, 0.08);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .success-box p {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .success-box p:last-child { margin-bottom: 0; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .info-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .info-item strong {
+      color: var(--accent);
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .info-item p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .contact-block {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    footer {
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav img { height: 30px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.05rem; }
+      .container { margin: 30px auto; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
+    <a href="index.html">← Retour à l'accueil</a>
+  </nav>
+
+  <div class="container">
+    <span class="updated">Dernière mise à jour : 12 août 2026</span>
+    <h1>Supprimer mon compte RunCrew</h1>
+
+    <div class="intro">
+      <p>Vous souhaitez supprimer votre compte RunCrew et toutes vos données personnelles ? Cette page vous explique <strong>comment procéder simplement et rapidement</strong>, conformément au Règlement Général sur la Protection des Données (RGPD Article 17 — Droit à l'effacement).</p>
+    </div>
+
+    <h2>1. Suppression depuis l'application (recommandé)</h2>
+
+    <p>La méthode la plus simple pour supprimer votre compte est de le faire directement depuis l'application RunCrew.</p>
+
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application RunCrew sur votre téléphone</li>
+        <li>Accédez à <strong>Paramètres</strong> (icône en haut à droite de l'écran d'accueil)</li>
+        <li>Descendez jusqu'à la section <strong>📱 APP</strong></li>
+        <li>Cliquez sur <strong>Supprimer mon compte</strong> (bouton rouge dans la zone de danger)</li>
+        <li>Lisez attentivement l'avertissement et cliquez sur <strong>Continuer</strong></li>
+        <li>Confirmez en tapant le mot <strong>SUPPRIMER</strong> dans le champ prévu</li>
+        <li>Cliquez sur <strong>SUPPRIMER</strong> pour valider définitivement</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>⚠️ Attention</strong> : La suppression est <strong>immédiate, définitive et irréversible</strong>. Aucune récupération ne sera possible après validation.</p>
+    </div>
+
+    <h2>2. Suppression par email</h2>
+
+    <p>Si vous ne pouvez pas accéder à l'application, vous pouvez demander la suppression de votre compte par email.</p>
+
+    <div class="steps">
+      <ol>
+        <li>Envoyez un email à <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+        <li>Objet : <strong>Demande de suppression de compte RGPD</strong></li>
+        <li>Précisez l'adresse email associée à votre compte RunCrew</li>
+        <li>Nous procéderons à la suppression sous <strong>48 heures maximum</strong></li>
+        <li>Vous recevrez un email de confirmation une fois la suppression effectuée</li>
+      </ol>
+    </div>
+
+    <h2>3. Ce qui est supprimé</h2>
+
+    <p>Lorsque vous supprimez votre compte, un traitement serveur automatique effectue les opérations suivantes en <strong>7 étapes atomiques</strong> :</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>PROFIL</strong>
+        <p>Nom, email, préférences, photo de profil, consentements RGPD</p>
+      </div>
+      <div class="info-item">
+        <strong>COURSES</strong>
+        <p>Historique complet, tracés GPS, splits, ressentis, analyses IA</p>
+      </div>
+      <div class="info-item">
+        <strong>CHAUSSURES</strong>
+        <p>Toutes vos paires et historique kilométrique</p>
+      </div>
+      <div class="info-item">
+        <strong>BADGES</strong>
+        <p>Tous vos badges gagnés et progression</p>
+      </div>
+      <div class="info-item">
+        <strong>CREW</strong>
+        <p>Retrait bidirectionnel de tous les crews auxquels vous apparteniez</p>
+      </div>
+      <div class="info-item">
+        <strong>SESSIONS ACTIVES</strong>
+        <p>Session en cours et alertes SOS actives immédiatement effacées</p>
+      </div>
+      <div class="info-item">
+        <strong>STORAGE</strong>
+        <p>Photo de profil et fichiers associés supprimés du stockage</p>
+      </div>
+      <div class="info-item">
+        <strong>COMPTE FIREBASE</strong>
+        <p>Votre compte d'authentification est intégralement supprimé</p>
+      </div>
+    </div>
+
+    <div class="danger-box">
+      <p>La suppression est <strong>immédiate, définitive et irréversible</strong>. Aucune donnée orpheline n'est conservée sur nos serveurs.</p>
+    </div>
+
+    <h2>4. Ce qui est anonymisé (et non supprimé)</h2>
+
+    <p>Pour préserver l'intégrité historique des événements auxquels vous avez participé, votre nom est <strong>anonymisé</strong> dans les classements passés :</p>
+
+    <div class="success-box">
+      <p>Votre nom est remplacé par « <strong>Utilisateur supprimé</strong> » dans les classements des événements auxquels vous avez participé. Aucune donnée personnelle identifiable n'est conservée dans ces classements.</p>
+    </div>
+
+    <p>Cette approche respecte l'équilibre RGPD entre votre droit à l'effacement et l'intégrité des données historiques des autres participants.</p>
+
+    <h2>5. Suppression de données spécifiques (sans supprimer le compte)</h2>
+
+    <p>Si vous ne souhaitez pas supprimer votre compte entièrement, vous pouvez supprimer certaines données de manière ciblée :</p>
+
+    <h3>Supprimer une course</h3>
+    <p>Historique → Sélectionnez la course → Menu ⋮ → <strong>Supprimer</strong></p>
+
+    <h3>Retirer une paire de chaussures</h3>
+    <p>Paramètres → Mes chaussures → Sélectionnez la paire → <strong>Supprimer</strong></p>
+
+    <h3>Quitter un crew</h3>
+    <p>Crew → Onglet « Je supporte » → Options → <strong>Ne plus supporter</strong></p>
+
+    <h3>Retirer un supporter de votre crew</h3>
+    <p>Crew → Onglet « Mes supporters » → Options → <strong>Retirer du crew</strong></p>
+
+    <h3>Supprimer votre photo de profil</h3>
+    <p>Paramètres → Profil → <strong>Supprimer la photo</strong></p>
+
+    <h3>Désactiver le partage de statistiques avec votre crew</h3>
+    <p>Paramètres → Crew & Confidentialité → <strong>Désactiver le partage</strong></p>
+
+    <h2>6. Délais de suppression</h2>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>SUPPRESSION APP</strong>
+        <p>Immédiate — dès validation de la double confirmation</p>
+      </div>
+      <div class="info-item">
+        <strong>SUPPRESSION EMAIL</strong>
+        <p>48 heures maximum après réception de votre demande</p>
+      </div>
+      <div class="info-item">
+        <strong>MESSAGES VOCAUX</strong>
+        <p>Auto-supprimés après 24h (règle de cycle de vie Storage)</p>
+      </div>
+      <div class="info-item">
+        <strong>CLASSEMENTS ÉVÉNEMENTS</strong>
+        <p>Nom anonymisé immédiatement, données conservées 2 ans max</p>
+      </div>
+    </div>
+
+    <h2>7. Récapitulatif de vos droits RGPD</h2>
+
+    <p>La suppression de compte n'est qu'un de vos droits garantis par le RGPD. Vous disposez également des droits suivants :</p>
+
+    <ul>
+      <li><strong>Droit d'accès (Art. 15)</strong> : Consulter vos données à tout moment dans l'application</li>
+      <li><strong>Droit de rectification (Art. 16)</strong> : Modifier vos données de profil</li>
+      <li><strong>Droit à l'effacement (Art. 17)</strong> : Cette page décrit ce droit</li>
+      <li><strong>Droit à la portabilité (Art. 20)</strong> : Télécharger l'ensemble de vos données au format ZIP (Paramètres → App → Télécharger mes données)</li>
+      <li><strong>Droit d'opposition (Art. 21)</strong> : Mode incognito, désactivation partages</li>
+      <li><strong>Droit à la limitation (Art. 18)</strong> : Nous contacter par email</li>
+    </ul>
+
+    <p>Pour plus d'informations : <a class="link" href="privacy.html">Consultez notre Politique de Confidentialité</a></p>
+
+    <div class="contact-block">
+      <h3>Besoin d'aide ?</h3>
+      <p>Contactez-nous à</p>
+      <p><a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
+      <em>Dernière mise à jour : 12 août 2026</em>
+    </p>
+  </div>
+
+  <footer>
+    <p>RunCrew — Courir entouré, même en solitaire.</p>
+    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgu.html">CGU</a></p>
+  </footer>
+
+</body>
+</html>
