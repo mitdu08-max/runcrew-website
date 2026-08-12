@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions Générales d'Utilisation — RunCrew</title>
+  <meta name="description" content="Conditions Générales d'Utilisation de l'application RunCrew — Modalités d'accès et d'usage du service." />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --bg: #0B0F14;
+      --bg-alt: #0F151C;
+      --card: #151B23;
+      --border: #1E2730;
+      --accent: #8CFF3B;
+      --accent-alt: #00E676;
+      --text: #EAF1F8;
+      --muted: #8A99A8;
+      --warning: #FFAB00;
+      --danger: #FF5252;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav img { height: 40px; }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul { margin-left: 20px; margin-bottom: 15px; }
+    li { margin-bottom: 8px; }
+
+    code {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+    }
+
+    a.link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.link:hover { text-decoration: underline; }
+
+    .updated {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .version-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(140, 255, 59, 0.1);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0 50px 0;
+    }
+
+    .intro p {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 171, 0, 0.08);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: var(--warning);
+      margin-bottom: 8px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    .danger-box {
+      background: rgba(255, 82, 82, 0.08);
+      border: 1px solid rgba(255, 82, 82, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .danger-box p {
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .danger-box p:last-child { margin-bottom: 0; }
+
+    .success-box {
+      background: rgba(140, 255, 59, 0.08);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .success-box p {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .success-box p:last-child { margin-bottom: 0; }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .contact-block {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px 0 50px 0;
+    }
+
+    .toc h3 {
+      color: var(--text);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .toc ol {
+      margin-left: 20px;
+      color: var(--muted);
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--accent); }
+
+    footer {
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav img { height: 30px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.05rem; }
+      .container { margin: 30px auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
+    <a href="index.html">← Retour à l'accueil</a>
+  </nav>
+
+  <div class="container">
+    <span class="updated">Dernière mise à jour : 12 août 2026</span>
+    <h1>Conditions Générales d'Utilisation<span class="version-badge">V1.0</span></h1>
+
+    <div class="intro">
+      <p>Les présentes Conditions Générales d'Utilisation (ci-après « <strong>CGU</strong> ») ont pour objet de définir les modalités et conditions dans lesquelles l'utilisateur (ci-après « l'<strong>Utilisateur</strong> ») peut accéder et utiliser l'application mobile RunCrew et le site www.runcrew.fr (ci-après « le <strong>Service</strong> »), édités par <strong>ARRAGAIN Tony (RunCrew)</strong>, micro-entreprise, dont le siège social est situé 131 Avenue de Verdun, 83600 Fréjus (ci-après « l'<strong>Éditeur</strong> »).</p>
+    </div>
+
+    <p>L'utilisation du Service implique l'acceptation pleine, entière et sans réserve des présentes CGU.</p>
+
+    <div class="toc">
+      <h3>📑 Sommaire</h3>
+      <ol>
+        <li><a href="#s1">Définitions</a></li>
+        <li><a href="#s2">Acceptation des CGU</a></li>
+        <li><a href="#s3">Conditions d'accès au Service</a></li>
+        <li><a href="#s4">Description du Service</a></li>
+        <li><a href="#s5">Système Crew et partage de position</a></li>
+        <li><a href="#s6">Bouton SOS — Avertissement essentiel</a></li>
+        <li><a href="#s7">Intelligence Artificielle</a></li>
+        <li><a href="#s8">Obligations de l'Utilisateur</a></li>
+        <li><a href="#s9">Contenus publiés par l'Utilisateur</a></li>
+        <li><a href="#s10">Propriété intellectuelle</a></li>
+        <li><a href="#s11">Données personnelles</a></li>
+        <li><a href="#s12">Suspension et résiliation</a></li>
+        <li><a href="#s13">Responsabilité de l'Éditeur</a></li>
+        <li><a href="#s14">Droit applicable et juridiction</a></li>
+        <li><a href="#s15">Médiation de la consommation</a></li>
+        <li><a href="#s16">Dispositions diverses</a></li>
+        <li><a href="#s17">Contact</a></li>
+      </ol>
+    </div>
+
+    <h2 id="s1">1. Définitions</h2>
+    <ul>
+      <li><strong>Application</strong> : Application mobile RunCrew disponible sur Google Play Store</li>
+      <li><strong>Site</strong> : Site internet accessible à l'adresse www.runcrew.fr</li>
+      <li><strong>Service</strong> : Ensemble des fonctionnalités proposées via l'Application et le Site</li>
+      <li><strong>Utilisateur</strong> : Toute personne physique disposant d'un compte sur l'Application</li>
+      <li><strong>Compte</strong> : Espace personnel de l'Utilisateur créé lors de l'inscription</li>
+      <li><strong>Crew</strong> : Groupe d'utilisateurs liés par une invitation, permettant le partage de position en direct</li>
+      <li><strong>Runner</strong> : Utilisateur qui court et partage sa position pendant une course</li>
+      <li><strong>Supporter</strong> : Utilisateur qui suit une course en direct en tant que membre du crew du Runner</li>
+      <li><strong>Contenu</strong> : Toutes données, informations, textes, images, vidéos ou éléments publiés par les Utilisateurs</li>
+      <li><strong>Premium</strong> : Abonnement payant donnant accès à des fonctionnalités avancées</li>
+    </ul>
+
+    <h2 id="s2">2. Acceptation des CGU</h2>
+
+    <h3>2.1 Consentement explicite</h3>
+    <p>L'inscription au Service nécessite l'acceptation expresse des présentes CGU par le cochage d'une case dédiée lors de l'onboarding. Le bouton d'inscription est techniquement désactivé tant que cette acceptation n'a pas été effectuée.</p>
+    <p>Le consentement est horodaté et associé à la version des CGU en vigueur au moment de l'inscription.</p>
+
+    <h3>2.2 Modifications des CGU</h3>
+    <p>L'Éditeur se réserve le droit de modifier les CGU à tout moment. En cas de modification substantielle, l'Utilisateur en sera informé par notification dans l'Application et devra accepter les nouvelles CGU pour continuer à utiliser le Service.</p>
+
+    <h2 id="s3">3. Conditions d'accès au Service</h2>
+
+    <h3>3.1 Âge minimum</h3>
+    <p>L'utilisation du Service est réservée aux personnes physiques âgées d'<strong>au moins 16 ans</strong>.</p>
+    <p>L'Utilisateur confirme son âge lors de l'inscription par le cochage d'une case dédiée. Toute inscription mensongère sur l'âge entraîne la résiliation immédiate du compte.</p>
+
+    <h3>3.2 Équipement requis</h3>
+    <p>L'utilisation du Service nécessite :</p>
+    <ul>
+      <li>Un smartphone Android compatible</li>
+      <li>Une connexion internet</li>
+      <li>L'activation du GPS du téléphone</li>
+      <li>L'acceptation des permissions nécessaires (localisation, notifications)</li>
+    </ul>
+
+    <h3>3.3 Compte utilisateur</h3>
+    <p>L'inscription au Service est <strong>gratuite</strong> et se fait par la fourniture d'une adresse email valide. L'authentification se fait par code à usage unique (OTP) envoyé par email — aucun mot de passe n'est requis.</p>
+    <p>L'Utilisateur s'engage à :</p>
+    <ul>
+      <li>Fournir une adresse email valide et personnelle</li>
+      <li>Ne pas usurper l'identité d'un tiers</li>
+      <li>Ne créer qu'un seul compte personnel</li>
+      <li>Ne pas céder son compte à un tiers</li>
+      <li>Maintenir la confidentialité de son accès</li>
+    </ul>
+
+    <h2 id="s4">4. Description du Service</h2>
+
+    <h3>4.1 Fonctionnalités gratuites</h3>
+    <p>Dans sa version actuelle, l'Utilisateur peut utiliser gratuitement l'ensemble des fonctionnalités suivantes :</p>
+    <ul>
+      <li>Tracking GPS de ses courses</li>
+      <li>Historique de ses courses</li>
+      <li>Système de Crew (supporters illimités)</li>
+      <li>Bouton SOS</li>
+      <li>Notifications push</li>
+      <li>Mode incognito</li>
+    </ul>
+    <div class="info-card">
+      <p><strong>Note</strong> : Les présentes CGU seront mises à jour lorsque des limitations seront introduites au lancement de l'abonnement Premium.</p>
+    </div>
+
+    <h3>4.2 Fonctionnalités Premium</h3>
+    <p>L'abonnement Premium à 7,99 €/mois donne accès à des fonctionnalités avancées, décrites dans nos <a class="link" href="cgv.html">Conditions Générales de Vente</a>.</p>
+
+    <h3>4.3 Évolution du Service</h3>
+    <p>L'Éditeur se réserve le droit de faire évoluer le Service, d'ajouter, modifier ou supprimer des fonctionnalités à tout moment, sans que cela puisse ouvrir droit à indemnisation au bénéfice de l'Utilisateur.</p>
+
+    <h2 id="s5">5. Système Crew et partage de position</h2>
+
+    <h3>5.1 Fonctionnement du Crew</h3>
+    <p>Chaque Utilisateur peut :</p>
+    <ul>
+      <li>Créer son propre crew et inviter des supporters via un code d'invitation à 6 caractères</li>
+      <li>Rejoindre le crew d'autres utilisateurs pour les supporter</li>
+    </ul>
+    <p><strong>Le code d'invitation est valable 30 jours et peut être utilisé par plusieurs personnes.</strong></p>
+
+    <h3>5.2 Consentement au partage de position</h3>
+    <p>En rejoignant un crew, l'Utilisateur est informé que :</p>
+    <ul>
+      <li>Les autres membres du crew peuvent voir sa position en direct pendant ses courses</li>
+      <li>Sa position n'est partagée que pendant les courses actives, jamais en dehors</li>
+      <li>Il peut activer le mode incognito à tout moment pour désactiver ce partage</li>
+    </ul>
+    <div class="success-box">
+      <p><strong>En invitant un supporter dans son crew, l'Utilisateur consent à ce que ce supporter voie sa position live pendant ses courses, sauf activation du mode incognito.</strong></p>
+    </div>
+
+    <h3>5.3 Mode incognito</h3>
+    <p>L'Utilisateur peut activer le mode incognito avant chaque course. Dans ce mode :</p>
+    <ul>
+      <li>Sa course n'est pas partagée avec son crew</li>
+      <li>Ses supporters ne reçoivent aucune notification de démarrage</li>
+      <li>Sa position live n'est accessible à personne</li>
+    </ul>
+
+    <h3>5.4 Exception SOS</h3>
+    <div class="warning-box">
+      <p><strong>Le bouton SOS reste actif même en mode incognito.</strong> Son déclenchement partage la position GPS de l'Utilisateur avec tous les membres de son crew, pour des raisons de sécurité.</p>
+    </div>
+
+    <h3>5.5 Retrait de membres</h3>
+    <ul>
+      <li>Le Runner peut retirer un supporter de son crew à tout moment</li>
+      <li>Un Supporter peut quitter le crew d'un Runner à tout moment</li>
+      <li>Ces actions sont immédiates et irréversibles</li>
+    </ul>
+
+    <h2 id="s6">6. Bouton SOS — Avertissement essentiel</h2>
+    <p>Le bouton SOS envoie une notification urgente aux membres du crew de l'Utilisateur avec sa position GPS exacte.</p>
+
+    <div class="danger-box">
+      <p><strong>⚠️ AVERTISSEMENT IMPORTANT</strong></p>
+      <p><strong>Le bouton SOS n'appelle PAS automatiquement les services de secours officiels.</strong></p>
+      <p>En cas d'urgence vitale, l'Utilisateur doit impérativement composer :</p>
+      <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)</p>
+    </div>
+
+    <p>L'Éditeur ne peut en aucun cas être tenu responsable :</p>
+    <ul>
+      <li>De la non-intervention des services de secours officiels</li>
+      <li>Du défaut de réception de la notification par les supporters (téléphone éteint, notifications désactivées, absence de réseau, etc.)</li>
+      <li>De tout dommage corporel ou matériel résultant d'une situation d'urgence</li>
+    </ul>
+    <p>L'Utilisateur reconnaît utiliser le bouton SOS en connaissance de cause et sous sa propre responsabilité.</p>
+
+    <h2 id="s7">7. Intelligence Artificielle</h2>
+
+    <h3>7.1 Nature du service IA</h3>
+    <p>RunCrew utilise l'intelligence artificielle <strong>OpenAI GPT-4o-mini</strong> pour générer :</p>
+    <ul>
+      <li>Des analyses personnalisées de courses (à la demande explicite de l'Utilisateur)</li>
+      <li>Des bilans de progression (à la demande explicite de l'Utilisateur)</li>
+    </ul>
+
+    <h3>7.2 Caractère indicatif</h3>
+    <div class="warning-box">
+      <p><strong>Les commentaires générés par l'IA sont fournis à titre indicatif et motivationnel uniquement.</strong></p>
+    </div>
+    <p>Ils ne constituent en aucun cas :</p>
+    <ul>
+      <li>Un avis médical</li>
+      <li>Un conseil d'entraînement personnalisé de coach diplômé</li>
+      <li>Un diagnostic ou une recommandation de santé</li>
+      <li>Une prescription sportive</li>
+    </ul>
+    <p>L'Utilisateur reste seul responsable de ses choix d'entraînement et de la gestion de son effort. En cas de doute sur sa capacité à pratiquer un effort physique, il doit consulter un professionnel de santé qualifié.</p>
+
+    <h3>7.3 Désactivation</h3>
+    <p>L'Utilisateur peut désactiver totalement les fonctionnalités d'intelligence artificielle depuis les paramètres de l'Application.</p>
+
+    <h2 id="s8">8. Obligations de l'Utilisateur</h2>
+
+    <h3>8.1 Usage conforme</h3>
+    <p>L'Utilisateur s'engage à utiliser le Service :</p>
+    <ul>
+      <li>Conformément aux présentes CGU</li>
+      <li>Conformément à la loi et aux règlements en vigueur</li>
+      <li>Dans le respect des droits des tiers</li>
+      <li>Sans porter atteinte à l'ordre public</li>
+    </ul>
+
+    <h3>8.2 Comportement interdit</h3>
+    <p>Il est strictement interdit à l'Utilisateur :</p>
+    <ul>
+      <li>D'utiliser le Service à des fins illégales, frauduleuses ou malveillantes</li>
+      <li>De collecter des données personnelles d'autres Utilisateurs sans leur consentement</li>
+      <li>De harceler, insulter, menacer ou intimider d'autres Utilisateurs</li>
+      <li>De publier des contenus illicites, diffamatoires, injurieux, racistes, sexistes, homophobes, violents, pornographiques ou contraires aux bonnes mœurs</li>
+      <li>D'usurper l'identité d'un tiers</li>
+      <li>De tenter d'accéder frauduleusement aux systèmes ou données de l'Éditeur ou d'autres Utilisateurs</li>
+      <li>D'utiliser des robots, scripts ou outils automatisés pour interagir avec le Service</li>
+      <li>De reverse-engineerer, décompiler ou pirater l'Application</li>
+      <li>De contourner les mesures de sécurité mises en place</li>
+      <li>De revendre ou céder son compte à un tiers</li>
+    </ul>
+
+    <h3>8.3 Utilisation à des fins sportives</h3>
+    <p>L'Utilisateur pratique le running <strong>sous sa propre responsabilité</strong>. Il s'engage à :</p>
+    <ul>
+      <li>S'assurer de sa condition physique préalable à toute pratique sportive</li>
+      <li>Respecter le Code de la route lorsqu'il court sur la voie publique</li>
+      <li>Ne pas mettre en danger sa vie ni celle d'autrui</li>
+      <li>Respecter les zones autorisées à la course (voies publiques, parcs, etc.)</li>
+    </ul>
+
+    <h2 id="s9">9. Contenus publiés par l'Utilisateur</h2>
+
+    <h3>9.1 Responsabilité</h3>
+    <p>L'Utilisateur est <strong>seul responsable</strong> des contenus qu'il publie dans le Service (nom de crew, nom de course, description d'événement, photo de profil, messages, etc.).</p>
+    <p>Il garantit détenir tous les droits nécessaires sur ces contenus et s'engage à respecter les droits de propriété intellectuelle et les droits de la personnalité des tiers.</p>
+
+    <h3>9.2 Licence accordée à RunCrew</h3>
+    <p>En publiant un contenu dans le Service, l'Utilisateur concède à l'Éditeur une licence :</p>
+    <ul>
+      <li>Non exclusive</li>
+      <li>Gratuite</li>
+      <li>Limitée à l'utilisation nécessaire au fonctionnement du Service</li>
+      <li>Pour la durée de conservation du contenu dans le Service</li>
+    </ul>
+    <p>Cette licence permet à l'Éditeur d'afficher, reproduire et diffuser le contenu dans le cadre du Service uniquement.</p>
+
+    <h3>9.3 Messages éphémères</h3>
+    <p>Les messages échangés entre membres d'un crew pendant une course sont <strong>éphémères</strong> :</p>
+    <ul>
+      <li>Les messages textuels ne sont pas persistés</li>
+      <li>Les messages vocaux sont supprimés automatiquement dans les 24 heures</li>
+    </ul>
+    <p>En raison de cette nature éphémère, l'Éditeur ne peut proposer de fonctionnalité de signalement rétroactif des messages.</p>
+
+    <h3>9.4 Modération</h3>
+    <p>L'Éditeur se réserve le droit, sans obligation :</p>
+    <ul>
+      <li>De modérer, modifier ou supprimer tout contenu contraire aux présentes CGU</li>
+      <li>De suspendre ou résilier le compte d'un Utilisateur en cas de manquement</li>
+      <li>De coopérer avec les autorités judiciaires en cas de demande légale</li>
+    </ul>
+
+    <h2 id="s10">10. Propriété intellectuelle</h2>
+
+    <h3>10.1 Droits de l'Éditeur</h3>
+    <p>L'ensemble des éléments composant le Service (marque RunCrew, logo, identité visuelle, textes, interface, code source, base de données, algorithmes, etc.) sont la propriété exclusive de l'Éditeur ou font l'objet d'une autorisation d'utilisation.</p>
+    <p>Toute reproduction, représentation, modification ou exploitation non autorisée est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+
+    <h3>10.2 Licence d'utilisation</h3>
+    <p>L'Éditeur accorde à l'Utilisateur, dans le cadre des présentes CGU, une licence :</p>
+    <ul>
+      <li>Personnelle</li>
+      <li>Non exclusive</li>
+      <li>Non transférable</li>
+      <li>Limitée à l'utilisation du Service à des fins strictement personnelles et non commerciales</li>
+      <li>Révocable à tout moment en cas de non-respect des CGU</li>
+    </ul>
+
+    <h2 id="s11">11. Données personnelles</h2>
+    <p>Le traitement des données personnelles de l'Utilisateur est régi par la <a class="link" href="privacy.html">Politique de Confidentialité</a>, qui fait partie intégrante des présentes CGU.</p>
+    <p>L'Utilisateur dispose notamment des droits suivants (RGPD) :</p>
+    <ul>
+      <li>Droit d'accès à ses données</li>
+      <li>Droit de rectification</li>
+      <li>Droit à l'effacement</li>
+      <li>Droit à la portabilité de ses données</li>
+      <li>Droit d'opposition</li>
+      <li>Droit à la limitation du traitement</li>
+    </ul>
+    <p>Pour exercer ces droits : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a> ou directement depuis les paramètres de l'Application.</p>
+
+    <h2 id="s12">12. Suspension et résiliation</h2>
+
+    <h3>12.1 Résiliation par l'Utilisateur</h3>
+    <p>L'Utilisateur peut supprimer son compte à tout moment, sans préavis et sans justification, depuis :</p>
+    <p><strong>Paramètres > Application > Supprimer mon compte</strong></p>
+    <p>La suppression est immédiate, définitive et irréversible. Elle entraîne :</p>
+    <ul>
+      <li>La suppression de l'ensemble des données personnelles</li>
+      <li>Le retrait des crews auxquels l'Utilisateur appartenait</li>
+      <li>L'anonymisation dans les classements d'événements passés</li>
+    </ul>
+    <p>Pour les Utilisateurs abonnés Premium, la résiliation du compte doit être précédée de la résiliation de l'abonnement via Google Play (voir <a class="link" href="cgv.html">CGV</a>).</p>
+
+    <h3>12.2 Suspension ou résiliation par l'Éditeur</h3>
+    <p>L'Éditeur se réserve le droit de suspendre ou résilier le compte d'un Utilisateur, sans préavis ni indemnité, en cas de :</p>
+    <ul>
+      <li>Manquement grave aux présentes CGU</li>
+      <li>Comportement illicite, frauduleux ou malveillant</li>
+      <li>Utilisation du Service portant atteinte aux droits d'autres Utilisateurs</li>
+      <li>Décision de justice ou demande d'autorité compétente</li>
+    </ul>
+    <p>Dans ce cas, aucun remboursement de l'abonnement Premium ne sera dû.</p>
+
+    <h2 id="s13">13. Responsabilité de l'Éditeur</h2>
+
+    <h3>13.1 Obligation de moyens</h3>
+    <p>L'Éditeur s'engage à mettre en œuvre les moyens raisonnables pour assurer le bon fonctionnement du Service. Il est tenu à une <strong>obligation de moyens</strong> et non de résultat.</p>
+
+    <h3>13.2 Limitations de responsabilité</h3>
+    <p>L'Éditeur ne peut être tenu responsable :</p>
+    <ul>
+      <li>Des dommages résultant de la pratique sportive de l'Utilisateur</li>
+      <li>Des interruptions ou dysfonctionnements du Service, notamment en cas de maintenance, force majeure, défaillance des sous-traitants techniques ou opérateurs télécom</li>
+      <li>De la perte de données due à une défaillance technique</li>
+      <li>Du comportement des autres Utilisateurs</li>
+      <li>De la non-intervention des services de secours officiels après déclenchement du bouton SOS</li>
+      <li>De l'utilisation faite par l'Utilisateur des analyses générées par l'IA</li>
+      <li>De tout usage détourné du Service par l'Utilisateur ou par un tiers</li>
+    </ul>
+
+    <h3>13.3 Force majeure</h3>
+    <p>L'Éditeur ne peut être tenu responsable en cas d'inexécution due à un cas de force majeure au sens de l'article 1218 du Code civil.</p>
+
+    <h2 id="s14">14. Droit applicable et juridiction</h2>
+    <p>Les présentes CGU sont régies par le <strong>droit français</strong>.</p>
+    <p>En cas de litige, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire.</p>
+    <p>À défaut de résolution amiable, tout litige sera soumis aux tribunaux français compétents.</p>
+    <p>Pour les Utilisateurs ayant la qualité de consommateur, conformément à l'article R. 631-3 du Code de la consommation, le tribunal compétent est celui du lieu où le consommateur demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable.</p>
+
+    <h2 id="s15">15. Médiation de la consommation</h2>
+    <p>Conformément aux articles L.611-1 et suivants du Code de la consommation, tout Utilisateur consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige.</p>
+    <p>L'Éditeur a désigné la société <strong>MEDICYS</strong> en tant que médiateur de la consommation :</p>
+    <div class="info-card">
+      <ul>
+        <li><strong>MEDICYS</strong></li>
+        <li>Centre de médiation et règlement amiable des huissiers de justice</li>
+        <li>73 Boulevard de Clichy, 75009 Paris</li>
+        <li>Site web : <a class="link" href="https://www.medicys.fr" target="_blank">https://www.medicys.fr</a></li>
+        <li>Formulaire de saisine : <a class="link" href="https://app.medicys.fr" target="_blank">https://app.medicys.fr</a></li>
+      </ul>
+    </div>
+    <p>Une plateforme européenne de règlement en ligne des litiges est également accessible à l'adresse : <a class="link" href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
+
+    <h2 id="s16">16. Dispositions diverses</h2>
+
+    <h3>16.1 Nullité partielle</h3>
+    <p>Si l'une des stipulations des présentes CGU était déclarée nulle ou inopposable, les autres stipulations resteraient pleinement applicables.</p>
+
+    <h3>16.2 Non-renonciation</h3>
+    <p>Le fait pour l'Éditeur de ne pas se prévaloir d'un manquement aux CGU ne saurait être interprété comme une renonciation à s'en prévaloir ultérieurement.</p>
+
+    <h3>16.3 Intégralité</h3>
+    <p>Les présentes CGU constituent l'intégralité de l'accord entre l'Utilisateur et l'Éditeur relatif à l'utilisation du Service.</p>
+
+    <h2 id="s17">17. Contact</h2>
+    <div class="contact-block">
+      <h3>Pour toute question relative aux présentes CGU</h3>
+      <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+      <p>Site web : <a href="https://www.runcrew.fr">https://www.runcrew.fr</a></p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
+      <em>Dernière mise à jour : 12 août 2026 — Version 1.0</em>
+    </p>
+  </div>
+
+  <footer>
+    <p>RunCrew — Courir entouré, même en solitaire.</p>
+    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+  </footer>
+
+</body>
+</html>
