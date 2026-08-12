@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentions Légales — RunCrew</title>
-  <meta name="description" content="Mentions légales du site RunCrew.fr" />
+  <meta name="description" content="Mentions légales de RunCrew — Éditeur, hébergement, propriété intellectuelle." />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -14,8 +14,11 @@
       --card: #151B23;
       --border: #1E2730;
       --accent: #8CFF3B;
+      --accent-alt: #00E676;
       --text: #EAF1F8;
       --muted: #8A99A8;
+      --warning: #FFAB00;
+      --danger: #FF5252;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -51,7 +54,7 @@
     nav a:hover { color: var(--accent); }
 
     .container {
-      max-width: 800px;
+      max-width: 860px;
       margin: 60px auto;
       padding: 0 20px;
     }
@@ -59,16 +62,27 @@
     h1 {
       font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 15px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 50px;
+      margin-bottom: 20px;
       color: var(--accent);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--text);
     }
 
     p, li {
@@ -77,7 +91,22 @@
       margin-bottom: 15px;
     }
 
-    ul { margin-left: 20px; }
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul { margin-left: 20px; margin-bottom: 15px; }
+    li { margin-bottom: 8px; }
+
+    code {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+    }
 
     a.link {
       color: var(--accent);
@@ -97,6 +126,67 @@
       margin-bottom: 30px;
     }
 
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 171, 0, 0.08);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: var(--warning);
+      margin-bottom: 8px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    .danger-box {
+      background: rgba(255, 82, 82, 0.08);
+      border: 1px solid rgba(255, 82, 82, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .danger-box p {
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .danger-box p:last-child { margin-bottom: 0; }
+
+    .contact-block {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
     footer {
       padding: 40px 20px;
       border-top: 1px solid var(--border);
@@ -112,7 +202,9 @@
       nav { padding: 15px 20px; }
       nav img { height: 30px; }
       h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.2rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.05rem; }
+      .container { margin: 30px auto; }
     }
   </style>
 </head>
@@ -120,86 +212,161 @@
 <body>
   <nav>
     <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour</a>
+    <a href="index.html">← Retour à l'accueil</a>
   </nav>
 
   <div class="container">
-    <span class="updated">Dernière mise à jour : 2026</span>
+    <span class="updated">Dernière mise à jour : 12 août 2026</span>
     <h1>Mentions Légales</h1>
 
-    <h2>1. Éditeur du site</h2>
-    <p>
-      Le site <strong>runcrew.fr</strong> est édité à titre personnel par :<br>
-      <strong>Tony Arragain</strong><br>
-      Roquebrune-sur-Argens, France<br>
-      Email : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
-    </p>
-    <p>
-      RunCrew est actuellement un projet personnel non commercial en phase de développement.
-      Aucune activité commerciale n'est exercée à ce jour.
-    </p>
+    <h2>1. Éditeur du site et de l'application</h2>
+    <div class="info-card">
+      <p>Le site <a class="link" href="https://www.runcrew.fr">www.runcrew.fr</a> et l'application mobile RunCrew sont édités par :</p>
+      <ul>
+        <li><strong>Nom / Raison sociale</strong> : ARRAGAIN Tony (RunCrew)</li>
+        <li><strong>Statut juridique</strong> : Micro-entreprise (Entrepreneur individuel)</li>
+        <li><strong>SIRET</strong> : [EN COURS]</li>
+        <li><strong>Code APE</strong> : 6201Z — Programmation informatique</li>
+        <li><strong>Adresse du siège social</strong> : 131 Avenue de Verdun, 83600 Fréjus</li>
+        <li><strong>Adresse email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+        <li><strong>Site web</strong> : <a class="link" href="https://www.runcrew.fr">https://www.runcrew.fr</a></li>
+      </ul>
+      <p>En sa qualité d'entrepreneur individuel bénéficiant du régime de la franchise en base de TVA (article 293 B du Code général des impôts), l'éditeur n'est pas assujetti à la TVA. <strong>TVA non applicable, article 293 B du CGI.</strong></p>
+    </div>
 
-    <h2>2. Hébergement</h2>
-    <p>
-      Le site est hébergé par :<br>
-      <strong>Vercel Inc.</strong><br>
-      440 N Barranca Ave #4133<br>
-      Covina, CA 91723, États-Unis<br>
-      Site : <a class="link" href="https://vercel.com" target="_blank">vercel.com</a>
-    </p>
-    <p>
-      Le nom de domaine <strong>runcrew.fr</strong> est enregistré chez :<br>
-      <strong>Ionos SARL</strong><br>
-      7 Place de la Gare, 57200 Sarreguemines, France
-    </p>
+    <h2>2. Directeur de la publication</h2>
+    <p>Le directeur de la publication du site www.runcrew.fr et de l'application RunCrew est le fondateur de RunCrew, joignable à l'adresse <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>.</p>
 
-    <h2>3. Contact</h2>
-    <p>
-      Pour toute question, remarque ou demande d'information, vous pouvez contacter :<br>
-      <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>
-    </p>
+    <h2>3. Hébergement du site web</h2>
+    <div class="info-card">
+      <p>Le site www.runcrew.fr est hébergé par :</p>
+      <ul>
+        <li><strong>Raison sociale</strong> : Vercel Inc.</li>
+        <li><strong>Adresse</strong> : 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis</li>
+        <li><strong>Site web</strong> : <a class="link" href="https://vercel.com" target="_blank">https://vercel.com</a></li>
+      </ul>
+    </div>
 
-    <h2>4. Propriété intellectuelle</h2>
-    <p>
-      L'ensemble des éléments présents sur ce site (textes, logos, images, animations, code)
-      sont la propriété exclusive de Tony Arragain, sauf mention contraire.
-      Toute reproduction, représentation ou diffusion, totale ou partielle,
-      est strictement interdite sans autorisation écrite préalable.
-    </p>
-    <p>
-      La marque <strong>RunCrew</strong>, son logo, son slogan et son identité visuelle
-      sont protégés au titre du droit d'auteur.
-    </p>
+    <h2>4. Hébergement de l'application mobile et des données</h2>
+    <div class="info-card">
+      <p>L'infrastructure technique de l'application RunCrew (base de données, stockage, authentification, notifications) est hébergée par :</p>
+      <ul>
+        <li><strong>Raison sociale</strong> : Google Ireland Limited</li>
+        <li><strong>Adresse</strong> : Gordon House, Barrow Street, Dublin 4, Irlande</li>
+        <li><strong>Service utilisé</strong> : Google Cloud Platform / Firebase</li>
+        <li><strong>Localisation des serveurs</strong> : Union Européenne — Belgique (europe-west1)</li>
+      </ul>
+    </div>
 
-    <h2>5. Responsabilité</h2>
-    <p>
-      Les informations diffusées sur ce site sont fournies à titre informatif.
-      L'éditeur ne saurait être tenu responsable des erreurs, omissions ou
-      indisponibilités temporaires du site.
-    </p>
+    <h2>5. Distribution de l'application</h2>
+    <div class="info-card">
+      <p>L'application mobile RunCrew est distribuée exclusivement via :</p>
+      <ul>
+        <li><strong>Google Play Store</strong>, opéré par Google LLC</li>
+        <li><strong>Adresse</strong> : 1600 Amphitheatre Parkway, Mountain View, CA 94043, États-Unis</li>
+      </ul>
+    </div>
 
-    <h2>6. Liens externes</h2>
-    <p>
-      Le site peut contenir des liens vers d'autres sites (réseaux sociaux, Google Play, etc.).
-      L'éditeur n'exerce aucun contrôle sur le contenu de ces sites tiers
-      et décline toute responsabilité à leur égard.
-    </p>
+    <h2>6. Contact</h2>
+    <p>Pour toute question, demande d'information ou signalement :</p>
+    <ul>
+      <li><strong>Adresse email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+    </ul>
+    <p>Pour les demandes relatives à vos données personnelles, consultez notre <a class="link" href="privacy.html">Politique de Confidentialité</a>.</p>
 
-    <h2>7. Données personnelles</h2>
-    <p>
-      Pour toute information concernant la collecte et le traitement de vos données personnelles,
-      merci de consulter notre <a class="link" href="privacy.html">Politique de Confidentialité</a>.
-    </p>
+    <h2>7. Propriété intellectuelle</h2>
 
-    <h2>8. Droit applicable</h2>
-    <p>
-      Le présent site est soumis au droit français.
-      En cas de litige, les tribunaux français seront seuls compétents.
+    <h3>7.1 Contenus édités par RunCrew</h3>
+    <p>L'ensemble des éléments composant le site www.runcrew.fr et l'application RunCrew (textes, images, logos, graphismes, icônes, éléments d'interface, structure, code source, base de données, marques) sont la propriété exclusive de l'éditeur de RunCrew ou font l'objet d'une autorisation d'utilisation.</p>
+    <p><strong>La marque « RunCrew »</strong>, son slogan « Courir entouré, même en solitaire », son identité visuelle (gorille néon vert) et ses éléments graphiques distinctifs sont protégés au titre du droit d'auteur et du droit des marques.</p>
+    <p>Toute reproduction, représentation, modification, publication, adaptation ou exploitation, totale ou partielle, de ces éléments, quel que soit le moyen ou le procédé utilisé, est <strong>strictement interdite</strong> sans autorisation écrite préalable de l'éditeur.</p>
+    <p>Toute utilisation non autorisée est constitutive de contrefaçon et sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+
+    <h3>7.2 Contenus créés par les utilisateurs</h3>
+    <p>Les contenus créés par les utilisateurs dans l'application (noms de crew, noms de courses, descriptions d'événements, photos de profil, messages, etc.) restent la propriété de leurs auteurs.</p>
+    <p>En publiant ces contenus dans RunCrew, l'utilisateur concède à RunCrew une licence non exclusive, gratuite et limitée d'utilisation, de reproduction et d'affichage de ces contenus, strictement dans le cadre du fonctionnement de l'application.</p>
+    <p>L'utilisateur garantit qu'il détient les droits nécessaires sur les contenus qu'il publie et s'engage à ne pas porter atteinte aux droits de tiers.</p>
+
+    <h2>8. Responsabilité</h2>
+
+    <h3>8.1 Disponibilité du service</h3>
+    <p>RunCrew met en œuvre les moyens raisonnables pour assurer la disponibilité et le bon fonctionnement de l'application et du site. Toutefois, l'éditeur ne peut garantir une disponibilité continue et sans interruption, notamment en cas de :</p>
+    <ul>
+      <li>Maintenance planifiée ou d'urgence</li>
+      <li>Défaillance des sous-traitants techniques (Google Cloud, Vercel, opérateurs télécom)</li>
+      <li>Cas de force majeure</li>
+    </ul>
+
+    <h3>8.2 Utilisation à des fins sportives et de loisir</h3>
+    <p>RunCrew est une application de suivi sportif et de partage entre amis à des fins de loisir. L'application <strong>n'est pas un dispositif médical</strong> au sens du règlement (UE) 2017/745 et ne saurait remplacer un avis médical, un coach sportif diplômé ou un professionnel de santé.</p>
+    <div class="warning-box">
+      <p>L'utilisateur pratique le running sous sa propre responsabilité. L'éditeur ne peut être tenu responsable des dommages corporels ou matériels résultant de la pratique sportive.</p>
+    </div>
+
+    <h3>8.3 Fonctionnalité SOS</h3>
+    <p>Le bouton SOS de l'application envoie une notification aux membres du crew de l'utilisateur avec sa position GPS. <strong>Cette fonctionnalité n'appelle pas les services de secours officiels.</strong></p>
+    <div class="danger-box">
+      <p><strong>⚠️ IMPORTANT</strong> : En cas d'urgence vitale, l'utilisateur doit impérativement composer :</p>
+      <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)</p>
+      <p>L'éditeur ne peut être tenu responsable en cas d'incident lié à la non-intervention des secours officiels ou au dysfonctionnement de la notification aux supporters (défaillance réseau, téléphone éteint, notifications désactivées, etc.).</p>
+    </div>
+
+    <h3>8.4 Contenus des utilisateurs</h3>
+    <p>L'éditeur n'exerce aucun contrôle a priori sur les contenus publiés par les utilisateurs. Les messages échangés entre membres d'un crew étant éphémères, aucun signalement rétroactif n'est possible.</p>
+    <p>L'utilisateur s'engage à ne pas publier de contenus illicites, injurieux, diffamatoires ou portant atteinte aux droits de tiers.</p>
+
+    <h3>8.5 Liens externes</h3>
+    <p>Le site et l'application peuvent contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur ces sites et ne peut être tenu responsable de leur contenu ou de leur politique de confidentialité.</p>
+
+    <h2>9. Données personnelles</h2>
+    <p>Le traitement des données personnelles est encadré par notre <a class="link" href="privacy.html">Politique de Confidentialité</a>, conforme au Règlement (UE) 2016/679 (RGPD).</p>
+    <p>Pour toute demande relative à vos données personnelles :</p>
+    <ul>
+      <li><strong>Email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+      <li><strong>Autorité de contrôle</strong> : Commission Nationale de l'Informatique et des Libertés (CNIL) — <a class="link" href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a></li>
+    </ul>
+
+    <h2>10. Cookies</h2>
+    <p>Le site www.runcrew.fr n'utilise <strong>aucun cookie de tracking ni cookie marketing</strong>.</p>
+    <p>L'application mobile RunCrew n'utilise <strong>aucun cookie</strong>.</p>
+
+    <h2>11. Droit applicable et juridiction compétente</h2>
+    <p>Les présentes mentions légales sont régies par le <strong>droit français</strong>.</p>
+    <p>En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
+    <p>Pour les utilisateurs ayant la qualité de consommateur, conformément à l'article R. 631-3 du Code de la consommation, le tribunal territorialement compétent est celui du lieu où le consommateur demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable.</p>
+
+    <h2>12. Médiation de la consommation</h2>
+    <p>Conformément aux articles L.611-1 et suivants du Code de la consommation, tout Utilisateur consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige.</p>
+    <p>L'Éditeur a désigné, par adhésion enregistrée sous le numéro <strong>[EN COURS]</strong>, la société <strong>MEDICYS</strong> en tant que médiateur de la consommation :</p>
+    <div class="info-card">
+      <ul>
+        <li><strong>MEDICYS</strong></li>
+        <li>Centre de médiation et règlement amiable des huissiers de justice</li>
+        <li>73 Boulevard de Clichy, 75009 Paris</li>
+        <li>Site web : <a class="link" href="https://www.medicys.fr" target="_blank">https://www.medicys.fr</a></li>
+        <li>Formulaire de saisine : <a class="link" href="https://app.medicys.fr" target="_blank">https://app.medicys.fr</a></li>
+      </ul>
+    </div>
+    <p>L'Utilisateur peut également recourir à la plateforme européenne de règlement en ligne des litiges (Règlement UE n° 524/2013) : <a class="link" href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
+
+    <h2>13. Modification des mentions légales</h2>
+    <p>L'éditeur se réserve le droit de modifier les présentes mentions légales à tout moment. Les modifications entrent en vigueur dès leur publication sur le site.</p>
+
+    <div class="contact-block">
+      <h3>Pour toute question</h3>
+      <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+      <p>Site web : <a href="https://www.runcrew.fr">https://www.runcrew.fr</a></p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
+      <em>Dernière mise à jour : 12 août 2026</em>
     </p>
   </div>
 
   <footer>
-    © 2026 RunCrew — <a href="index.html">Retour à l'accueil</a>
+    <p>RunCrew — Courir entouré, même en solitaire.</p>
+    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a></p>
   </footer>
+
 </body>
 </html>
