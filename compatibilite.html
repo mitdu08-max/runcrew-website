@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide de compatibilité — RunCrew</title>
+  <meta name="description" content="Guide de compatibilité RunCrew — Configurer votre téléphone Android pour une expérience optimale." />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --bg: #0B0F14;
+      --bg-alt: #0F151C;
+      --card: #151B23;
+      --border: #1E2730;
+      --accent: #8CFF3B;
+      --accent-alt: #00E676;
+      --text: #EAF1F8;
+      --muted: #8A99A8;
+      --warning: #FFAB00;
+      --danger: #FF5252;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav img { height: 40px; }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul, ol { margin-left: 20px; margin-bottom: 15px; }
+    li { margin-bottom: 8px; }
+
+    code {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+    }
+
+    a.link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.link:hover { text-decoration: underline; }
+
+    .updated {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .version-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(140, 255, 59, 0.1);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0 50px 0;
+    }
+
+    .intro p {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 15px;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    .warning-box {
+      background: rgba(255, 171, 0, 0.08);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: var(--warning);
+      margin-bottom: 8px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    .danger-box {
+      background: rgba(255, 82, 82, 0.08);
+      border: 1px solid rgba(255, 82, 82, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .danger-box p {
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .danger-box p:last-child { margin-bottom: 0; }
+
+    .success-box {
+      background: rgba(140, 255, 59, 0.08);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .success-box p {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .success-box p:last-child { margin-bottom: 0; }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .brand-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 25px 0;
+    }
+
+    .brand-section h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .brand-emoji {
+      font-size: 1.3rem;
+      margin-right: 8px;
+    }
+
+    .step-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 12px 0;
+    }
+
+    .step-block h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .step-block p {
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .step-block p:last-child { margin-bottom: 0; }
+
+    .step-path {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .step-action {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .test-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+
+    .test-card h4 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px 0 50px 0;
+    }
+
+    .toc h3 {
+      color: var(--text);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .toc ol {
+      margin-left: 20px;
+      color: var(--muted);
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--accent); }
+
+    .contact-block {
+      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .contact-block h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .docs-grid a {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .docs-grid a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav img { height: 30px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.05rem; }
+      .container { margin: 30px auto; }
+      .docs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
+    <a href="index.html">← Retour à l'accueil</a>
+  </nav>
+
+  <div class="container">
+    <span class="updated">Dernière mise à jour : 19 août 2026</span>
+    <h1>Guide de compatibilité<span class="version-badge">V1.0</span></h1>
+
+    <div class="intro">
+      <p>Certains constructeurs Android appliquent des politiques d'optimisation batterie très agressives qui peuvent affecter le fonctionnement de RunCrew : notifications retardées, GPS coupé, application fermée en arrière-plan.</p>
+      <p>Ce guide vous explique <strong>comment configurer votre téléphone</strong> pour améliorer la fiabilité de RunCrew.</p>
+      <p><strong>Constructeurs concernés</strong> : Huawei, Honor, Xiaomi, Redmi, Poco, OnePlus, Oppo, Vivo, Realme, Meizu.</p>
+    </div>
+
+    <div class="danger-box">
+      <p><strong>⚠️ Avertissement légal</strong></p>
+      <p>Ce guide est fourni à titre informatif. Les procédures peuvent varier selon les versions Android et les mises à jour constructeurs.</p>
+      <p><strong>RunCrew ne peut pas garantir à 100% la fiabilité des alertes SOS sur les appareils à politique batterie restrictive</strong>, même après application de ces réglages.</p>
+      <p>En cas d'urgence vitale, composez toujours les numéros officiels : <strong>15, 18, 112, 911</strong>.</p>
+    </div>
+
+    <div class="toc">
+      <h3>📑 Sommaire</h3>
+      <ol>
+        <li><a href="#s1">Pourquoi ce guide ?</a></li>
+        <li><a href="#s2">Huawei / Honor</a></li>
+        <li><a href="#s3">Xiaomi / Redmi / Poco (MIUI / HyperOS)</a></li>
+        <li><a href="#s4">OnePlus (OxygenOS)</a></li>
+        <li><a href="#s5">Oppo / Realme (ColorOS)</a></li>
+        <li><a href="#s6">Vivo (FunTouch OS / OriginOS)</a></li>
+        <li><a href="#s7">Meizu (Flyme OS)</a></li>
+        <li><a href="#s8">Vérification rapide</a></li>
+        <li><a href="#s9">Si ça ne fonctionne toujours pas</a></li>
+        <li><a href="#s10">Rappel de sécurité</a></li>
+        <li><a href="#s11">Documents associés</a></li>
+      </ol>
+    </div>
+
+    <!-- SECTION 1 -->
+    <h2 id="s1">1. Pourquoi ce guide ?</h2>
+    <p>Certains constructeurs Android modifient le comportement standard d'Android pour économiser la batterie. Ces modifications peuvent :</p>
+    <ul>
+      <li>Retarder ou empêcher la réception des notifications RunCrew (y compris les alertes SOS)</li>
+      <li>Couper le suivi GPS pendant vos sessions</li>
+      <li>Fermer l'application en arrière-plan</li>
+      <li>Bloquer le démarrage automatique de RunCrew</li>
+    </ul>
+    <div class="warning-box">
+      <p>Ces limitations sont <strong>indépendantes de RunCrew</strong>. Elles résultent des choix techniques des fabricants d'appareils. Les réglages ci-dessous permettent de rétablir le fonctionnement normal.</p>
+    </div>
+
+    <!-- SECTION 2 — Huawei / Honor -->
+    <h2 id="s2">2. <span class="brand-emoji">🇨🇳</span> Huawei / Honor</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Désactiver l'optimisation batterie</h4>
+        <p class="step-path">Paramètres → Batterie → Optimisation de l'application</p>
+        <p>→ Rechercher <strong>RunCrew</strong></p>
+        <p>→ Sélectionner <span class="step-action">« Ne pas optimiser »</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Ajouter aux applications protégées</h4>
+        <p class="step-path">Paramètres → Batterie → Démarrage d'applications</p>
+        <p>→ Rechercher <strong>RunCrew</strong></p>
+        <p>→ Désactiver <em>« Gérer automatiquement »</em></p>
+        <p>→ Activer : <span class="step-action">✅ Démarrage automatique</span></p>
+        <p>→ Activer : <span class="step-action">✅ Démarrage secondaire</span></p>
+        <p>→ Activer : <span class="step-action">✅ Exécution en arrière-plan</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 3 — Verrouiller en mémoire</h4>
+        <p>→ Ouvrir la vue <em>« Applications récentes »</em></p>
+        <p>→ Tirer RunCrew vers le bas</p>
+        <p>→ <span class="step-action">Cadenas apparaît (verrouillé en mémoire)</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 4 — Autoriser les notifications</h4>
+        <p class="step-path">Paramètres → Notifications → RunCrew</p>
+        <p>→ Activer <span class="step-action">TOUTES les catégories</span></p>
+        <p>→ Priorité : <span class="step-action">Élevée</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 3 — Xiaomi / Redmi / Poco -->
+    <h2 id="s3">3. <span class="brand-emoji">🇨🇳</span> Xiaomi / Redmi / Poco (MIUI / HyperOS)</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Autorisations en arrière-plan</h4>
+        <p class="step-path">Paramètres → Applications → Gérer les applications → RunCrew</p>
+        <p>→ Batterie et performance</p>
+        <p>→ Sélectionner <span class="step-action">« Pas de restrictions »</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Démarrage automatique</h4>
+        <p class="step-path">Paramètres → Applications → Autorisations → Démarrage automatique</p>
+        <p>→ <span class="step-action">Activer pour RunCrew</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 3 — Verrouillage en mémoire</h4>
+        <p>→ Ouvrir la vue <em>« Applications récentes »</em></p>
+        <p>→ Tirer RunCrew vers le bas</p>
+        <p>→ <span class="step-action">Icône cadenas apparaît</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 4 — Notifications prioritaires</h4>
+        <p class="step-path">Paramètres → Notifications et centre de contrôle → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser les notifications</span></p>
+        <p>→ Notifications importantes : <span class="step-action">activer</span></p>
+        <p>→ Afficher sur écran verrouillé : <span class="step-action">activer</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 5 — Économie d'énergie</h4>
+        <p class="step-path">Paramètres → Batterie → Économie de batterie → RunCrew</p>
+        <p>→ <span class="step-action">Aucune restriction</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 4 — OnePlus -->
+    <h2 id="s4">4. <span class="brand-emoji">🇨🇳</span> OnePlus (OxygenOS)</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Optimisation batterie</h4>
+        <p class="step-path">Paramètres → Batterie → Optimisation de la batterie</p>
+        <p>→ RunCrew → <span class="step-action">Ne pas optimiser</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Applications récentes</h4>
+        <p class="step-path">Paramètres → Batterie → Applications récentes en arrière-plan</p>
+        <p>→ Personnaliser pour RunCrew</p>
+        <p>→ <span class="step-action">Autoriser l'exécution</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 3 — Démarrage automatique</h4>
+        <p class="step-path">Paramètres → Applications → Gestion des applications → RunCrew</p>
+        <p>→ Démarrage automatique → <span class="step-action">Activer</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 4 — Verrouillage en mémoire</h4>
+        <p>→ Vue applications récentes</p>
+        <p>→ <span class="step-action">Icône verrou sur RunCrew</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 5 — Oppo / Realme -->
+    <h2 id="s5">5. <span class="brand-emoji">🇨🇳</span> Oppo / Realme (ColorOS)</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Économie d'énergie</h4>
+        <p class="step-path">Paramètres → Batterie → Consommation d'énergie de l'application → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser l'exécution en arrière-plan</span></p>
+        <p>→ <span class="step-action">Autoriser les notifications push d'arrière-plan</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Démarrage automatique</h4>
+        <p class="step-path">Paramètres → Gestion des applications → Démarrage automatique</p>
+        <p>→ <span class="step-action">Activer pour RunCrew</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 3 — Verrouillage</h4>
+        <p>→ Vue applications récentes</p>
+        <p>→ <span class="step-action">Cadenas sur RunCrew</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 6 — Vivo -->
+    <h2 id="s6">6. <span class="brand-emoji">🇨🇳</span> Vivo (FunTouch OS / OriginOS)</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Batterie</h4>
+        <p class="step-path">Paramètres → Batterie → Consommation en arrière-plan → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Démarrage automatique</h4>
+        <p class="step-path">iManager → Gestion des applications → Démarrage automatique</p>
+        <p>→ <span class="step-action">Activer pour RunCrew</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 3 — Notifications</h4>
+        <p class="step-path">Paramètres → Notifications et barre d'état → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser toutes les catégories</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 7 — Meizu -->
+    <h2 id="s7">7. <span class="brand-emoji">🇨🇳</span> Meizu (Flyme OS)</h2>
+
+    <div class="brand-section">
+      <h3>Configuration recommandée</h3>
+
+      <div class="step-block">
+        <h4>Étape 1 — Économie d'énergie</h4>
+        <p class="step-path">Paramètres → Batterie → Économie d'énergie → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser en arrière-plan</span></p>
+      </div>
+
+      <div class="step-block">
+        <h4>Étape 2 — Notifications</h4>
+        <p class="step-path">Paramètres → Notifications → RunCrew</p>
+        <p>→ <span class="step-action">Autoriser toutes les notifications</span></p>
+      </div>
+    </div>
+
+    <!-- SECTION 8 — Vérification -->
+    <h2 id="s8">8. 🔍 Vérification rapide</h2>
+    <p>Après avoir appliqué les réglages pour votre constructeur, effectuez les tests suivants :</p>
+
+    <div class="test-card">
+      <h4>Test 1 — Notifications</h4>
+      <ol>
+        <li>Fermez complètement RunCrew (swipe up)</li>
+        <li>Attendez 5 minutes</li>
+        <li>Demandez à un ami de vous envoyer un message via son crew</li>
+        <li>La notification doit arriver dans les 30 secondes</li>
+      </ol>
+    </div>
+
+    <div class="test-card">
+      <h4>Test 2 — SOS</h4>
+      <ol>
+        <li>Fermez complètement RunCrew</li>
+        <li>Rouvrez et lancez une session test</li>
+        <li>Activez le SOS (test)</li>
+        <li>Vérifiez que vos supporters reçoivent l'alerte</li>
+      </ol>
+    </div>
+
+    <div class="test-card">
+      <h4>Test 3 — GPS en arrière-plan</h4>
+      <ol>
+        <li>Lancez une session RunCrew</li>
+        <li>Verrouillez votre téléphone</li>
+        <li>Marchez pendant 5 minutes</li>
+        <li>Le tracé doit être continu (pas de trou)</li>
+      </ol>
+    </div>
+
+    <div class="success-box">
+      <p>Si les 3 tests sont réussis, votre téléphone est correctement configuré pour RunCrew ! ✅</p>
+    </div>
+
+    <!-- SECTION 9 — Dépannage -->
+    <h2 id="s9">9. ❌ Si ça ne fonctionne toujours pas</h2>
+    <p>Si malgré ces réglages RunCrew reste peu fiable :</p>
+    <ul>
+      <li><strong>Redémarrez</strong> votre téléphone après configuration</li>
+      <li>Vérifiez que <strong>Android est à jour</strong></li>
+      <li>Vérifiez que <strong>RunCrew est à jour</strong> sur Google Play</li>
+      <li>Contactez notre support : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+    </ul>
+
+    <!-- SECTION 10 — Sécurité -->
+    <h2 id="s10">10. 🚨 Rappel de sécurité essentiel</h2>
+    <div class="danger-box">
+      <p>Même après configuration parfaite, <strong>RunCrew ne peut jamais garantir à 100%</strong> la réception des notifications sur les téléphones à politique batterie restrictive.</p>
+      <p><strong>En cas d'urgence vitale, composez toujours :</strong></p>
+      <p>📞 <strong>15</strong> — SAMU</p>
+      <p>📞 <strong>18</strong> — Pompiers</p>
+      <p>📞 <strong>112</strong> — Numéro européen d'urgence</p>
+      <p>📞 <strong>911</strong> — USA / Canada</p>
+      <p><strong>Ne vous reposez JAMAIS uniquement sur la fonction SOS de RunCrew.</strong></p>
+    </div>
+
+    <!-- SECTION 11 — Documents -->
+    <h2 id="s11">11. 📚 Documents associés</h2>
+    <div class="docs-grid">
+      <a href="privacy.html">🔒 Politique de Confidentialité</a>
+      <a href="cgu.html">📋 Conditions Générales d'Utilisation</a>
+      <a href="mentions-legales.html">⚖️ Mentions Légales</a>
+      <a href="suppression-compte.html">🗑️ Suppression de compte</a>
+    </div>
+
+    <div class="contact-block">
+      <h3>Besoin d'aide ?</h3>
+      <p style="margin-bottom: 10px; color: var(--muted);">Contactez-nous pour toute question ou difficulté :</p>
+      <p><a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://www.runcrew.fr" style="color: var(--accent); text-decoration: none;">https://www.runcrew.fr</a></p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
+      <em>Dernière mise à jour : 19 août 2026 — Version 1.0</em>
+    </p>
+  </div>
+
+  <footer>
+    <p>RunCrew — Courir entouré, même en solitaire.</p>
+    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgu.html">CGU</a></p>
+  </footer>
+
+</body>
+</html>

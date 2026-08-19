@@ -117,6 +117,18 @@
       margin-bottom: 30px;
     }
 
+    .version-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(140, 255, 59, 0.1);
+      border: 1px solid rgba(140, 255, 59, 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
     .intro {
       background: var(--card);
       border: 1px solid var(--border);
@@ -243,6 +255,40 @@
       margin-bottom: 0;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--bg-alt);
+      color: var(--accent);
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
     .contact-block {
       background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
       border: 1px solid rgba(140, 255, 59, 0.3);
@@ -267,6 +313,14 @@
 
     .contact-block a:hover { text-decoration: underline; }
 
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
     footer {
       padding: 40px 20px;
       border-top: 1px solid var(--border);
@@ -286,6 +340,8 @@
       h3 { font-size: 1.05rem; }
       .container { margin: 30px auto; }
       .info-grid { grid-template-columns: 1fr; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 10px 12px; }
     }
   </style>
 </head>
@@ -297,166 +353,375 @@
   </nav>
 
   <div class="container">
-    <span class="updated">Dernière mise à jour : 12 août 2026</span>
-    <h1>Supprimer mon compte RunCrew</h1>
+    <span class="updated">Dernière mise à jour : 19 août 2026</span>
+    <h1>Supprimer mon compte RunCrew<span class="version-badge">V2.0</span></h1>
 
     <div class="intro">
-      <p>Vous souhaitez supprimer votre compte RunCrew et toutes vos données personnelles ? Cette page vous explique <strong>comment procéder simplement et rapidement</strong>, conformément au Règlement Général sur la Protection des Données (RGPD Article 17 — Droit à l'effacement).</p>
+      <p>Cette page explique comment supprimer votre compte RunCrew et vos données personnelles, conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong> et aux exigences de <strong>Google Play</strong>. Chez RunCrew, nous respectons votre droit à contrôler vos données. La suppression de votre compte est <strong>simple, immédiate et gratuite</strong>.</p>
     </div>
 
-    <h2>1. Suppression depuis l'application (recommandé)</h2>
+    <!-- SECTION 1 -->
+    <h2>1. Comment supprimer votre compte entièrement</h2>
 
-    <p>La méthode la plus simple pour supprimer votre compte est de le faire directement depuis l'application RunCrew.</p>
-
+    <h3>Option 1 — Depuis l'application (recommandé)</h3>
     <div class="steps">
       <ol>
-        <li>Ouvrez l'application RunCrew sur votre téléphone</li>
-        <li>Accédez à <strong>Paramètres</strong> (icône en haut à droite de l'écran d'accueil)</li>
-        <li>Descendez jusqu'à la section <strong>📱 APP</strong></li>
-        <li>Cliquez sur <strong>Supprimer mon compte</strong> (bouton rouge dans la zone de danger)</li>
-        <li>Lisez attentivement l'avertissement et cliquez sur <strong>Continuer</strong></li>
-        <li>Confirmez en tapant le mot <strong>SUPPRIMER</strong> dans le champ prévu</li>
-        <li>Cliquez sur <strong>SUPPRIMER</strong> pour valider définitivement</li>
+        <li>Ouvrez l'application <strong>RunCrew</strong> sur votre téléphone</li>
+        <li>Rendez-vous dans <strong>Paramètres</strong> (icône en haut à droite)</li>
+        <li>Ouvrez la section <strong>Application</strong></li>
+        <li>Sélectionnez <strong>« Supprimer mon compte »</strong></li>
+        <li>Lisez attentivement l'avertissement affiché</li>
+        <li>Saisissez le mot <strong>« SUPPRIMER »</strong> dans le champ de confirmation</li>
+        <li>Confirmez la suppression</li>
+      </ol>
+    </div>
+    <div class="success-box">
+      <p>Un traitement automatique se déclenche et supprime immédiatement toutes vos données.</p>
+    </div>
+
+    <h3>Option 2 — Par email</h3>
+    <p>Si vous ne pouvez plus accéder à l'application (téléphone perdu, désinstallation, etc.), vous pouvez demander la suppression de votre compte par email :</p>
+    <div class="info-card">
+      <ul>
+        <li><strong>Adresse</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
+        <li><strong>Objet</strong> : Demande de suppression de compte RunCrew</li>
+        <li><strong>Contenu</strong> : Votre adresse email utilisée pour vous inscrire + la déclaration : <em>« Je demande la suppression de mon compte RunCrew et de l'ensemble de mes données personnelles »</em></li>
+        <li><strong>Délai de traitement</strong> : sous 30 jours maximum (généralement sous 72 heures ouvrées)</li>
+      </ul>
+    </div>
+    <p>Vous recevrez une confirmation par email une fois la suppression effectuée.</p>
+
+    <!-- SECTION 2 -->
+    <h2>2. Suppression de données spécifiques (sans supprimer le compte)</h2>
+    <p>Si vous souhaitez supprimer certaines données sans supprimer votre compte, plusieurs options sont disponibles directement dans l'application :</p>
+
+    <h3>Supprimer une session individuelle</h3>
+    <p>Une session correspond à une activité sportive enregistrée (course à pied, vélo ou randonnée).</p>
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application RunCrew</li>
+        <li>Accédez à votre <strong>historique de sessions</strong></li>
+        <li>Ouvrez la session concernée</li>
+        <li>Menu (icône ⋮) → <strong>Supprimer</strong></li>
+      </ol>
+    </div>
+    <div class="success-box">
+      <p>La session et toutes les données associées (tracé GPS, splits, analyse IA, métriques estimées) sont supprimées immédiatement.</p>
+    </div>
+
+    <h3>Supprimer une paire de chaussures</h3>
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application RunCrew</li>
+        <li>Rendez-vous dans <strong>Chaussures</strong></li>
+        <li>Sélectionnez la paire concernée</li>
+        <li>Menu (icône ⋮) → <strong>Supprimer</strong></li>
       </ol>
     </div>
 
-    <div class="warning-box">
-      <p><strong>⚠️ Attention</strong> : La suppression est <strong>immédiate, définitive et irréversible</strong>. Aucune récupération ne sera possible après validation.</p>
-    </div>
-
-    <h2>2. Suppression par email</h2>
-
-    <p>Si vous ne pouvez pas accéder à l'application, vous pouvez demander la suppression de votre compte par email.</p>
-
+    <h3>Quitter un crew (en tant que supporter)</h3>
     <div class="steps">
       <ol>
-        <li>Envoyez un email à <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
-        <li>Objet : <strong>Demande de suppression de compte RGPD</strong></li>
-        <li>Précisez l'adresse email associée à votre compte RunCrew</li>
-        <li>Nous procéderons à la suppression sous <strong>48 heures maximum</strong></li>
-        <li>Vous recevrez un email de confirmation une fois la suppression effectuée</li>
+        <li>Ouvrez l'application RunCrew</li>
+        <li>Rendez-vous dans la section <strong>Crew</strong> ou <strong>Coureurs suivis</strong></li>
+        <li>Sélectionnez le crew concerné</li>
+        <li><strong>Quitter ce crew</strong></li>
       </ol>
     </div>
 
-    <h2>3. Ce qui est supprimé</h2>
+    <h3>Retirer un supporter (en tant que coureur)</h3>
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application RunCrew</li>
+        <li>Rendez-vous dans <strong>Mon crew</strong></li>
+        <li>Sélectionnez le supporter à retirer</li>
+        <li><strong>Retirer du crew</strong></li>
+      </ol>
+    </div>
+    <p>Cette action est bidirectionnelle et immédiate.</p>
 
-    <p>Lorsque vous supprimez votre compte, un traitement serveur automatique effectue les opérations suivantes en <strong>7 étapes atomiques</strong> :</p>
+    <h3>Supprimer votre photo de profil</h3>
+    <div class="steps">
+      <ol>
+        <li>Paramètres → Profil</li>
+        <li>Appuyez sur votre photo de profil</li>
+        <li>Sélectionnez <strong>Supprimer la photo</strong></li>
+      </ol>
+    </div>
 
+    <h3>Modifier ou supprimer votre prénom / nom d'affichage</h3>
+    <div class="steps">
+      <ol>
+        <li>Paramètres → Profil</li>
+        <li>Modifiez ou effacez le champ concerné</li>
+        <li>Enregistrez</li>
+      </ol>
+    </div>
+
+    <h3>Désactiver les métriques de santé estimées</h3>
+    <div class="steps">
+      <ol>
+        <li>Paramètres → Application</li>
+        <li>Section <strong>Intelligence artificielle et métriques</strong></li>
+        <li>Désactivez <strong>« Métriques de santé estimées »</strong></li>
+      </ol>
+    </div>
+    <p>Les métriques ne seront plus affichées ni calculées. Les données existantes seront masquées.</p>
+
+    <h3>Désactiver l'intelligence artificielle</h3>
+    <div class="steps">
+      <ol>
+        <li>Paramètres → Application</li>
+        <li>Section <strong>Intelligence artificielle et métriques</strong></li>
+        <li>Désactivez <strong>« Analyses IA »</strong></li>
+      </ol>
+    </div>
+    <p>Aucun nouvel appel à OpenAI ne sera effectué.</p>
+
+    <!-- SECTION 3 -->
+    <h2>3. Ce qui est supprimé lors de la suppression du compte</h2>
+    <p>Lorsque vous supprimez votre compte, un traitement automatique côté serveur (Cloud Function) supprime intégralement les données suivantes :</p>
+
+    <h3>Données supprimées définitivement</h3>
     <div class="info-grid">
       <div class="info-item">
         <strong>PROFIL</strong>
-        <p>Nom, email, préférences, photo de profil, consentements RGPD</p>
+        <p>Email, prénom, photo, préférences, consentements RGPD</p>
       </div>
       <div class="info-item">
-        <strong>COURSES</strong>
-        <p>Historique complet, tracés GPS, splits, ressentis, analyses IA</p>
+        <strong>SESSIONS</strong>
+        <p>Historique complet (course à pied, vélo, randonnée), tracés GPS, splits, métriques estimées</p>
+      </div>
+      <div class="info-item">
+        <strong>ANALYSES IA</strong>
+        <p>Toutes les analyses générées par intelligence artificielle</p>
       </div>
       <div class="info-item">
         <strong>CHAUSSURES</strong>
         <p>Toutes vos paires et historique kilométrique</p>
       </div>
       <div class="info-item">
-        <strong>BADGES</strong>
-        <p>Tous vos badges gagnés et progression</p>
-      </div>
-      <div class="info-item">
-        <strong>CREW</strong>
-        <p>Retrait bidirectionnel de tous les crews auxquels vous apparteniez</p>
+        <strong>BADGES & OBJECTIFS</strong>
+        <p>Badges, récompenses, objectifs personnels et streaks</p>
       </div>
       <div class="info-item">
         <strong>SESSIONS ACTIVES</strong>
-        <p>Session en cours et alertes SOS actives immédiatement effacées</p>
+        <p>Positions live en cours et alertes SOS actives immédiatement effacées</p>
       </div>
       <div class="info-item">
-        <strong>STORAGE</strong>
-        <p>Photo de profil et fichiers associés supprimés du stockage</p>
+        <strong>CREW & INVITATIONS</strong>
+        <p>Codes d'invitation générés, relations crew dans les deux sens</p>
       </div>
       <div class="info-item">
         <strong>COMPTE FIREBASE</strong>
-        <p>Votre compte d'authentification est intégralement supprimé</p>
+        <p>Token FCM, consentements horodatés, compte d'authentification Firebase</p>
       </div>
     </div>
 
-    <div class="danger-box">
-      <p>La suppression est <strong>immédiate, définitive et irréversible</strong>. Aucune donnée orpheline n'est conservée sur nos serveurs.</p>
-    </div>
-
-    <h2>4. Ce qui est anonymisé (et non supprimé)</h2>
-
-    <p>Pour préserver l'intégrité historique des événements auxquels vous avez participé, votre nom est <strong>anonymisé</strong> dans les classements passés :</p>
-
+    <h3>Retrait des relations crew</h3>
     <div class="success-box">
-      <p>Votre nom est remplacé par « <strong>Utilisateur supprimé</strong> » dans les classements des événements auxquels vous avez participé. Aucune donnée personnelle identifiable n'est conservée dans ces classements.</p>
+      <p>✅ Vous êtes <strong>retiré de tous les crews</strong> où vous étiez supporter</p>
+      <p>✅ Les supporters de votre crew sont <strong>détachés</strong> de vous</p>
+      <p>✅ Cette action est effectuée <strong>dans les deux sens</strong> de manière atomique</p>
     </div>
 
-    <p>Cette approche respecte l'équilibre RGPD entre votre droit à l'effacement et l'intégrité des données historiques des autres participants.</p>
+    <h3>Données anonymisées (conservées sans identification)</h3>
+    <p>Certaines données historiques sont <strong>anonymisées</strong> au lieu d'être supprimées, afin de préserver l'intégrité des événements auxquels vous avez participé :</p>
+    <div class="success-box">
+      <p>Votre nom est remplacé par <strong>« Utilisateur supprimé »</strong> dans les classements des événements passés. Votre temps et classement sont conservés pour ne pas altérer les résultats des autres participants. Aucune donnée personnelle identifiable ne subsiste.</p>
+    </div>
 
-    <h2>5. Suppression de données spécifiques (sans supprimer le compte)</h2>
+    <h3>Ce qui n'est PAS conservé</h3>
+    <div class="danger-box">
+      <p>❌ Aucun email</p>
+      <p>❌ Aucun identifiant technique lié à vous</p>
+      <p>❌ Aucune photo</p>
+      <p>❌ Aucune donnée GPS</p>
+      <p>❌ Aucune métrique santé estimée</p>
+      <p>❌ Aucune analyse IA</p>
+      <p>❌ Aucune donnée de compte</p>
+    </div>
 
-    <p>Si vous ne souhaitez pas supprimer votre compte entièrement, vous pouvez supprimer certaines données de manière ciblée :</p>
-
-    <h3>Supprimer une course</h3>
-    <p>Historique → Sélectionnez la course → Menu ⋮ → <strong>Supprimer</strong></p>
-
-    <h3>Retirer une paire de chaussures</h3>
-    <p>Paramètres → Mes chaussures → Sélectionnez la paire → <strong>Supprimer</strong></p>
-
-    <h3>Quitter un crew</h3>
-    <p>Crew → Onglet « Je supporte » → Options → <strong>Ne plus supporter</strong></p>
-
-    <h3>Retirer un supporter de votre crew</h3>
-    <p>Crew → Onglet « Mes supporters » → Options → <strong>Retirer du crew</strong></p>
-
-    <h3>Supprimer votre photo de profil</h3>
-    <p>Paramètres → Profil → <strong>Supprimer la photo</strong></p>
-
-    <h3>Désactiver le partage de statistiques avec votre crew</h3>
-    <p>Paramètres → Crew & Confidentialité → <strong>Désactiver le partage</strong></p>
-
-    <h2>6. Délais de suppression</h2>
-
+    <!-- SECTION 4 -->
+    <h2>4. Délais de suppression</h2>
     <div class="info-grid">
       <div class="info-item">
         <strong>SUPPRESSION APP</strong>
-        <p>Immédiate — dès validation de la double confirmation</p>
+        <p>Immédiate et irréversible dès confirmation dans l'application</p>
       </div>
       <div class="info-item">
         <strong>SUPPRESSION EMAIL</strong>
-        <p>48 heures maximum après réception de votre demande</p>
+        <p>30 jours maximum (généralement sous 72 heures ouvrées)</p>
       </div>
       <div class="info-item">
         <strong>MESSAGES VOCAUX</strong>
         <p>Auto-supprimés après 24h (règle de cycle de vie Storage)</p>
       </div>
       <div class="info-item">
-        <strong>CLASSEMENTS ÉVÉNEMENTS</strong>
-        <p>Nom anonymisé immédiatement, données conservées 2 ans max</p>
+        <strong>SAUVEGARDES TECHNIQUES</strong>
+        <p>Écrasement automatique sous 30 jours maximum</p>
       </div>
     </div>
 
-    <h2>7. Récapitulatif de vos droits RGPD</h2>
+    <div class="warning-box">
+      <p><strong>Sauvegardes techniques</strong> : Nos serveurs (Firebase / Google Cloud) effectuent des sauvegardes techniques standards. Vos données peuvent subsister dans ces sauvegardes pendant <strong>une durée maximale de 30 jours</strong> avant leur écrasement automatique. Ces sauvegardes ne sont pas accessibles à des fins opérationnelles.</p>
+    </div>
 
-    <p>La suppression de compte n'est qu'un de vos droits garantis par le RGPD. Vous disposez également des droits suivants :</p>
-
+    <!-- SECTION 5 -->
+    <h2>5. Que se passe-t-il si vous vous réinscrivez ?</h2>
+    <p>Si vous supprimez votre compte puis vous réinscrivez avec la même adresse email, vous serez traité comme un <strong>nouvel utilisateur</strong> :</p>
     <ul>
-      <li><strong>Droit d'accès (Art. 15)</strong> : Consulter vos données à tout moment dans l'application</li>
-      <li><strong>Droit de rectification (Art. 16)</strong> : Modifier vos données de profil</li>
-      <li><strong>Droit à l'effacement (Art. 17)</strong> : Cette page décrit ce droit</li>
-      <li><strong>Droit à la portabilité (Art. 20)</strong> : Télécharger l'ensemble de vos données au format ZIP (Paramètres → App → Télécharger mes données)</li>
-      <li><strong>Droit d'opposition (Art. 21)</strong> : Mode incognito, désactivation partages</li>
-      <li><strong>Droit à la limitation (Art. 18)</strong> : Nous contacter par email</li>
+      <li>Un nouvel identifiant utilisateur (UID) vous sera attribué</li>
+      <li>Aucune donnée précédente ne pourra être restaurée</li>
+      <li>Vous devrez ré-accepter la Politique de Confidentialité et les CGU</li>
+      <li>Vous devrez re-confirmer votre âge (16 ans minimum)</li>
+      <li>Vous devrez re-consentir aux métriques santé estimées</li>
+      <li>Vous devrez re-valider le disclaimer SOS</li>
+      <li>Vous devrez re-lire le guide de fonctionnement</li>
     </ul>
+    <div class="success-box">
+      <p>Cette architecture garantit que <strong>votre nouveau consentement est valide et documenté</strong>, conformément aux exigences RGPD.</p>
+    </div>
 
-    <p>Pour plus d'informations : <a class="link" href="privacy.html">Consultez notre Politique de Confidentialité</a></p>
+    <!-- SECTION 6 -->
+    <h2>6. Suppression de votre abonnement Premium</h2>
+    <div class="warning-box">
+      <p><strong>⚠️ Important</strong> : Si vous êtes abonné à <strong>RunCrew Premium</strong>, la suppression de votre compte RunCrew <strong>n'annule pas automatiquement</strong> votre abonnement Google Play. Vous devez résilier votre abonnement séparément.</p>
+    </div>
 
+    <h3>Depuis Google Play Store</h3>
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application <strong>Google Play Store</strong></li>
+        <li>Menu → <strong>Abonnements</strong></li>
+        <li>Sélectionnez <strong>RunCrew Premium</strong></li>
+        <li>Cliquez sur <strong>« Résilier l'abonnement »</strong></li>
+      </ol>
+    </div>
+
+    <h3>Depuis un navigateur web</h3>
+    <div class="steps">
+      <ol>
+        <li>Rendez-vous sur <a class="link" href="https://play.google.com/store/account/subscriptions" target="_blank">https://play.google.com/store/account/subscriptions</a></li>
+        <li>Sélectionnez <strong>RunCrew Premium</strong></li>
+        <li>Cliquez sur <strong>« Résilier »</strong></li>
+      </ol>
+    </div>
+    <p>Pour plus de détails sur la résiliation et le remboursement, consultez nos <a class="link" href="cgv.html">Conditions Générales de Vente</a>.</p>
+
+    <!-- SECTION 7 -->
+    <h2>7. Télécharger vos données avant suppression</h2>
+    <p>Avant de supprimer votre compte, vous pouvez télécharger l'ensemble de vos données personnelles au format standard (droit à la portabilité — RGPD Article 20).</p>
+
+    <h3>Comment demander l'export de vos données</h3>
+    <div class="steps">
+      <ol>
+        <li>Ouvrez l'application RunCrew</li>
+        <li>Rendez-vous dans <strong>Paramètres → Application</strong></li>
+        <li>Sélectionnez <strong>« Télécharger mes données »</strong></li>
+        <li>Confirmez votre demande</li>
+      </ol>
+    </div>
+
+    <h3>Ce que contient l'archive</h3>
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>PROFIL</strong>
+        <p>Profil complet au format JSON</p>
+      </div>
+      <div class="info-item">
+        <strong>SESSIONS</strong>
+        <p>Historique complet avec métadonnées JSON détaillées</p>
+      </div>
+      <div class="info-item">
+        <strong>FICHIERS GPX</strong>
+        <p>Un fichier par session, compatibles Strava, Garmin, Komoot, Google Earth</p>
+      </div>
+      <div class="info-item">
+        <strong>MÉTRIQUES SANTÉ</strong>
+        <p>Métriques santé estimées au format JSON structuré</p>
+      </div>
+      <div class="info-item">
+        <strong>ÉQUIPEMENTS & SOCIAL</strong>
+        <p>Chaussures, crews, supporters, badges</p>
+      </div>
+      <div class="info-item">
+        <strong>CONSENTEMENTS</strong>
+        <p>Consentements horodatés + fichier README.txt avec vos droits RGPD</p>
+      </div>
+    </div>
+
+    <div class="success-box">
+      <p>Vous recevrez automatiquement un email contenant un <strong>lien de téléchargement sécurisé valable 48 heures</strong>. Passé ce délai, le lien expire et le fichier est automatiquement supprimé de nos serveurs.</p>
+    </div>
+
+    <!-- SECTION 8 -->
+    <h2>8. Vos droits RGPD</h2>
+    <p>En complément du droit à l'effacement, vous disposez des droits suivants sur vos données personnelles :</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Droit</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Droit d'accès (Art. 15)</td>
+          <td>Consulter les données que nous détenons sur vous</td>
+        </tr>
+        <tr>
+          <td>Droit de rectification (Art. 16)</td>
+          <td>Modifier vos données depuis l'application</td>
+        </tr>
+        <tr>
+          <td>Droit à l'effacement (Art. 17)</td>
+          <td>Supprimer votre compte (cette page)</td>
+        </tr>
+        <tr>
+          <td>Droit à la portabilité (Art. 20)</td>
+          <td>Télécharger vos données (voir section 7)</td>
+        </tr>
+        <tr>
+          <td>Droit d'opposition (Art. 21)</td>
+          <td>Refuser certains traitements (mode incognito, désactivation IA, désactivation métriques santé)</td>
+        </tr>
+        <tr>
+          <td>Droit à la limitation (Art. 18)</td>
+          <td>Limiter le traitement de certaines données</td>
+        </tr>
+        <tr>
+          <td>Droit de retirer le consentement</td>
+          <td>À tout moment, y compris pour les métriques santé estimées</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Pour plus de détails, consultez notre <a class="link" href="privacy.html">Politique de Confidentialité</a>.</p>
+
+    <!-- SECTION 9 -->
+    <h2>9. Réclamation</h2>
+    <p>Si vous estimez que vos droits n'ont pas été respectés, vous pouvez introduire une réclamation auprès de la <strong>Commission Nationale de l'Informatique et des Libertés (CNIL)</strong> :</p>
+    <div class="info-card">
+      <ul>
+        <li><strong>Site web</strong> : <a class="link" href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a></li>
+        <li><strong>Adresse</strong> : 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07</li>
+        <li><strong>Téléphone</strong> : 01 53 73 22 22</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 10 -->
+    <h2>10. Contact</h2>
     <div class="contact-block">
       <h3>Besoin d'aide ?</h3>
-      <p>Contactez-nous à</p>
+      <p>Nous répondons sous <strong>72 heures ouvrées</strong> en moyenne.</p>
       <p><a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
+      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://www.runcrew.fr" style="color: var(--accent); text-decoration: none;">https://www.runcrew.fr</a></p>
     </div>
 
     <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 12 août 2026</em>
+      <em>Dernière mise à jour : 19 août 2026 — Version 2.0</em>
     </p>
   </div>
 

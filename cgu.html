@@ -293,11 +293,11 @@
   </nav>
 
   <div class="container">
-    <span class="updated">Dernière mise à jour : 12 août 2026</span>
-    <h1>Conditions Générales d'Utilisation<span class="version-badge">V1.0</span></h1>
+    <span class="updated">Dernière mise à jour : 19 août 2026</span>
+    <h1>Conditions Générales d'Utilisation<span class="version-badge">V2.0</span></h1>
 
     <div class="intro">
-      <p>Les présentes Conditions Générales d'Utilisation (ci-après « <strong>CGU</strong> ») ont pour objet de définir les modalités et conditions dans lesquelles l'utilisateur (ci-après « l'<strong>Utilisateur</strong> ») peut accéder et utiliser l'application mobile RunCrew et le site www.runcrew.fr (ci-après « le <strong>Service</strong> »), édités par <strong>ARRAGAIN Tony (RunCrew)</strong>, micro-entreprise, dont le siège social est situé 131 Avenue de Verdun, 83600 Fréjus (ci-après « l'<strong>Éditeur</strong> »).</p>
+      <p>Les présentes Conditions Générales d'Utilisation (ci-après « <strong>CGU</strong> ») ont pour objet de définir les modalités et conditions dans lesquelles l'utilisateur (ci-après « l'<strong>Utilisateur</strong> ») peut accéder et utiliser l'application mobile RunCrew et le site www.runcrew.fr (ci-après « le <strong>Service</strong> »), édités par <strong>ARRAGAIN Tony (RunCrew)</strong>, micro-entreprise, dont le siège social est situé <strong>Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</strong> (ci-après « l'<strong>Éditeur</strong> »).</p>
     </div>
 
     <p>L'utilisation du Service implique l'acceptation pleine, entière et sans réserve des présentes CGU.</p>
@@ -311,43 +311,50 @@
         <li><a href="#s4">Description du Service</a></li>
         <li><a href="#s5">Système Crew et partage de position</a></li>
         <li><a href="#s6">Bouton SOS — Avertissement essentiel</a></li>
-        <li><a href="#s7">Intelligence Artificielle</a></li>
-        <li><a href="#s8">Obligations de l'Utilisateur</a></li>
-        <li><a href="#s9">Contenus publiés par l'Utilisateur</a></li>
-        <li><a href="#s10">Propriété intellectuelle</a></li>
-        <li><a href="#s11">Données personnelles</a></li>
-        <li><a href="#s12">Suspension et résiliation</a></li>
-        <li><a href="#s13">Responsabilité de l'Éditeur</a></li>
-        <li><a href="#s14">Droit applicable et juridiction</a></li>
-        <li><a href="#s15">Médiation de la consommation</a></li>
-        <li><a href="#s16">Dispositions diverses</a></li>
-        <li><a href="#s17">Contact</a></li>
+        <li><a href="#s7">Métriques de santé estimées</a></li>
+        <li><a href="#s8">Compatibilité et Limitations Techniques</a></li>
+        <li><a href="#s9">Intelligence Artificielle</a></li>
+        <li><a href="#s10">Obligations de l'Utilisateur</a></li>
+        <li><a href="#s11">Contenus publiés par l'Utilisateur</a></li>
+        <li><a href="#s12">Propriété intellectuelle</a></li>
+        <li><a href="#s13">Données personnelles</a></li>
+        <li><a href="#s14">Suspension et résiliation</a></li>
+        <li><a href="#s15">Responsabilité de l'Éditeur</a></li>
+        <li><a href="#s16">Droit applicable et juridiction</a></li>
+        <li><a href="#s17">Médiation de la consommation</a></li>
+        <li><a href="#s18">Dispositions diverses</a></li>
+        <li><a href="#s19">Contact</a></li>
       </ol>
     </div>
 
+    <!-- SECTION 1 -->
     <h2 id="s1">1. Définitions</h2>
     <ul>
-      <li><strong>Application</strong> : Application mobile RunCrew disponible sur Google Play Store</li>
+      <li><strong>Application</strong> : Application mobile RunCrew disponible sur Google Play Store (package <code>fr.runcrew.app</code>)</li>
       <li><strong>Site</strong> : Site internet accessible à l'adresse www.runcrew.fr</li>
       <li><strong>Service</strong> : Ensemble des fonctionnalités proposées via l'Application et le Site</li>
       <li><strong>Utilisateur</strong> : Toute personne physique disposant d'un compte sur l'Application</li>
       <li><strong>Compte</strong> : Espace personnel de l'Utilisateur créé lors de l'inscription</li>
       <li><strong>Crew</strong> : Groupe d'utilisateurs liés par une invitation, permettant le partage de position en direct</li>
-      <li><strong>Runner</strong> : Utilisateur qui court et partage sa position pendant une course</li>
-      <li><strong>Supporter</strong> : Utilisateur qui suit une course en direct en tant que membre du crew du Runner</li>
+      <li><strong>Coureur / Runner</strong> : Utilisateur qui pratique une activité sportive et partage sa position</li>
+      <li><strong>Supporter</strong> : Utilisateur qui suit une activité en direct en tant que membre du crew du Coureur</li>
+      <li><strong>Session</strong> : Activité sportive trackée (course à pied, vélo ou randonnée)</li>
       <li><strong>Contenu</strong> : Toutes données, informations, textes, images, vidéos ou éléments publiés par les Utilisateurs</li>
       <li><strong>Premium</strong> : Abonnement payant donnant accès à des fonctionnalités avancées</li>
+      <li><strong>Métriques estimées</strong> : Données calculées mathématiquement (fréquence cardiaque, VO2max, puissance, calories)</li>
     </ul>
 
+    <!-- SECTION 2 -->
     <h2 id="s2">2. Acceptation des CGU</h2>
 
     <h3>2.1 Consentement explicite</h3>
     <p>L'inscription au Service nécessite l'acceptation expresse des présentes CGU par le cochage d'une case dédiée lors de l'onboarding. Le bouton d'inscription est techniquement désactivé tant que cette acceptation n'a pas été effectuée.</p>
-    <p>Le consentement est horodaté et associé à la version des CGU en vigueur au moment de l'inscription.</p>
+    <p>Le consentement est horodaté et associé à la version des CGU en vigueur au moment de l'inscription (<code>termsVersion</code>, <code>consentedAt</code>).</p>
 
     <h3>2.2 Modifications des CGU</h3>
     <p>L'Éditeur se réserve le droit de modifier les CGU à tout moment. En cas de modification substantielle, l'Utilisateur en sera informé par notification dans l'Application et devra accepter les nouvelles CGU pour continuer à utiliser le Service.</p>
 
+    <!-- SECTION 3 -->
     <h2 id="s3">3. Conditions d'accès au Service</h2>
 
     <h3>3.1 Âge minimum</h3>
@@ -374,28 +381,42 @@
       <li>Maintenir la confidentialité de son accès</li>
     </ul>
 
+    <!-- SECTION 4 -->
     <h2 id="s4">4. Description du Service</h2>
 
-    <h3>4.1 Fonctionnalités gratuites</h3>
+    <h3>4.1 Activités supportées</h3>
+    <p>RunCrew supporte trois activités sportives :</p>
+    <ul>
+      <li><strong>Course à pied</strong></li>
+      <li><strong>Vélo</strong></li>
+      <li><strong>Randonnée</strong></li>
+    </ul>
+    <p>Chaque activité dispose de métriques et calculs adaptés (coefficients MET, modèles de puissance, calculs de dénivelé spécifiques).</p>
+
+    <h3>4.2 Fonctionnalités gratuites</h3>
     <p>Dans sa version actuelle, l'Utilisateur peut utiliser gratuitement l'ensemble des fonctionnalités suivantes :</p>
     <ul>
-      <li>Tracking GPS de ses courses</li>
-      <li>Historique de ses courses</li>
-      <li>Système de Crew (supporters illimités)</li>
-      <li>Bouton SOS</li>
+      <li>Tracking GPS des sessions sportives (running, vélo, randonnée)</li>
+      <li>Historique complet des sessions</li>
+      <li>Système de Crew avec supporters illimités</li>
+      <li>Bouton SOS d'urgence</li>
       <li>Notifications push</li>
       <li>Mode incognito</li>
+      <li>Métriques estimées (fréquence cardiaque, VO2max, puissance, calories)</li>
+      <li>Analyse IA à la demande</li>
+      <li>Export GPX local</li>
     </ul>
     <div class="info-card">
       <p><strong>Note</strong> : Les présentes CGU seront mises à jour lorsque des limitations seront introduites au lancement de l'abonnement Premium.</p>
     </div>
 
-    <h3>4.2 Fonctionnalités Premium</h3>
-    <p>L'abonnement Premium à 7,99 €/mois donne accès à des fonctionnalités avancées, décrites dans nos <a class="link" href="cgv.html">Conditions Générales de Vente</a>.</p>
+    <h3>4.3 Fonctionnalités Premium (à venir)</h3>
+    <p>L'abonnement Premium à 7,99 €/mois donnera accès à des fonctionnalités avancées, décrites dans les <a class="link" href="cgv.html">Conditions Générales de Vente</a>.</p>
 
-    <h3>4.3 Évolution du Service</h3>
+    <h3>4.4 Évolution du Service</h3>
     <p>L'Éditeur se réserve le droit de faire évoluer le Service, d'ajouter, modifier ou supprimer des fonctionnalités à tout moment, sans que cela puisse ouvrir droit à indemnisation au bénéfice de l'Utilisateur.</p>
 
+    <!-- SECTION 5 -->
     <h2 id="s5">5. Système Crew et partage de position</h2>
 
     <h3>5.1 Fonctionnement du Crew</h3>
@@ -409,18 +430,18 @@
     <h3>5.2 Consentement au partage de position</h3>
     <p>En rejoignant un crew, l'Utilisateur est informé que :</p>
     <ul>
-      <li>Les autres membres du crew peuvent voir sa position en direct pendant ses courses</li>
-      <li>Sa position n'est partagée que pendant les courses actives, jamais en dehors</li>
+      <li>Les autres membres du crew peuvent voir sa position en direct pendant ses sessions</li>
+      <li>Sa position n'est partagée que pendant les sessions actives, jamais en dehors</li>
       <li>Il peut activer le mode incognito à tout moment pour désactiver ce partage</li>
     </ul>
     <div class="success-box">
-      <p><strong>En invitant un supporter dans son crew, l'Utilisateur consent à ce que ce supporter voie sa position live pendant ses courses, sauf activation du mode incognito.</strong></p>
+      <p><strong>En invitant un supporter dans son crew, l'Utilisateur consent à ce que ce supporter voie sa position live pendant ses sessions, sauf activation du mode incognito.</strong></p>
     </div>
 
     <h3>5.3 Mode incognito</h3>
-    <p>L'Utilisateur peut activer le mode incognito avant chaque course. Dans ce mode :</p>
+    <p>L'Utilisateur peut activer le mode incognito avant chaque session. Dans ce mode :</p>
     <ul>
-      <li>Sa course n'est pas partagée avec son crew</li>
+      <li>Sa session n'est pas partagée avec son crew</li>
       <li>Ses supporters ne reçoivent aucune notification de démarrage</li>
       <li>Sa position live n'est accessible à personne</li>
     </ul>
@@ -432,11 +453,24 @@
 
     <h3>5.5 Retrait de membres</h3>
     <ul>
-      <li>Le Runner peut retirer un supporter de son crew à tout moment</li>
-      <li>Un Supporter peut quitter le crew d'un Runner à tout moment</li>
+      <li>Le Coureur peut retirer un supporter de son crew à tout moment</li>
+      <li>Un Supporter peut quitter le crew d'un Coureur à tout moment</li>
       <li>Ces actions sont immédiates et irréversibles</li>
     </ul>
 
+    <h3>5.6 Messages entre membres du Crew</h3>
+    <p>Les Supporters peuvent envoyer au Coureur pendant sa session :</p>
+    <ul>
+      <li>Messages textuels</li>
+      <li>Messages Flash (préformatés)</li>
+      <li>Messages vocaux (10 secondes maximum)</li>
+    </ul>
+    <div class="info-card">
+      <p><strong>Système anti-spam</strong> : Pour préserver la concentration du Coureur, un système de limitation automatique est en place (3 messages/min texte, 2 messages/min vocal, 30 messages max par session).</p>
+    </div>
+    <p>Les messages textuels ne sont pas conservés. Les messages vocaux sont supprimés automatiquement dans les 24 heures.</p>
+
+    <!-- SECTION 6 -->
     <h2 id="s6">6. Bouton SOS — Avertissement essentiel</h2>
     <p>Le bouton SOS envoie une notification urgente aux membres du crew de l'Utilisateur avec sa position GPS exacte.</p>
 
@@ -444,7 +478,7 @@
       <p><strong>⚠️ AVERTISSEMENT IMPORTANT</strong></p>
       <p><strong>Le bouton SOS n'appelle PAS automatiquement les services de secours officiels.</strong></p>
       <p>En cas d'urgence vitale, l'Utilisateur doit impérativement composer :</p>
-      <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)</p>
+      <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)<br>• <strong>911</strong> (États-Unis / Canada)</p>
     </div>
 
     <p>L'Éditeur ne peut en aucun cas être tenu responsable :</p>
@@ -453,18 +487,120 @@
       <li>Du défaut de réception de la notification par les supporters (téléphone éteint, notifications désactivées, absence de réseau, etc.)</li>
       <li>De tout dommage corporel ou matériel résultant d'une situation d'urgence</li>
     </ul>
-    <p>L'Utilisateur reconnaît utiliser le bouton SOS en connaissance de cause et sous sa propre responsabilité.</p>
+    <p>L'Utilisateur reconnaît utiliser le bouton SOS en connaissance de cause et sous sa propre responsabilité, ayant accepté explicitement le disclaimer SOS lors de l'onboarding (<code>sosDisclaimerAccepted</code>).</p>
 
-    <h2 id="s7">7. Intelligence Artificielle</h2>
+    <!-- SECTION 7 -->
+    <h2 id="s7">7. ⚠️ Métriques de santé estimées — Section essentielle</h2>
 
-    <h3>7.1 Nature du service IA</h3>
+    <h3>7.1 Nature des métriques</h3>
+    <p>RunCrew calcule et affiche certaines métriques dites « de santé » :</p>
+    <ul>
+      <li><strong>Fréquence cardiaque estimée</strong> (bpm)</li>
+      <li><strong>Zones d'effort estimées</strong> (1 à 5)</li>
+      <li><strong>Puissance mécanique estimée</strong> (watts)</li>
+      <li><strong>VO2max estimé</strong> (ml/kg/min)</li>
+      <li><strong>Calories brûlées estimées</strong></li>
+    </ul>
+
+    <h3>7.2 Nature strictement ESTIMÉE</h3>
+    <p><strong>Ces métriques sont des ESTIMATIONS MATHÉMATIQUES</strong>, calculées à partir :</p>
+    <ul>
+      <li>De la vitesse GPS en temps réel</li>
+      <li>Du dénivelé positif cumulé</li>
+      <li>Du poids déclaré (si renseigné)</li>
+      <li>De l'âge déclaré</li>
+      <li>Du niveau sportif déclaré</li>
+    </ul>
+    <div class="danger-box">
+      <p><strong>Elles ne sont PAS :</strong></p>
+      <p>• Des mesures issues de capteurs physiologiques réels</p>
+      <p>• Des mesures médicales certifiées</p>
+      <p>• Des diagnostics médicaux</p>
+      <p>• Des données produites par un dispositif médical au sens du Règlement (UE) 2017/745</p>
+    </div>
+
+    <h3>7.3 Positionnement non-médical</h3>
+    <div class="danger-box">
+      <p><strong>RunCrew n'est pas un dispositif médical.</strong> L'application ne peut en aucun cas être utilisée à des fins de :</p>
+      <p>• Diagnostic médical</p>
+      <p>• Suivi médical ou clinique</p>
+      <p>• Détection de pathologies</p>
+      <p>• Prise de décision médicale</p>
+      <p>• Substitution à un professionnel de santé</p>
+    </div>
+    <p>Son usage est <strong>exclusivement sportif et récréatif</strong>. Les métriques calculées sont fournies à titre <strong>informatif et motivationnel</strong> uniquement.</p>
+
+    <h3>7.4 Avertissement médical</h3>
+    <div class="warning-box">
+      <p><strong>Une consultation médicale préalable est fortement recommandée si l'Utilisateur présente :</strong></p>
+      <p>• Une pathologie cardiaque ou de l'arythmie</p>
+      <p>• De l'hypertension artérielle</p>
+      <p>• Un diabète insulino-dépendant</p>
+      <p>• Des antécédents de malaise à l'effort</p>
+      <p>• Un pacemaker ou défibrillateur implanté</p>
+      <p>• Une grossesse</p>
+      <p>• Tout autre problème de santé susceptible de contre-indiquer un effort physique</p>
+    </div>
+    <p>En cas de doute, <strong>l'Utilisateur doit consulter un professionnel de santé qualifié</strong> avant toute utilisation de l'application ou pratique sportive.</p>
+
+    <h3>7.5 Consentement spécifique</h3>
+    <p>L'utilisation des métriques de santé estimées nécessite un <strong>consentement explicite</strong> recueilli lors de l'onboarding via une case à cocher dédiée (<code>healthMetricsAccepted</code>), conforme à l'Article 9.2.a du RGPD.</p>
+    <p>L'Utilisateur peut retirer son consentement à tout moment via les paramètres de l'application.</p>
+
+    <h3>7.6 Décharge de responsabilité</h3>
+    <div class="warning-box">
+      <p>L'Éditeur décline toute responsabilité pour :</p>
+      <p>• Tout préjudice résultant d'une mauvaise interprétation des métriques estimées</p>
+      <p>• Toute décision médicale prise sur la base des métriques</p>
+      <p>• Tout accident de santé survenu pendant ou après l'utilisation de l'application</p>
+      <p>• Tout dépassement des capacités physiques de l'Utilisateur basé sur les métriques estimées</p>
+    </div>
+    <p><strong>L'Utilisateur reste seul responsable de sa pratique sportive et de l'usage qu'il fait des métriques fournies.</strong></p>
+
+    <!-- SECTION 8 -->
+    <h2 id="s8">8. Compatibilité et Limitations Techniques</h2>
+
+    <h3>8.1 Dépendance à l'appareil</h3>
+    <p>L'Utilisateur reconnaît que le fonctionnement optimal de RunCrew dépend de son appareil, notamment de la marque et du modèle du téléphone Android utilisé.</p>
+
+    <h3>8.2 Constructeurs à politique batterie restrictive</h3>
+    <p>Certains constructeurs (notamment <strong>Huawei, Honor, Xiaomi, Redmi, Poco, OnePlus, Oppo, Vivo, Realme, Meizu</strong>) appliquent des politiques d'optimisation batterie agressives qui peuvent :</p>
+    <ul>
+      <li>Retarder ou empêcher la réception des notifications, y compris les alertes SOS</li>
+      <li>Interrompre le suivi GPS en cours de session</li>
+      <li>Fermer l'application en arrière-plan</li>
+      <li>Restreindre les processus en tâche de fond</li>
+    </ul>
+    <p>Ces limitations sont <strong>indépendantes de la volonté et du contrôle de l'Éditeur</strong>. Elles résultent des choix techniques des fabricants d'appareils.</p>
+
+    <h3>8.3 Information de l'Utilisateur</h3>
+    <p>L'Éditeur informe l'Utilisateur de ces limitations via :</p>
+    <ul>
+      <li>Un <strong>modal bloquant</strong> dans l'application au premier lancement pour les appareils concernés</li>
+      <li>Un <strong>guide de compatibilité détaillé</strong> disponible sur <a class="link" href="https://www.runcrew.fr/compatibilite">www.runcrew.fr/compatibilite</a></li>
+      <li>Les présentes Conditions Générales d'Utilisation</li>
+    </ul>
+    <p>L'Utilisateur reconnaît avoir été informé de ces limitations et accepte que la fiabilité du service, en particulier la fonction SOS, puisse varier selon son appareil.</p>
+
+    <h3>8.4 Engagement de l'Utilisateur</h3>
+    <div class="danger-box">
+      <p><strong>En toute circonstance et en cas d'urgence vitale, l'Utilisateur s'engage à composer immédiatement les numéros d'urgence officiels (15 SAMU, 18 Pompiers, 112 en Europe, 911 aux USA/Canada) sans se reposer uniquement sur la fonction SOS de RunCrew.</strong></p>
+    </div>
+
+    <h3>8.5 Décharge de responsabilité</h3>
+    <p>L'Éditeur ne peut être tenu responsable des dommages résultant d'un retard ou d'une non-réception d'alerte SOS liés aux limitations techniques d'un appareil.</p>
+
+    <!-- SECTION 9 -->
+    <h2 id="s9">9. Intelligence Artificielle</h2>
+
+    <h3>9.1 Nature du service IA</h3>
     <p>RunCrew utilise l'intelligence artificielle <strong>OpenAI GPT-4o-mini</strong> pour générer :</p>
     <ul>
-      <li>Des analyses personnalisées de courses (à la demande explicite de l'Utilisateur)</li>
+      <li>Des analyses personnalisées de sessions (à la demande explicite de l'Utilisateur)</li>
       <li>Des bilans de progression (à la demande explicite de l'Utilisateur)</li>
     </ul>
 
-    <h3>7.2 Caractère indicatif</h3>
+    <h3>9.2 Caractère indicatif</h3>
     <div class="warning-box">
       <p><strong>Les commentaires générés par l'IA sont fournis à titre indicatif et motivationnel uniquement.</strong></p>
     </div>
@@ -477,12 +613,13 @@
     </ul>
     <p>L'Utilisateur reste seul responsable de ses choix d'entraînement et de la gestion de son effort. En cas de doute sur sa capacité à pratiquer un effort physique, il doit consulter un professionnel de santé qualifié.</p>
 
-    <h3>7.3 Désactivation</h3>
+    <h3>9.3 Désactivation</h3>
     <p>L'Utilisateur peut désactiver totalement les fonctionnalités d'intelligence artificielle depuis les paramètres de l'Application.</p>
 
-    <h2 id="s8">8. Obligations de l'Utilisateur</h2>
+    <!-- SECTION 10 -->
+    <h2 id="s10">10. Obligations de l'Utilisateur</h2>
 
-    <h3>8.1 Usage conforme</h3>
+    <h3>10.1 Usage conforme</h3>
     <p>L'Utilisateur s'engage à utiliser le Service :</p>
     <ul>
       <li>Conformément aux présentes CGU</li>
@@ -491,7 +628,7 @@
       <li>Sans porter atteinte à l'ordre public</li>
     </ul>
 
-    <h3>8.2 Comportement interdit</h3>
+    <h3>10.2 Comportement interdit</h3>
     <p>Il est strictement interdit à l'Utilisateur :</p>
     <ul>
       <li>D'utiliser le Service à des fins illégales, frauduleuses ou malveillantes</li>
@@ -504,24 +641,28 @@
       <li>De reverse-engineerer, décompiler ou pirater l'Application</li>
       <li>De contourner les mesures de sécurité mises en place</li>
       <li>De revendre ou céder son compte à un tiers</li>
+      <li>De contourner les systèmes anti-spam et rate limiting</li>
     </ul>
 
-    <h3>8.3 Utilisation à des fins sportives</h3>
-    <p>L'Utilisateur pratique le running <strong>sous sa propre responsabilité</strong>. Il s'engage à :</p>
+    <h3>10.3 Utilisation à des fins sportives</h3>
+    <p>L'Utilisateur pratique le sport <strong>sous sa propre responsabilité</strong>. Il s'engage à :</p>
     <ul>
       <li>S'assurer de sa condition physique préalable à toute pratique sportive</li>
-      <li>Respecter le Code de la route lorsqu'il court sur la voie publique</li>
+      <li>Consulter un professionnel de santé en cas de doute médical</li>
+      <li>Respecter le Code de la route lorsqu'il pratique sur la voie publique</li>
       <li>Ne pas mettre en danger sa vie ni celle d'autrui</li>
-      <li>Respecter les zones autorisées à la course (voies publiques, parcs, etc.)</li>
+      <li>Respecter les zones autorisées à la pratique sportive</li>
+      <li>Utiliser un équipement adapté (casque à vélo, équipement de sécurité en randonnée, etc.)</li>
     </ul>
 
-    <h2 id="s9">9. Contenus publiés par l'Utilisateur</h2>
+    <!-- SECTION 11 -->
+    <h2 id="s11">11. Contenus publiés par l'Utilisateur</h2>
 
-    <h3>9.1 Responsabilité</h3>
-    <p>L'Utilisateur est <strong>seul responsable</strong> des contenus qu'il publie dans le Service (nom de crew, nom de course, description d'événement, photo de profil, messages, etc.).</p>
+    <h3>11.1 Responsabilité</h3>
+    <p>L'Utilisateur est <strong>seul responsable</strong> des contenus qu'il publie dans le Service (nom de crew, nom de session, description d'événement, photo de profil, messages, etc.).</p>
     <p>Il garantit détenir tous les droits nécessaires sur ces contenus et s'engage à respecter les droits de propriété intellectuelle et les droits de la personnalité des tiers.</p>
 
-    <h3>9.2 Licence accordée à RunCrew</h3>
+    <h3>11.2 Licence accordée à RunCrew</h3>
     <p>En publiant un contenu dans le Service, l'Utilisateur concède à l'Éditeur une licence :</p>
     <ul>
       <li>Non exclusive</li>
@@ -531,15 +672,15 @@
     </ul>
     <p>Cette licence permet à l'Éditeur d'afficher, reproduire et diffuser le contenu dans le cadre du Service uniquement.</p>
 
-    <h3>9.3 Messages éphémères</h3>
-    <p>Les messages échangés entre membres d'un crew pendant une course sont <strong>éphémères</strong> :</p>
+    <h3>11.3 Messages éphémères</h3>
+    <p>Les messages échangés entre membres d'un crew pendant une session sont <strong>éphémères</strong> :</p>
     <ul>
       <li>Les messages textuels ne sont pas persistés</li>
       <li>Les messages vocaux sont supprimés automatiquement dans les 24 heures</li>
     </ul>
     <p>En raison de cette nature éphémère, l'Éditeur ne peut proposer de fonctionnalité de signalement rétroactif des messages.</p>
 
-    <h3>9.4 Modération</h3>
+    <h3>11.4 Modération</h3>
     <p>L'Éditeur se réserve le droit, sans obligation :</p>
     <ul>
       <li>De modérer, modifier ou supprimer tout contenu contraire aux présentes CGU</li>
@@ -547,13 +688,14 @@
       <li>De coopérer avec les autorités judiciaires en cas de demande légale</li>
     </ul>
 
-    <h2 id="s10">10. Propriété intellectuelle</h2>
+    <!-- SECTION 12 -->
+    <h2 id="s12">12. Propriété intellectuelle</h2>
 
-    <h3>10.1 Droits de l'Éditeur</h3>
-    <p>L'ensemble des éléments composant le Service (marque RunCrew, logo, identité visuelle, textes, interface, code source, base de données, algorithmes, etc.) sont la propriété exclusive de l'Éditeur ou font l'objet d'une autorisation d'utilisation.</p>
+    <h3>12.1 Droits de l'Éditeur</h3>
+    <p>L'ensemble des éléments composant le Service (marque <strong>RunCrew</strong> — déposée à l'INPI en classes 9, 41 et 42 —, logo, identité visuelle, textes, interface, code source, base de données, algorithmes, etc.) sont la propriété exclusive de l'Éditeur ou font l'objet d'une autorisation d'utilisation.</p>
     <p>Toute reproduction, représentation, modification ou exploitation non autorisée est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
 
-    <h3>10.2 Licence d'utilisation</h3>
+    <h3>12.2 Licence d'utilisation</h3>
     <p>L'Éditeur accorde à l'Utilisateur, dans le cadre des présentes CGU, une licence :</p>
     <ul>
       <li>Personnelle</li>
@@ -563,22 +705,25 @@
       <li>Révocable à tout moment en cas de non-respect des CGU</li>
     </ul>
 
-    <h2 id="s11">11. Données personnelles</h2>
+    <!-- SECTION 13 -->
+    <h2 id="s13">13. Données personnelles</h2>
     <p>Le traitement des données personnelles de l'Utilisateur est régi par la <a class="link" href="privacy.html">Politique de Confidentialité</a>, qui fait partie intégrante des présentes CGU.</p>
     <p>L'Utilisateur dispose notamment des droits suivants (RGPD) :</p>
     <ul>
       <li>Droit d'accès à ses données</li>
       <li>Droit de rectification</li>
-      <li>Droit à l'effacement</li>
-      <li>Droit à la portabilité de ses données</li>
+      <li>Droit à l'effacement (suppression cascade complète)</li>
+      <li>Droit à la portabilité de ses données (export ZIP complet)</li>
       <li>Droit d'opposition</li>
       <li>Droit à la limitation du traitement</li>
+      <li>Droit de retirer son consentement (y compris pour les métriques santé estimées)</li>
     </ul>
     <p>Pour exercer ces droits : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a> ou directement depuis les paramètres de l'Application.</p>
 
-    <h2 id="s12">12. Suspension et résiliation</h2>
+    <!-- SECTION 14 -->
+    <h2 id="s14">14. Suspension et résiliation</h2>
 
-    <h3>12.1 Résiliation par l'Utilisateur</h3>
+    <h3>14.1 Résiliation par l'Utilisateur</h3>
     <p>L'Utilisateur peut supprimer son compte à tout moment, sans préavis et sans justification, depuis :</p>
     <p><strong>Paramètres > Application > Supprimer mon compte</strong></p>
     <p>La suppression est immédiate, définitive et irréversible. Elle entraîne :</p>
@@ -586,10 +731,11 @@
       <li>La suppression de l'ensemble des données personnelles</li>
       <li>Le retrait des crews auxquels l'Utilisateur appartenait</li>
       <li>L'anonymisation dans les classements d'événements passés</li>
+      <li>La suppression des métriques santé estimées</li>
     </ul>
     <p>Pour les Utilisateurs abonnés Premium, la résiliation du compte doit être précédée de la résiliation de l'abonnement via Google Play (voir <a class="link" href="cgv.html">CGV</a>).</p>
 
-    <h3>12.2 Suspension ou résiliation par l'Éditeur</h3>
+    <h3>14.2 Suspension ou résiliation par l'Éditeur</h3>
     <p>L'Éditeur se réserve le droit de suspendre ou résilier le compte d'un Utilisateur, sans préavis ni indemnité, en cas de :</p>
     <ul>
       <li>Manquement grave aux présentes CGU</li>
@@ -599,33 +745,38 @@
     </ul>
     <p>Dans ce cas, aucun remboursement de l'abonnement Premium ne sera dû.</p>
 
-    <h2 id="s13">13. Responsabilité de l'Éditeur</h2>
+    <!-- SECTION 15 -->
+    <h2 id="s15">15. Responsabilité de l'Éditeur</h2>
 
-    <h3>13.1 Obligation de moyens</h3>
+    <h3>15.1 Obligation de moyens</h3>
     <p>L'Éditeur s'engage à mettre en œuvre les moyens raisonnables pour assurer le bon fonctionnement du Service. Il est tenu à une <strong>obligation de moyens</strong> et non de résultat.</p>
 
-    <h3>13.2 Limitations de responsabilité</h3>
+    <h3>15.2 Limitations de responsabilité</h3>
     <p>L'Éditeur ne peut être tenu responsable :</p>
     <ul>
       <li>Des dommages résultant de la pratique sportive de l'Utilisateur</li>
-      <li>Des interruptions ou dysfonctionnements du Service, notamment en cas de maintenance, force majeure, défaillance des sous-traitants techniques ou opérateurs télécom</li>
+      <li>Des interruptions ou dysfonctionnements du Service (maintenance, force majeure, défaillance sous-traitants techniques, opérateurs télécom)</li>
       <li>De la perte de données due à une défaillance technique</li>
       <li>Du comportement des autres Utilisateurs</li>
       <li>De la non-intervention des services de secours officiels après déclenchement du bouton SOS</li>
+      <li>Des limitations techniques des appareils Android à politique batterie restrictive (Huawei, Xiaomi, OnePlus, etc.)</li>
       <li>De l'utilisation faite par l'Utilisateur des analyses générées par l'IA</li>
+      <li>De l'interprétation des métriques de santé estimées</li>
       <li>De tout usage détourné du Service par l'Utilisateur ou par un tiers</li>
     </ul>
 
-    <h3>13.3 Force majeure</h3>
+    <h3>15.3 Force majeure</h3>
     <p>L'Éditeur ne peut être tenu responsable en cas d'inexécution due à un cas de force majeure au sens de l'article 1218 du Code civil.</p>
 
-    <h2 id="s14">14. Droit applicable et juridiction</h2>
+    <!-- SECTION 16 -->
+    <h2 id="s16">16. Droit applicable et juridiction</h2>
     <p>Les présentes CGU sont régies par le <strong>droit français</strong>.</p>
     <p>En cas de litige, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire.</p>
     <p>À défaut de résolution amiable, tout litige sera soumis aux tribunaux français compétents.</p>
     <p>Pour les Utilisateurs ayant la qualité de consommateur, conformément à l'article R. 631-3 du Code de la consommation, le tribunal compétent est celui du lieu où le consommateur demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable.</p>
 
-    <h2 id="s15">15. Médiation de la consommation</h2>
+    <!-- SECTION 17 -->
+    <h2 id="s17">17. Médiation de la consommation</h2>
     <p>Conformément aux articles L.611-1 et suivants du Code de la consommation, tout Utilisateur consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige.</p>
     <p>L'Éditeur a désigné la société <strong>MEDICYS</strong> en tant que médiateur de la consommation :</p>
     <div class="info-card">
@@ -633,24 +784,26 @@
         <li><strong>MEDICYS</strong></li>
         <li>Centre de médiation et règlement amiable des huissiers de justice</li>
         <li>73 Boulevard de Clichy, 75009 Paris</li>
-        <li>Site web : <a class="link" href="https://www.medicys.fr" target="_blank">https://www.medicys.fr</a></li>
-        <li>Formulaire de saisine : <a class="link" href="https://app.medicys.fr" target="_blank">https://app.medicys.fr</a></li>
+        <li><strong>Site web</strong> : <a class="link" href="https://www.medicys.fr" target="_blank">https://www.medicys.fr</a></li>
+        <li><strong>Formulaire de saisine</strong> : <a class="link" href="https://app.medicys.fr" target="_blank">https://app.medicys.fr</a></li>
       </ul>
     </div>
     <p>Une plateforme européenne de règlement en ligne des litiges est également accessible à l'adresse : <a class="link" href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
 
-    <h2 id="s16">16. Dispositions diverses</h2>
+    <!-- SECTION 18 -->
+    <h2 id="s18">18. Dispositions diverses</h2>
 
-    <h3>16.1 Nullité partielle</h3>
+    <h3>18.1 Nullité partielle</h3>
     <p>Si l'une des stipulations des présentes CGU était déclarée nulle ou inopposable, les autres stipulations resteraient pleinement applicables.</p>
 
-    <h3>16.2 Non-renonciation</h3>
+    <h3>18.2 Non-renonciation</h3>
     <p>Le fait pour l'Éditeur de ne pas se prévaloir d'un manquement aux CGU ne saurait être interprété comme une renonciation à s'en prévaloir ultérieurement.</p>
 
-    <h3>16.3 Intégralité</h3>
+    <h3>18.3 Intégralité</h3>
     <p>Les présentes CGU constituent l'intégralité de l'accord entre l'Utilisateur et l'Éditeur relatif à l'utilisation du Service.</p>
 
-    <h2 id="s17">17. Contact</h2>
+    <!-- SECTION 19 -->
+    <h2 id="s19">19. Contact</h2>
     <div class="contact-block">
       <h3>Pour toute question relative aux présentes CGU</h3>
       <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
@@ -658,7 +811,7 @@
     </div>
 
     <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 12 août 2026 — Version 1.0</em>
+      <em>Dernière mise à jour : 19 août 2026 — Version 2.0</em>
     </p>
   </div>
 
