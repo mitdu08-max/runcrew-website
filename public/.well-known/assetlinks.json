@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.runcrew.app",
+      "sha256_cert_fingerprints": [
+        "B5:EB:7C:94:73:DE:56:9A:9B:5B:AA:10:B4:C0:57:9C:A8:F9:DF:89:EF:12:B9:E8:EF:63:1A:41:25:B7:42:CD"
+      ]
+    }
+  }
+]
