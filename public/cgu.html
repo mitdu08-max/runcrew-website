@@ -294,7 +294,7 @@
 
   <div class="container">
     <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Conditions Générales d'Utilisation<span class="version-badge">V2.0</span></h1>
+    <h1>Conditions Générales d'Utilisation<span class="version-badge">V2.1</span></h1>
 
     <div class="intro">
       <p>Les présentes Conditions Générales d'Utilisation (ci-après « <strong>CGU</strong> ») ont pour objet de définir les modalités et conditions dans lesquelles l'utilisateur (ci-après « l'<strong>Utilisateur</strong> ») peut accéder et utiliser l'application mobile RunCrew et le site www.runcrew.fr (ci-après « le <strong>Service</strong> »), édités par <strong>ARRAGAIN Tony (Le Petit Dev / RunCrew)</strong>, micro-entreprise (Entrepreneur individuel), immatriculée sous le numéro SIRET <strong>108 765 439 00014</strong>, dont le siège social est situé <strong>Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</strong> (ci-après « l'<strong>Éditeur</strong> »).</p>
@@ -311,7 +311,7 @@
         <li><a href="#s4">Description du Service</a></li>
         <li><a href="#s5">Système Crew et partage de position</a></li>
         <li><a href="#s6">Bouton SOS — Avertissement essentiel</a></li>
-        <li><a href="#s7">Métriques de santé estimées</a></li>
+        <li><a href="#s7">Données physiologiques et cardiaques (Bluetooth & Estimations)</a></li>
         <li><a href="#s8">Compatibilité et Limitations Techniques</a></li>
         <li><a href="#s9">Intelligence Artificielle</a></li>
         <li><a href="#s10">Obligations de l'Utilisateur</a></li>
@@ -341,7 +341,8 @@
       <li><strong>Session</strong> : Activité sportive trackée (course à pied, vélo ou randonnée)</li>
       <li><strong>Contenu</strong> : Toutes données, informations, textes, images, vidéos ou éléments publiés par les Utilisateurs</li>
       <li><strong>Premium</strong> : Abonnement payant donnant accès à des fonctionnalités avancées</li>
-      <li><strong>Métriques estimées</strong> : Données calculées mathématiquement (fréquence cardiaque, VO2max, puissance, calories)</li>
+      <li><strong>Capteur Bluetooth (BLE)</strong> : Accessoire sportif connecté via Bluetooth Low Energy (ceinture pectorale, brassard optique, montre connectée) transmettant la fréquence cardiaque en temps réel</li>
+      <li><strong>Métriques estimées</strong> : Données physiologiques calculées mathématiquement par l'Application en l'absence de capteur Bluetooth connecté</li>
     </ul>
 
     <!-- SECTION 2 -->
@@ -368,6 +369,7 @@
       <li>Une connexion internet</li>
       <li>L'activation du GPS du téléphone</li>
       <li>L'acceptation des permissions nécessaires (localisation, notifications)</li>
+      <li>Le cas échéant, l'activation du Bluetooth pour la connexion aux capteurs cardiaques</li>
     </ul>
 
     <h3>3.3 Compte utilisateur</h3>
@@ -397,6 +399,7 @@
     <p>Dans sa version actuelle, l'Utilisateur peut utiliser gratuitement l'ensemble des fonctionnalités suivantes :</p>
     <ul>
       <li>Tracking GPS des sessions sportives (running, vélo, randonnée)</li>
+      <li>Connexion aux capteurs cardiaques Bluetooth (ceintures, brassards, montres)</li>
       <li>Historique complet des sessions</li>
       <li>Système de Crew avec supporters illimités</li>
       <li>Bouton SOS d'urgence</li>
@@ -486,20 +489,22 @@
     <p>L'Utilisateur reconnaît utiliser le bouton SOS en connaissance de cause et sous sa propre responsabilité, ayant accepté explicitement le disclaimer SOS lors de l'onboarding (<code>sosDisclaimerAccepted</code>).</p>
 
     <!-- SECTION 7 -->
-    <h2 id="s7">7. ⚠️ Métriques de santé estimées — Section essentielle</h2>
+    <h2 id="s7">7. 🫀 Données physiologiques et cardiaques (Bluetooth & Estimations) — Section essentielle</h2>
 
-    <h3>7.1 Nature des métriques</h3>
-    <p>RunCrew calcule et affiche certaines métriques dites « de santé » :</p>
+    <h3>7.1 Deux modes de fonctionnement</h3>
+    <p>RunCrew propose deux manières distinctes de traiter la fréquence cardiaque et les métriques physiologiques de l'Utilisateur :</p>
+
+    <h4>Mode A — Capteur Bluetooth Low Energy (Mesure réelle)</h4>
+    <p>L'Utilisateur peut appairer un capteur cardiaque externe compatible Bluetooth Low Energy (BLE) avec l'Application. Les équipements pris en charge incluent notamment :</p>
     <ul>
-      <li><strong>Fréquence cardiaque estimée</strong> (bpm)</li>
-      <li><strong>Zones d'effort estimées</strong> (1 à 5)</li>
-      <li><strong>Puissance mécanique estimée</strong> (watts)</li>
-      <li><strong>VO2max estimé</strong> (ml/kg/min)</li>
-      <li><strong>Calories brûlées estimées</strong></li>
+      <li><strong>Ceintures pectorales</strong> (ex : Polar H10, Garmin HRM-Pro, Wahoo TICKR, Coospo)</li>
+      <li><strong>Brassards optiques</strong> (ex : Polar Verity Sense, Wahoo TICKR FIT)</li>
+      <li><strong>Montres connectées</strong> diffusant la fréquence cardiaque via BLE (ex : Garmin, Polar, Suunto, COROS)</li>
     </ul>
+    <p>Dans ce mode, la fréquence cardiaque affichée et enregistrée est la <strong>mesure réelle transmise par le capteur</strong> de l'Utilisateur. Les données brutes proviennent exclusivement du capteur et ne sont pas altérées par l'Application.</p>
 
-    <h3>7.2 Nature strictement ESTIMÉE</h3>
-    <p><strong>Ces métriques sont des ESTIMATIONS MATHÉMATIQUES</strong>, calculées à partir :</p>
+    <h4>Mode B — Estimation mathématique (Sans capteur connecté)</h4>
+    <p>En l'absence de capteur Bluetooth appairé, RunCrew calcule une <strong>estimation mathématique</strong> de la fréquence cardiaque et des métriques associées à partir :</p>
     <ul>
       <li>De la vitesse GPS en temps réel</li>
       <li>Du dénivelé positif cumulé</li>
@@ -507,24 +512,30 @@
       <li>De l'âge déclaré</li>
       <li>Du niveau sportif déclaré</li>
     </ul>
-    <div class="danger-box">
-      <p><strong>Elles ne sont PAS :</strong></p>
-      <p>• Des mesures issues de capteurs physiologiques réels</p>
-      <p>• Des mesures médicales certifiées</p>
-      <p>• Des diagnostics médicaux</p>
-      <p>• Des données produites par un dispositif médical au sens du Règlement (UE) 2017/745</p>
-    </div>
+    <p>Les métriques estimées comprennent : fréquence cardiaque estimée (bpm), zones d'effort estimées (1 à 5, formule Karvonen), puissance mécanique estimée (watts), VO2max estimé (ml/kg/min, formule Cooper adaptée) et calories brûlées estimées (méthode MET).</p>
+    <p>En mode estimation, toutes les valeurs sont précédées du symbole <code>~</code> ou de la mention « Estimé » dans l'interface.</p>
 
-    <h3>7.3 Positionnement non-médical</h3>
+    <h3>7.2 Permissions Bluetooth Android</h3>
+    <p>Pour permettre la connexion aux capteurs cardiaques, l'Application sollicite les autorisations Bluetooth du système Android (<code>BLUETOOTH_SCAN</code>, <code>BLUETOOTH_CONNECT</code>). Ces permissions sont utilisées <strong>exclusivement</strong> pour :</p>
+    <ul>
+      <li>Détecter les capteurs cardiaques BLE à proximité</li>
+      <li>Établir une connexion locale avec le capteur choisi par l'Utilisateur</li>
+      <li>Recevoir les données de fréquence cardiaque en temps réel pendant une session</li>
+    </ul>
+    <p>RunCrew n'utilise <strong>pas</strong> le Bluetooth à des fins de géolocalisation par balises, de suivi publicitaire ou de collecte de données tierces. L'Utilisateur peut déconnecter ou oublier un capteur à tout moment depuis les paramètres de l'Application.</p>
+
+    <h3>7.3 Positionnement strictement NON MÉDICAL</h3>
     <div class="danger-box">
-      <p><strong>RunCrew n'est pas un dispositif médical.</strong> L'application ne peut en aucun cas être utilisée à des fins de :</p>
-      <p>• Diagnostic médical</p>
-      <p>• Suivi médical ou clinique</p>
-      <p>• Détection de pathologies</p>
-      <p>• Prise de décision médicale</p>
-      <p>• Substitution à un professionnel de santé</p>
+      <p><strong>⚠️ AVERTISSEMENT ESSENTIEL — QUEL QUE SOIT LE MODE UTILISÉ (BLUETOOTH OU ESTIMATION) :</strong></p>
+      <p><strong>RunCrew n'est PAS un dispositif médical</strong> au sens du Règlement (UE) 2017/745 relatif aux dispositifs médicaux.</p>
+      <p>L'Application ne peut en aucun cas être utilisée à des fins de :</p>
+      <p>• Diagnostic médical ou cardiologique</p>
+      <p>• Détection d'arythmies, de fibrillations ou de pathologies cardiaques</p>
+      <p>• Suivi médical ou clinique post-opératoire</p>
+      <p>• Substitution à un électrocardiogramme (ECG) ou un test d'effort médical</p>
+      <p>• Prise de décision thérapeutique ou médicamenteuse</p>
     </div>
-    <p>Son usage est <strong>exclusivement sportif et récréatif</strong>. Les métriques calculées sont fournies à titre <strong>informatif et motivationnel</strong> uniquement.</p>
+    <p>Même lorsque la fréquence cardiaque est mesurée par un capteur Bluetooth grand public (ceinture, brassard, montre), ces équipements ne sont <strong>pas des dispositifs médicaux certifiés</strong>. Les données affichées restent destinées à un usage <strong>exclusivement sportif, récréatif et motivationnel</strong>.</p>
 
     <h3>7.4 Avertissement médical</h3>
     <div class="warning-box">
@@ -540,30 +551,32 @@
     <p>En cas de doute, <strong>l'Utilisateur doit consulter un professionnel de santé qualifié</strong> avant toute utilisation de l'application ou pratique sportive.</p>
 
     <h3>7.5 Consentement spécifique</h3>
-    <p>L'utilisation des métriques de santé estimées nécessite un <strong>consentement explicite</strong> recueilli lors de l'onboarding via une case à cocher dédiée (<code>healthMetricsAccepted</code>), conforme à l'Article 9.2.a du RGPD.</p>
-    <p>L'Utilisateur peut retirer son consentement à tout moment via les paramètres de l'application.</p>
+    <p>Le traitement des données relatives à la fréquence cardiaque (qu'elles soient mesurées par capteur Bluetooth ou estimées mathématiquement) repose sur le <strong>consentement explicite</strong> de l'Utilisateur, recueilli lors de l'onboarding via une case à cocher dédiée (<code>healthMetricsAccepted</code>), conforme à l'Article 9.2.a du RGPD.</p>
+    <p>L'Utilisateur peut retirer son consentement à tout moment via les paramètres de l'Application, ce qui désactivera l'affichage et le calcul de toutes les métriques physiologiques.</p>
 
     <h3>7.6 Décharge de responsabilité</h3>
     <div class="warning-box">
       <p>L'Éditeur décline toute responsabilité pour :</p>
-      <p>• Tout préjudice résultant d'une mauvaise interprétation des métriques estimées</p>
-      <p>• Toute décision médicale prise sur la base des métriques</p>
+      <p>• Tout préjudice résultant d'une mauvaise interprétation des métriques (mesurées ou estimées)</p>
+      <p>• Toute décision médicale prise sur la base des données affichées</p>
       <p>• Tout accident de santé survenu pendant ou après l'utilisation de l'application</p>
-      <p>• Tout dépassement des capacités physiques de l'Utilisateur basé sur les métriques estimées</p>
+      <p>• Tout dépassement des capacités physiques de l'Utilisateur basé sur les métriques cardiaques</p>
+      <p>• Toute inexactitude des mesures transmises par un capteur Bluetooth tiers (défaut de calibration, pile faible, mauvais positionnement du capteur, interférences)</p>
     </div>
-    <p><strong>L'Utilisateur reste seul responsable de sa pratique sportive et de l'usage qu'il fait des métriques fournies.</strong></p>
+    <p><strong>L'Utilisateur reste seul responsable de sa pratique sportive et de l'usage qu'il fait des données physiologiques fournies par l'Application ou par son capteur Bluetooth.</strong></p>
 
     <!-- SECTION 8 -->
     <h2 id="s8">8. Compatibilité et Limitations Techniques</h2>
 
     <h3>8.1 Dépendance à l'appareil</h3>
-    <p>L'Utilisateur reconnaît que le fonctionnement optimal de RunCrew d'un appareil, notamment de la marque et du modèle du téléphone Android utilisé.</p>
+    <p>L'Utilisateur reconnaît que le fonctionnement optimal de RunCrew dépend de son appareil, notamment de la marque et du modèle du téléphone Android utilisé.</p>
 
     <h3>8.2 Constructeurs à politique batterie restrictive</h3>
     <p>Certains constructeurs (notamment <strong>Huawei, Honor, Xiaomi, Redmi, Poco, OnePlus, Oppo, Vivo, Realme, Meizu</strong>) appliquent des politiques d'optimisation batterie agressives qui peuvent :</p>
     <ul>
       <li>Retarder ou empêcher la réception des notifications, y compris les alertes SOS</li>
       <li>Interrompre le suivi GPS en cours de session</li>
+      <li>Couper la connexion Bluetooth aux capteurs cardiaques en arrière-plan</li>
       <li>Fermer l'application en arrière-plan</li>
       <li>Restreindre les processus en tâche de fond</li>
     </ul>
@@ -576,7 +589,7 @@
       <li>Un <strong>guide de compatibilité détaillé</strong> disponible sur <a class="link" href="https://www.runcrew.fr/compatibilite">www.runcrew.fr/compatibilite</a></li>
       <li>Les présentes Conditions Générales d'Utilisation</li>
     </ul>
-    <p>L'Utilisateur reconnaît avoir été informé de ces limitations et accepte que la fiabilité du service, en particulier la fonction SOS, puisse varier selon son appareil.</p>
+    <p>L'Utilisateur reconnaît avoir été informé de ces limitations et accepte que la fiabilité du service, en particulier la fonction SOS et la connexion Bluetooth aux capteurs, puisse varier selon son appareil.</p>
 
     <h3>8.4 Engagement de l'Utilisateur</h3>
     <div class="danger-box">
@@ -584,7 +597,7 @@
     </div>
 
     <h3>8.5 Décharge de responsabilité</h3>
-    <p>L'Éditeur ne peut être tenu responsable des dommages résultant d'un retard ou d'une non-réception d'alerte SOS liés aux limitations techniques d'un appareil.</p>
+    <p>L'Éditeur ne peut être tenu responsable des dommages résultant d'un retard ou d'une non-réception d'alerte SOS, ni d'une interruption de la connexion Bluetooth au capteur cardiaque, liés aux limitations techniques d'un appareil.</p>
 
     <!-- SECTION 9 -->
     <h2 id="s9">9. Intelligence Artificielle</h2>
@@ -712,7 +725,7 @@
       <li>Droit à la portabilité de ses données (export ZIP complet)</li>
       <li>Droit d'opposition</li>
       <li>Droit à la limitation du traitement</li>
-      <li>Droit de retirer son consentement (y compris pour les métriques santé estimées)</li>
+      <li>Droit de retirer son consentement (y compris pour les données cardiaques Bluetooth et les métriques estimées)</li>
     </ul>
     <p>Pour exercer ces droits : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a> ou directement depuis les paramètres de l'Application.</p>
 
@@ -727,7 +740,7 @@
       <li>La suppression de l'ensemble des données personnelles</li>
       <li>Le retrait des crews auxquels l'Utilisateur appartenait</li>
       <li>L'anonymisation dans les classements d'événements passés</li>
-      <li>La suppression des métriques santé estimées</li>
+      <li>La suppression des données cardiaques (Bluetooth et estimées) et des métriques de santé</li>
     </ul>
     <p>Pour les Utilisateurs abonnés Premium, la résiliation du compte doit être précédée de la résiliation de l'abonnement via Google Play (voir <a class="link" href="cgv.html">CGV</a>).</p>
 
@@ -757,7 +770,8 @@
       <li>De la non-intervention des services de secours officiels après déclenchement du bouton SOS</li>
       <li>Des limitations techniques des appareils Android à politique batterie restrictive (Huawei, Xiaomi, OnePlus, etc.)</li>
       <li>De l'utilisation faite par l'Utilisateur des analyses générées par l'IA</li>
-      <li>De l'interprétation des métriques de santé estimées</li>
+      <li>De l'interprétation des données cardiaques (mesurées par capteur Bluetooth ou estimées)</li>
+      <li>Des inexactitudes des mesures transmises par un capteur Bluetooth tiers</li>
       <li>De tout usage détourné du Service par l'Utilisateur ou par un tiers</li>
     </ul>
 
@@ -807,7 +821,7 @@
     </div>
 
     <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 2.0</em>
+      <em>Dernière mise à jour : 19 août 2026 — Version 2.1</em>
     </p>
   </div>
 
