@@ -960,7 +960,8 @@
     .founder-tag strong {
       color: var(--accent);
     }
-        /* ===== PARTNERS ===== */
+    
+    /* ===== PARTNERS ===== */
     .partners-section {
       padding: 120px 20px;
       background: var(--bg-alt);
@@ -1061,6 +1062,7 @@
       .partner-card { min-height: 100px; padding: 20px 15px; }
       .partner-name { font-size: 1rem; }
     }
+
     /* ===== FAQ ===== */
     .faq-section {
       padding: 120px 20px;
@@ -1145,7 +1147,7 @@
     }
 
     .faq-item.open .faq-answer {
-      max-height: 300px;
+      max-height: 350px;
       padding: 0 30px 25px;
     }
 
@@ -1162,6 +1164,7 @@
       .faq-question h3 { font-size: 0.95rem; }
       .faq-item.open .faq-answer { padding: 0 20px 20px; }
     }
+
     /* ===== SÉCURITÉ ===== */
     .security-section {
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
@@ -1298,54 +1301,6 @@
       font-weight: 700;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 60px 20px 30px;
-      border-top: 1px solid var(--border);
-      background: var(--bg);
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer-brand img { height: 50px; margin-bottom: 20px; }
-    .footer-brand p { font-size: 0.95rem; margin-top: 10px; }
-
-    footer h4 {
-      color: var(--text);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    footer ul { list-style: none; }
-    footer li { margin-bottom: 10px; }
-
-    footer a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    footer a:hover { color: var(--accent); }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding-top: 30px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       nav { padding: 15px 20px; }
@@ -1366,7 +1321,6 @@
       .cinematic-stage { height: 70vh; width: 98vw; }
 
       .waitlist-form { flex-direction: column; }
-      .footer-inner { grid-template-columns: 1fr; text-align: center; }
 
       .skip-btn { top: 15px; right: 15px; padding: 8px 15px; font-size: 0.75rem; }
 
@@ -1512,12 +1466,12 @@
       <div class="step reveal">
         <div class="step-number">1</div>
         <h3>Prépare ta course</h3>
-        <p>Choisis ton programme, ton parcours GPX ou pars en libre. Configure ton crew de supporters.</p>
+        <p>Choisis ton parcours GPX ou pars en libre. Configure ton crew de supporters et apparie tes accessoires de santé si nécessaire.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">2</div>
         <h3>Cours en direct</h3>
-        <p>Ton crew te suit en temps réel sur une carte. Ils voient ta position, ton allure, ta distance.</p>
+        <p>Ton crew te suit en temps réel sur une carte. Ils voient ta position, ton allure, ta distance et ta fréquence cardiaque Bluetooth.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">3</div>
@@ -1537,8 +1491,8 @@
     <div class="features">
       <div class="card reveal" onclick="openModal('live-tracking')">
         <div class="card-icon">📡</div>
-        <h3>Live Tracking</h3>
-        <p>Ton crew te suit en temps réel sur une carte pendant que tu cours.</p>
+        <h3>Live Tracking & BLE</h3>
+        <p>Ton crew te suit en temps réel sur une carte pendant que tu cours avec tes capteurs Bluetooth.</p>
       </div>
       <div class="card reveal" onclick="openModal('encouragements')">
         <div class="card-icon">💬</div>
@@ -1627,7 +1581,8 @@
       </div>
     </div>
   </section>
-    <!-- PARTNERS -->
+
+  <!-- PARTNERS -->
   <section id="partners" class="partners-section">
     <div class="partners-inner reveal">
       <div class="partners-badge">
@@ -1676,6 +1631,7 @@
       </p>
     </div>
   </section>
+
   <!-- FAQ -->
   <section id="faq" class="faq-section">
     <div class="faq-header reveal">
@@ -1700,7 +1656,9 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Pour les runners, RunCrew est proposée via un abonnement raisonnable qui permet de faire vivre le projet indépendamment, sans publicité ni revente de données. En revanche, pour tes supporters (famille, amis), l'application est 100% gratuite. Ils peuvent te suivre en direct sans aucun frais.</p>
+          <p>RunCrew propose deux formules pour s'adapter à tes besoins : <br><br>
+             • <strong>L'Offre Gratuite</strong> : te permet d'enregistrer <strong>une (1) session sportive par semaine</strong> tout en profitant des fonctionnalités clés (live tracking, bouton SOS).<br><br>
+             • <strong>L'Abonnement Premium (6,99 €/mois)</strong> : débloque l'entièreté de l'application (sessions illimitées, appairage de vos ceintures/montres connectées Bluetooth, analyses IA poussées et illimitées, statistiques avancées). L'abonnement démarre par une <strong>première semaine d'essai gratuite (7 jours)</strong> et est résiliable sans frais à tout moment. L'application reste 100% gratuite pour tes supporters (qui te suivent en live).</p>
         </div>
       </div>
 
@@ -1720,7 +1678,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Tu invites tes proches à devenir tes supporters via un code unique. Pendant ta course, ils accèdent à une carte en temps réel où ils voient ta position, ta distance et ton allure. Ils peuvent aussi t'envoyer des messages d'encouragement en direct.</p>
+          <p>Tu invites tes proches à devenir tes supporters via un code unique à 6 chiffres. Pendant ta course, ils accèdent à une carte interactive en temps réel où ils voient ta position exacte, ta distance, ton allure et tes données cardiaques Bluetooth.</p>
         </div>
       </div>
 
@@ -1730,7 +1688,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Absolument. Tes données ne sont jamais vendues à des tiers. Elles sont stockées sur des serveurs sécurisés (Firebase / Google Cloud) et tu gardes le contrôle total sur ta vie privée. Consulte notre politique de confidentialité pour plus de détails.</p>
+          <p>Absolument. Tes données ne sont jamais vendues à des tiers et sont hébergées de manière ultra-sécurisée au sein de l'Union Européenne (Belgique - Firebase / Google Cloud). Tu disposes également d'un bouton de suppression totale de compte directement dans l'application. Consulte notre politique de confidentialité pour plus de détails.</p>
         </div>
       </div>
 
@@ -1756,15 +1714,16 @@
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <h3>Comment contacter le créateur ?</h3>
+          <h3>Comment connecter mes capteurs de fréquence cardiaque ?</h3>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Tony (le créateur) est directement joignable à runcrew.app@gmail.com. Feedback, questions, suggestions, partenariats : tout est bienvenu. RunCrew reste un projet à taille humaine où chaque avis compte.</p>
+          <p>RunCrew intègre la technologie Bluetooth BLE (Bluetooth Low Energy). Tu peux connecter ta ceinture pectorale (ex: Polar, Garmin), ton brassard optique ou ta montre de sport compatible directement depuis l'écran de préparation de séance de l'application, afin d'enregistrer de véritables données cardiaques.</p>
         </div>
       </div>
     </div>
   </section>
+
   <!-- SÉCURITÉ -->
   <section id="security" class="security-section">
     <div class="security-inner reveal">
@@ -1861,48 +1820,126 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="runcrew-logo.png" alt="RunCrew">
-        <p>Courir entouré, même en solitaire.</p>
+  <!-- ENGAGEMENTS ÉCO-RESPONSABLES -->
+  <section style="max-width: 900px; margin: 80px auto 0 auto; padding: 0 20px;">
+    <div style="background: linear-gradient(135deg, rgba(140, 255, 59, 0.06), rgba(0, 230, 118, 0.03)); border: 1px solid rgba(140, 255, 59, 0.2); border-radius: 24px; padding: 40px 32px;">
+      
+      <div style="text-align: center; margin-bottom: 28px;">
+        <span style="font-size: 40px;">🌱</span>
+        <h2 style="color: #8CFF3B; font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; margin: 12px 0 8px 0;">NOS ENGAGEMENTS ÉCO-RESPONSABLES</h2>
+        <p style="color: #8A99A8; font-size: 0.95rem; max-width: 500px; margin: 0 auto; line-height: 1.6;">RunCrew limite volontairement son empreinte environnementale numérique.</p>
       </div>
-      <div>
-        <h4>Produit</h4>
-        <ul>
-          <li><a href="#concept">Concept</a></li>
-          <li><a href="#features">Fonctionnalités</a></li>
-          <li><a href="#security">Sécurité</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Ressources</h4>
-        <ul>
-          <li><a href="#waitlist">Rejoindre</a></li>
-          <li><a href="mailto:runcrew.app@gmail.com">Contact</a></li>
-          <li><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew">Beta privée</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <ul>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="privacy.html">Confidentialité</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Suivre</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">Twitter / X</a></li>
-        </ul>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+        
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">🇪🇺</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Serveurs en Europe</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Hébergement Belgique (europe-west1) — moins de transit réseau international</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">🚫</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Zéro tracker publicitaire</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Aucun analytics tiers envahissant, aucune revente de données</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">🧹</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Nettoyage automatique</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Événements supprimés après 7 jours — messages vocaux après 24h</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">📱</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Export 100% local</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Les fichiers GPX sont générés sur ton téléphone — aucun serveur sollicité</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">🤖</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">IA à la demande</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Les analyses IA ne se déclenchent que si tu le demandes — jamais automatiquement</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
+          <span style="font-size: 20px; margin-top: 2px;">💚</span>
+          <div>
+            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Chaque octet compte</p>
+            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Moins de données stockées = moins d'énergie consommée par nos serveurs</p>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2026 RunCrew — Fièrement Made in France 🇫🇷 — runcrew.fr
+  </section>
+
+  <!-- MASTER FOOTER UNIQUE & CONFORME -->
+  <footer style="background: #0B0F14; border-top: 1px solid #1E2730; padding: 60px 20px 40px 20px; margin-top: 100px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Top Grid: Brand + Links -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <div style="grid-column: span 2;">
+          <img src="runcrew-logo.png" alt="RunCrew" style="height: 50px; margin-bottom: 15px;">
+          <p style="color: #EAF1F8; font-size: 0.95rem; font-weight: 600;">RunCrew · Le Petit Dev</p>
+          <p style="color: #8A99A8; font-size: 0.85rem; margin-top: 5px;">Courir entouré, même en solitaire. Un projet français et 100% indépendant.</p>
+        </div>
+        <div>
+          <h4 style="color: #EAF1F8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Produit</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 8px;"><a href="#concept" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Concept</a></li>
+            <li style="margin-bottom: 8px;"><a href="#features" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Fonctionnalités</a></li>
+            <li style="margin-bottom: 8px;"><a href="#security" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Sécurité</a></li>
+            <li style="margin-bottom: 8px;"><a href="#faq" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #EAF1F8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Ressources</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 8px;"><a href="#waitlist" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Rejoindre la liste</a></li>
+            <li style="margin-bottom: 8px;"><a href="mailto:runcrew.app@gmail.com" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Contact Email</a></li>
+            <li style="margin-bottom: 8px;"><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Beta privée</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #EAF1F8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Réseaux</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 8px;"><a href="#" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Instagram</a></li>
+            <li style="margin-bottom: 8px;"><a href="#" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Links: Legal (Conforme V2.2) -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 24px 0; border-top: 1px solid #1E2730; border-bottom: 1px solid #1E2730; margin-bottom: 24px;">
+        <a href="privacy.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Politique de confidentialité</a>
+        <a href="mentions-legales.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Mentions légales</a>
+        <a href="cgu.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">CGU</a>
+        <a href="cgv.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">CGV Premium</a>
+        <a href="suppression-compte.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Supprimer mon compte</a>
+      </div>
+
+      <!-- Bottom Credits -->
+      <div style="text-align: center;">
+        <p style="color: #8A99A8; font-size: 0.85rem; margin-bottom: 8px;">
+          SIRET : 108 765 439 00014 · Siège : Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France
+        </p>
+        <p style="color: #555; font-size: 0.8rem;">
+          © 2026 RunCrew — Tous droits réservés. Développé avec passion et exigence dans le Var 🇫🇷
+        </p>
+      </div>
+
     </div>
   </footer>
 
@@ -1976,7 +2013,7 @@
     if (alreadySeen) {
       revealTeaser();
     } else {
-      // Après la cinématique (3.5s) → forcer scroll en haut + lancer le teaser
+      // Après la cinématique (3.5s) → lancer le teaser
       setTimeout(() => {
         window.scrollTo(0, 0);
         revealTeaser();
@@ -1987,14 +2024,14 @@
     const modalData = {
       'live-tracking': {
         icon: '📡',
-        subtitle: 'Tracking en temps réel',
-        title: 'Ton crew voit chacune de tes foulées',
-        description: 'Grâce au GPS haute précision, ta position est partagée en direct avec ton crew. Ils voient ton parcours se dessiner sur la carte pendant que tu cours, ton allure évoluer, ta distance progresser.',
+        subtitle: 'Live Tracking & Bluetooth',
+        title: 'Ton crew voit ton parcours et tes constantes en direct',
+        description: 'Grâce au GPS haute précision et à la technologie Bluetooth BLE intégrée, ta position et ton rythme cardiaque réel sont partagés en live avec ton crew d\'urgence et tes proches.',
         features: [
-          'Position GPS mise à jour en temps réel',
-          'Carte interactive Mapbox premium',
-          'Visualisation du parcours tracé',
-          'Aucune limite de temps ou de distance'
+          'Position de course fluide sur cartes interactives Mapbox',
+          'Connexion aux ceintures, brassards et montres Bluetooth',
+          'Rendu des données cardiaques en direct pour tes supporters',
+          'Retrait ou oubli des accessoires BLE d\'un simple clic'
         ]
       },
       'encouragements': {
@@ -2093,6 +2130,7 @@
         document.body.style.overflow = '';
       }
     });
+
     // ===== FAQ ACCORDÉON =====
     function toggleFaq(item) {
       const isOpen = item.classList.contains('open');
@@ -2101,6 +2139,7 @@
       // Ouvre celle cliquée si elle n'était pas déjà ouverte
       if (!isOpen) item.classList.add('open');
     }
+
     // ===== COMPTEUR WAITLIST DYNAMIQUE =====
     function getWaitlistCount() {
       const startDate = new Date('2026-08-09T00:00:00');
@@ -2206,107 +2245,6 @@
       }
     });
   </script>
-
-  <!-- ═══════════════════════════════════════════════════
-       🌱 SECTION ÉCO-RESPONSABLE
-       ═══════════════════════════════════════════════════ -->
-  <section style="max-width: 900px; margin: 80px auto 0 auto; padding: 0 20px;">
-    <div style="background: linear-gradient(135deg, rgba(140, 255, 59, 0.06), rgba(0, 230, 118, 0.03)); border: 1px solid rgba(140, 255, 59, 0.2); border-radius: 24px; padding: 40px 32px;">
-      
-      <div style="text-align: center; margin-bottom: 28px;">
-        <span style="font-size: 40px;">🌱</span>
-        <h2 style="color: #8CFF3B; font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; margin: 12px 0 8px 0;">NOS ENGAGEMENTS ÉCO-RESPONSABLES</h2>
-        <p style="color: #8A99A8; font-size: 0.95rem; max-width: 500px; margin: 0 auto; line-height: 1.6;">RunCrew limite volontairement son empreinte environnementale numérique.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
-        
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">🇪🇺</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Serveurs en Europe</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Hébergement Belgique — moins de transit réseau international</p>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">🚫</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Zéro tracker publicitaire</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Aucun analytics tiers, aucune publicité, aucun tracking</p>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">🧹</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Nettoyage automatique</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Événements supprimés après 7 jours — messages vocaux après 24h</p>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">📱</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Export 100% local</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Les fichiers GPX sont générés sur ton téléphone — aucun serveur sollicité</p>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">🤖</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">IA à la demande</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Les analyses IA ne se déclenchent que si tu appuies — jamais automatiquement</p>
-          </div>
-        </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.06);">
-          <span style="font-size: 20px; margin-top: 2px;">💚</span>
-          <div>
-            <p style="color: #EAF1F8; font-size: 0.9rem; font-weight: 600; margin: 0 0 4px 0;">Chaque octet compte</p>
-            <p style="color: #8A99A8; font-size: 0.8rem; margin: 0; line-height: 1.5;">Moins de données stockées = moins de CO2 émis par nos infrastructures cloud</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       FOOTER JURIDIQUE — Ajouté 12 août 2026
-       ═══════════════════════════════════════════════════ -->
-  <footer style="background: #0B0F14; border-top: 1px solid #1E2730; padding: 60px 20px 40px 20px; margin-top: 100px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      
-      <!-- Logo + Slogan -->
-      <div style="text-align: center; margin-bottom: 40px;">
-        <img src="runcrew-logo.png" alt="RunCrew" style="height: 50px; margin-bottom: 12px;">
-        <p style="color: #EAF1F8; font-size: 1rem; font-weight: 600; margin-bottom: 4px;">RunCrew</p>
-        <p style="color: #8A99A8; font-size: 0.85rem; letter-spacing: 1px;">Courir entouré, même en solitaire</p>
-      </div>
-
-      <!-- Liens juridiques -->
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 24px 0; border-top: 1px solid #1E2730; border-bottom: 1px solid #1E2730; margin-bottom: 24px;">
-        <a href="privacy.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Politique de confidentialité</a>
-        <a href="mentions-legales.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Mentions légales</a>
-        <a href="cgu.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">CGU</a>
-        <a href="cgv.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">CGV Premium</a>
-        <a href="suppression-compte.html" style="color: #8A99A8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#8CFF3B'" onmouseout="this.style.color='#8A99A8'">Supprimer mon compte</a>
-      </div>
-
-      <!-- Contact + Copyright -->
-      <div style="text-align: center;">
-        <p style="color: #8A99A8; font-size: 0.85rem; margin-bottom: 8px;">
-          Contact : <a href="mailto:runcrew.app@gmail.com" style="color: #8CFF3B; text-decoration: none;">runcrew.app@gmail.com</a>
-        </p>
-        <p style="color: #555; font-size: 0.8rem;">
-          © 2026 RunCrew — Tous droits réservés
-        </p>
-      </div>
-
-    </div>
-  </footer>
 
 </body>
 </html>
