@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Politique de Confidentialité — RunCrew</title>
-  <meta name="description" content="Politique de confidentialité RunCrew — Protection des données personnelles, capteurs Bluetooth, zones de confidentialité, RGPD." />
+  <meta name="description" content="Politique de confidentialité RunCrew — Protection des données personnelles, capteurs Bluetooth, zones de confidentialité, sécurité OWASP MASVS L2, RGPD." />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -337,10 +337,10 @@
 
   <div class="container">
     <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Politique de Confidentialité<span class="version-badge">V2.3</span></h1>
+    <h1>Politique de Confidentialité<span class="version-badge">V2.4</span></h1>
 
     <div class="intro">
-      <p><strong>RunCrew</strong> est une application mobile de tracking sportif multi-activités (course à pied, vélo, randonnée) et de partage communautaire, éditée en France par ARRAGAIN Tony (nom commercial : <strong>Le Petit Dev</strong>). La protection de vos données personnelles est au cœur de notre démarche produit. Cette Politique vous informe de manière transparente sur les données que nous collectons, la manière dont nous les utilisons, avec qui nous les partageons, les mesures techniques mises en place pour les protéger, et les droits dont vous disposez.</p>
+      <p><strong>RunCrew</strong> est une application mobile de tracking sportif multi-activités (course à pied, vélo, randonnée) et de partage communautaire, éditée en France par ARRAGAIN Tony (nom commercial : <strong>Le Petit Dev</strong>). La protection de vos données personnelles est au cœur de notre démarche produit. Cette Politique vous informe de manière transparente sur les données que nous collectons, la manière dont nous les utilisons, avec qui nous les partageons, les mesures techniques de durcissement mises en place pour les protéger, et les droits dont vous disposez.</p>
     </div>
 
     <p>Cette Politique est conforme au <strong>Règlement (UE) 2016/679 dit RGPD</strong> et à la <strong>loi n° 78-17 du 6 janvier 1978</strong> modifiée dite Loi Informatique et Libertés.</p>
@@ -357,7 +357,7 @@
         <li><a href="#s7">Sous-Traitants et Destinataires</a></li>
         <li><a href="#s8">Transferts hors UE</a></li>
         <li><a href="#s9">Durées de Conservation</a></li>
-        <li><a href="#s10">Sécurité des Données</a></li>
+        <li><a href="#s10">Sécurité des Données & Durcissement Technique (OWASP MASVS L2)</a></li>
         <li><a href="#s11">Vos Droits</a></li>
         <li><a href="#s12">Mineurs</a></li>
         <li><a href="#s13">Cookies et Traceurs</a></li>
@@ -544,7 +544,12 @@
     </div>
 
     <!-- SECTION 8 -->
-    <h2 id="s8">8. Durées de Conservation</h2>
+    <h2 id="s8">8. Transferts de Données hors Union Européenne</h2>
+    <p>Certains sous-traitants (OpenAI, SendGrid, Mapbox) sont établis aux États-Unis. Ces transferts sont encadrés par le **Data Privacy Framework UE-USA** (décision d'adéquation du 10 juillet 2023) et les **Clauses Contractuelles Types (CCT)** de la Commission européenne.</p>
+    <p><strong>Les données principales de RunCrew (profils, sessions, tracés, photos, données cardiaques) sont hébergées exclusivement en Union Européenne (Belgique).</strong></p>
+
+    <!-- SECTION 9 -->
+    <h2 id="s9">9. Durées de Conservation</h2>
     <table>
       <thead>
         <tr><th>Type de données</th><th>Durée de conservation</th></tr>
@@ -558,14 +563,51 @@
       </tbody>
     </table>
 
-    <!-- SECTION 9 -->
-    <h2 id="s9">9. Vos Droits RGPD</h2>
+    <!-- SECTION 10 -->
+    <h2 id="s10">10. Sécurité des Données & Durcissement Technique (OWASP MASVS L2)</h2>
+    <p>RunCrew applique les principes de sécurité en profondeur conformément au référentiel <strong>OWASP Mobile Application Security Verification Standard (MASVS L2)</strong> et à l'Article 32 du RGPD :</p>
+    <div class="info-card">
+      <ul>
+        <li><strong>Chiffrement & Gestion des secrets :</strong> Aucune clé d'API ou secret d'infrastructure n'est stocké en dur dans le code de l'application. Les secrets sont injectés de manière sécurisée lors de la compilation.</li>
+        <li><strong>Contrôle d'accès serveur (Anti-IDOR) :</strong> L'accès aux bases de données (Firestore, Realtime Database) et au stockage de fichiers (Firebase Storage) est strictement contrôlé au niveau serveur par des règles d'isolation étanches. Un utilisateur ne peut en aucun cas accéder, modifier ou altérer les données d'un autre utilisateur.</li>
+        <li><strong>Obfuscation & Résilience :</strong> Le code source de l'application Android est minifié et obfusqué (ProGuard / R8) pour prévenir toute ingénierie inverse, et les services d'arrière-plan sont isolés contre les interférences d'applications tierces.</li>
+        <li><strong>Chiffrement des flux :</strong> L'intégralité des échanges de données et des flux de géolocalisation en direct est chiffrée en transit (TLS 1.3 / HTTPS) et au repos (Firebase AES-256).</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 11 -->
+    <h2 id="s11">11. Vos Droits RGPD</h2>
     <p>Vous disposez des droits d'accès, de rectification, de limitation, d'opposition, de portabilité (export ZIP + GPX) et <strong>d'effacement complet</strong> de vos données.</p>
     <p>Pour supprimer votre compte : <strong>Paramètres > Application > Supprimer mon compte</strong> ou par email à <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a>.</p>
     <p>Autorité de contrôle : <strong>CNIL</strong> (<a class="link" href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
 
-    <!-- SECTION 10 -->
-    <h2 id="s10">10. Contact</h2>
+    <!-- SECTION 12 -->
+    <h2 id="s12">12. Mineurs</h2>
+    <p>RunCrew est réservé aux utilisateurs âgés d'<strong>au moins 16 ans</strong>. L'inscription nécessite une confirmation formelle de l'âge.</p>
+
+    <!-- SECTION 13 -->
+    <h2 id="s13">13. Cookies et Traceurs</h2>
+    <ul>
+      <li><strong>Application mobile</strong> : RunCrew n'utilise aucun cookie.</li>
+      <li><strong>Site web www.runcrew.fr</strong> : Aucun cookie de tracking ni cookie marketing.</li>
+    </ul>
+
+    <!-- SECTION 14 -->
+    <h2 id="s14">14. Position claire sur le Dispositif Médical</h2>
+    <div class="danger-box">
+      <p><strong>RunCrew n'est PAS un dispositif médical</strong> au sens du Règlement (UE) 2017/745 relatif aux dispositifs médicaux. Les données fournies ont un objectif récréatif et motivationnel exclusif.</p>
+    </div>
+
+    <!-- SECTION 15 -->
+    <h2 id="s15">15. Décharge de Responsabilité</h2>
+    <p>L'éditeur décline toute responsabilité pour tout accident physique survenu durant la pratique sportive ou pour l'interprétation des données par l'utilisateur.</p>
+
+    <!-- SECTION 16 -->
+    <h2 id="s16">16. Modifications de la Politique</h2>
+    <p>L'éditeur se réserve le droit de modifier la présente Politique. Les utilisateurs seront avertis par notification dans l'application.</p>
+
+    <!-- SECTION 17 -->
+    <h2 id="s17">17. Contact</h2>
     <div class="contact-block">
       <h3>Pour toute question relative à cette Politique</h3>
       <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
@@ -573,7 +615,7 @@
     </div>
 
     <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 2.3</em>
+      <em>Dernière mise à jour : 19 août 2026 — Version 2.4</em>
     </p>
   </div>
 
