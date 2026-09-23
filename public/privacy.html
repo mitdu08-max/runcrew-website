@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Politique de Confidentialité — RunCrew</title>
-  <meta name="description" content="Politique de confidentialité RunCrew — Protection des données personnelles, capteurs Bluetooth, RGPD, transparence totale." />
+  <meta name="description" content="Politique de confidentialité RunCrew — Protection des données personnelles, capteurs Bluetooth, zones de confidentialité, RGPD." />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -337,7 +337,7 @@
 
   <div class="container">
     <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Politique de Confidentialité<span class="version-badge">V2.2</span></h1>
+    <h1>Politique de Confidentialité<span class="version-badge">V2.3</span></h1>
 
     <div class="intro">
       <p><strong>RunCrew</strong> est une application mobile de tracking sportif multi-activités (course à pied, vélo, randonnée) et de partage communautaire, éditée en France par ARRAGAIN Tony (nom commercial : <strong>Le Petit Dev</strong>). La protection de vos données personnelles est au cœur de notre démarche produit. Cette Politique vous informe de manière transparente sur les données que nous collectons, la manière dont nous les utilisons, avec qui nous les partageons, les mesures techniques mises en place pour les protéger, et les droits dont vous disposez.</p>
@@ -353,7 +353,7 @@
         <li><a href="#s3">Données Collectées</a></li>
         <li><a href="#s4">Données Physiologiques et Cardiaques (Bluetooth & Estimations)</a></li>
         <li><a href="#s5">Finalités et Bases Légales</a></li>
-        <li><a href="#s6">Fonctionnalités Spécifiques</a></li>
+        <li><a href="#s6">Fonctionnalités Spécifiques (Zones de Confidentialité, Live, SOS...)</a></li>
         <li><a href="#s7">Sous-Traitants et Destinataires</a></li>
         <li><a href="#s8">Transferts hors UE</a></li>
         <li><a href="#s9">Durées de Conservation</a></li>
@@ -409,7 +409,7 @@
         <tr><td>Identifiant utilisateur (UID)</td><td>Identifiant technique unique généré par Firebase Authentication</td></tr>
         <tr><td>Prénom ou pseudo</td><td>Identification dans le crew</td></tr>
         <tr><td>Âge</td><td>Vérification 16+ RGPD et calculs physiologiques</td></tr>
-        <tr><td>Position GPS (pendant activités)</td><td>Tracking de vos sessions sportives</td></tr>
+        <tr><td>Position GPS (pendant activités)</td><td>Tracking de vos sessions sportives (hors zones de confidentialité masquées localement)</td></tr>
         <tr><td>Données d'activité</td><td>Distance, durée, allure, vitesse, dénivelé, splits, vitesse max</td></tr>
         <tr><td>Token de notification (FCM)</td><td>Notifications push et alertes critiques</td></tr>
         <tr><td>Nombre et horodatage des sessions hebdomadaires</td><td>Vérification et application technique de la restriction de l'Offre Gratuite (1 session par semaine)</td></tr>
@@ -442,7 +442,7 @@
       <li>Sexe ou genre</li>
       <li>Données médicales cliniques (ECG de diagnostic, tension artérielle, glycémie, etc.)</li>
       <li>Numéro de téléphone</li>
-      <li>Adresse postale</li>
+      <li>Adresse postale exacte du domicile (protégée par les Zones de Confidentialité)</li>
       <li>Contacts de votre répertoire téléphonique</li>
       <li>Historique de navigation web</li>
       <li>Données financières ou bancaires (Google Play gère intégralement les paiements)</li>
@@ -504,24 +504,31 @@
     <!-- SECTION 6 -->
     <h2 id="s6">6. Fonctionnalités Spécifiques</h2>
 
-    <h3>6.1 Gestion des capteurs Bluetooth Low Energy (BLE)</h3>
+    <h3>6.1 Zones de Confidentialité (Privacy Zones & Protection du Domicile)</h3>
+    <p>Afin de protéger votre vie privée et d'empêcher l'identification de vos lieux de résidence ou de travail, RunCrew intègre une fonctionnalité native de <strong>Zones de Confidentialité (Privacy Zones)</strong>.</p>
+    <div class="success-box">
+      <p><strong>Traitement 100 % local (Privacy by Design) :</strong></p>
+      <p>L'application permet de définir un rayon de protection (par défaut 500 mètres) autour de vos adresses sensibles. Le masquage et le tronquage des coordonnées GPS situées à l'intérieur de ces zones sont <strong>exécutés directement sur votre smartphone</strong> avant toute transmission vers nos serveurs. Nos infrastructures cloud n'ont ainsi jamais connaissance de vos points exacts de départ et d'arrivée situés dans ces périmètres.</p>
+    </div>
+
+    <h3>6.2 Gestion des capteurs Bluetooth Low Energy (BLE)</h3>
     <p>L'appairage de vos équipements sportifs (ceintures cardio, brassards, montres) s'effectue localement via Bluetooth. Vous pouvez déconnecter ou oublier un capteur à tout moment dans l'application.</p>
 
-    <h3>6.2 Partage de position en direct avec le Crew</h3>
+    <h3>6.3 Partage de position en direct avec le Crew</h3>
     <p>Lorsque vous démarrez une session, votre position GPS actuelle est partagée en temps réel avec les membres de votre crew via un document temporaire (<code>activeSessions/{userId}</code>), qui est <strong>détruit immédiatement</strong> à la fin de la séance.</p>
 
-    <h3>6.3 Mode Incognito</h3>
+    <h3>6.4 Mode Incognito</h3>
     <p>Permet d'enregistrer une session sans partager votre position en direct ni notifier vos supporters.</p>
     <div class="warning-box">
       <p><strong>Exception SOS</strong> : Même en mode incognito, le déclenchement volontaire du bouton SOS transmet votre position GPS actuelle aux membres de votre crew pour assurer votre sécurité.</p>
     </div>
 
-    <h3>6.4 Bouton SOS</h3>
+    <h3>6.5 Bouton SOS</h3>
     <div class="danger-box">
-      <p><strong>⚠️ IMPORTANT</strong> : Le bouton SOS <strong>n'appelle PAS les services de secours officiels</strong> (15 SAMU, 18 Pompiers, 112). Il alerte uniquement les membres de votre crew with votre position.</p>
+      <p><strong>⚠️ IMPORTANT</strong> : Le bouton SOS <strong>n'appelle PAS les services de secours officiels</strong> (15 SAMU, 18 Pompiers, 112). Il alerte uniquement les membres de votre crew avec votre position.</p>
     </div>
 
-    <h3>6.5 Analyse par Intelligence Artificielle</h3>
+    <h3>6.6 Analyse par Intelligence Artificielle</h3>
     <p>RunCrew utilise <strong>OpenAI GPT-4o-mini</strong> uniquement à la demande expresse de l'utilisateur. <strong>Aucune donnée personnelle identifiante</strong> (nom, email, UID) n'est transmise, et les données ne sont pas utilisées pour l'entraînement des modèles IA.</p>
 
     <!-- SECTION 7 -->
@@ -566,7 +573,7 @@
     </div>
 
     <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 2.2</em>
+      <em>Dernière mise à jour : 19 août 2026 — Version 2.3</em>
     </p>
   </div>
 
