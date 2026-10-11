@@ -777,9 +777,10 @@
       <a href="index.html">Accueil RunCrew</a>
       
       <!-- Si Visiteur -->
-      <span id="navVisitorLinks" style="display: flex; align-items: center; gap: 16px;">
+      <span id="navVisitorLinks" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
         <a href="#avantages">Avantages</a>
         <a href="#faq">FAQ</a>
+        <button class="btn-action-small" onclick="showAuthTab('login')" style="border-color: var(--accent-cyan); color: var(--accent-cyan); font-weight: 700; padding: 7px 14px;">🔑 Se connecter</button>
         <button class="btn-nav-action" onclick="showAuthTab('register')">Inscrire mon Club</button>
       </span>
 
@@ -1512,9 +1513,16 @@
     async function fetchSessions() {
       if (!currentClubId) return;
       try {
-        const snap = await db.collection('clubs').doc(currentClubId).collection('sessions').orderBy('createdAt', 'desc').get();
+        const snap = await db.collection('clubs').doc(currentClubId).collection('sessions').get();
         sessionsList = [];
         snap.forEach(doc => sessionsList.push({ id: doc.id, ...doc.data() }));
+
+        // Tri chronologique côté client
+        sessionsList.sort((a, b) => {
+          const tA = a.createdAt?.seconds || 0;
+          const tB = b.createdAt?.seconds || 0;
+          return tB - tA;
+        });
 
         // Si vide, créer des séances d'exemple par défaut
         if (sessionsList.length === 0) {
@@ -1800,14 +1808,26 @@
       const password = document.getElementById('loginPassword').value;
 
       try {
-        await auth.signInWithEmailAndPassword(email, password);
-        // onAuthStateChanged prend le relais et charge le dashboard
+        const userCred = await auth.signInWithEmailAndPassword(email, password);
+        await loadClubData(userCred.user.uid);
       } catch (err) {
         console.error("Erreur login:", err);
-        errBox.textContent = "Email ou mot de passe incorrect.";
+        let msg = "Email ou mot de passe incorrect.";
+        if (err.code === 'auth/wrong-password') msg = "Mot de passe incorrect.";
+        if (err.code === 'auth/user-not-found') msg = "Aucun club enregistré avec cet email.";
+        if (err.code === 'auth/invalid-email') msg = "Format d'email invalide.";
+        errBox.textContent = msg;
         errBox.style.display = 'block';
         btn.disabled = false;
         btn.innerHTML = "<span>🔑 Accéder à mon Espace Club</span>";
+      }
+    });
+
+    // Détection automatique paramètre URL ?action=login
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('action') === 'login') {
+        showAuthTab('login');
       }
     });
 
