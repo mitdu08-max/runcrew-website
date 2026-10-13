@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /club?action=login
+
+Sitemap: https://runcrew.fr/sitemap.xml

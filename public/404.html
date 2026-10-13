@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — RunCrew</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#090E17">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="/css/site.css">
+  <style>
+    .err { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 20px; }
+    .err .code { font-family: var(--display); font-style: italic; font-weight: 800; font-size: clamp(6rem, 20vw, 12rem); line-height: 1; color: var(--orange); }
+    .err h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 12px 0 14px; }
+    .err p { color: var(--text-2); max-width: 44ch; margin: 0 auto 28px; }
+    .err img { height: 32px; width: auto; margin-bottom: 40px; }
+    .err .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="err">
+    <div>
+      <a href="/" aria-label="RunCrew — accueil"><img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="113" height="32"></a>
+      <div class="code" aria-hidden="true">404</div>
+      <h1>Cette page a pris un autre chemin.</h1>
+      <p>Le lien est peut-être périmé ou l'adresse mal recopiée. Pas de panique : le crew est juste à côté.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Retour à l'accueil</a>
+        <a class="btn btn-outline" href="mailto:runcrew.app@gmail.com">Signaler le lien</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "RunCrew",
+  "short_name": "RunCrew",
+  "description": "Courir entouré, même en solitaire.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#090E17",
+  "theme_color": "#090E17",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
