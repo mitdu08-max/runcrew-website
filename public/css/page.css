@@ -1,0 +1,155 @@
+/* ==========================================================================
+   RunCrew — pages « document » (mentions légales, CGU, CGV, confidentialité,
+   suppression de compte, guide de compatibilité). Complète css/site.css.
+   ========================================================================== */
+
+/* ---------- En-tête de page ---------- */
+.page-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(48px, 7vw, 96px) 0 clamp(36px, 5vw, 64px);
+  background: var(--navy-2);
+  border-bottom: 1px solid var(--border);
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: -40% -10% auto; height: 140%; z-index: 0;
+  background: radial-gradient(50% 40% at 85% 30%, rgba(255, 85, 0, 0.14), transparent 70%);
+  pointer-events: none;
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero h1 { font-size: clamp(2.4rem, 5.5vw, 4.4rem); margin: 18px 0 16px; max-width: 18ch; }
+.page-hero .lead { max-width: 64ch; }
+.page-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+.page-meta .updated,
+.page-meta .version-badge {
+  display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--border-2); background: var(--surface); color: var(--text-2);
+  font-size: 0.8rem; font-weight: 600;
+}
+.page-meta .version-badge { border-color: rgba(255, 85, 0, 0.45); color: var(--orange-2); letter-spacing: 0.06em; }
+
+/* ---------- Corps du document ---------- */
+.doc {
+  width: min(820px, 100% - 2 * var(--gutter)); margin: 0 auto;
+  padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 8vw, 110px);
+  font-size: 1.02rem; line-height: 1.75; color: var(--text-2);
+}
+.doc > * + * { margin-top: 1em; }
+.doc h2 {
+  font-family: var(--display); font-style: italic; font-weight: 800; letter-spacing: 0;
+  font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.05; color: var(--text);
+  margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border);
+  scroll-margin-top: 96px;
+}
+.doc h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.doc h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-top: 36px; }
+.doc h4 { font-size: 1.02rem; font-weight: 700; color: var(--text); margin-top: 24px; }
+.doc h2 + h3, .doc h3 + h4 { margin-top: 18px; }
+.doc p { margin-top: 14px; }
+.doc strong { color: var(--text); font-weight: 600; }
+.doc ul, .doc ol { margin: 14px 0 0 22px; }
+.doc ul { list-style: disc; }
+.doc ol { list-style: decimal; }
+.doc li { margin-top: 8px; padding-left: 4px; }
+.doc li::marker { color: var(--orange); font-weight: 700; }
+.doc a:not(.btn) { color: var(--orange-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 122, 51, 0.4); }
+.doc a:not(.btn):hover { text-decoration-color: currentColor; }
+.doc code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 1px 7px;
+}
+.doc hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
+.doc .icon { width: 1em; height: 1em; vertical-align: -0.15em; display: inline-block; margin-right: 6px; }
+.doc .icon.ok { color: var(--ok); }
+.doc .icon.no { color: var(--danger); }
+
+/* ---------- Blocs ---------- */
+.doc .intro {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: clamp(22px, 3vw, 32px); margin-top: 0; color: var(--text); font-size: 1.06rem;
+}
+.doc .intro p:first-child { margin-top: 0; }
+
+.doc .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 30px); margin-top: 28px; }
+.doc .toc h3 { margin: 0 0 14px; font-family: var(--body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.doc .toc ol { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 32px; counter-reset: toc; }
+.doc .toc li { counter-increment: toc; margin: 0; padding: 7px 0 7px 32px; position: relative; break-inside: avoid; font-size: 0.95rem; }
+.doc .toc li::before { content: counter(toc, decimal-leading-zero); position: absolute; left: 0; top: 7px; font-family: var(--display); font-style: italic; font-weight: 800; color: var(--orange); font-size: 1rem; }
+.doc .toc a { color: var(--text-2); text-decoration: none; }
+.doc .toc a:hover { color: var(--text); }
+
+.doc .info-card, .doc .brand-section, .doc .test-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(18px, 2.5vw, 26px); margin-top: 18px;
+}
+.doc .info-card > :first-child, .doc .brand-section > :first-child, .doc .test-card > :first-child { margin-top: 0; }
+.doc .info-card ul, .doc .info-card ol { margin-top: 10px; }
+
+.doc .warning-box, .doc .danger-box, .doc .success-box {
+  border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin-top: 18px; border-left: 3px solid;
+}
+.doc .warning-box { background: rgba(255, 171, 0, 0.07); border-color: #FFAB00; }
+.doc .danger-box { background: rgba(255, 59, 78, 0.07); border-color: var(--danger); }
+.doc .success-box { background: rgba(61, 220, 132, 0.07); border-color: var(--ok); }
+.doc .warning-box > :first-child, .doc .danger-box > :first-child, .doc .success-box > :first-child { margin-top: 0; }
+.doc .warning-box p, .doc .danger-box p, .doc .success-box p { margin-top: 8px; }
+.doc .warning-box strong { color: #FFC24D; }
+.doc .danger-box strong { color: #FF7482; }
+.doc .success-box strong { color: var(--ok); }
+
+.doc .contact-block {
+  margin-top: 48px; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 85, 0, 0.12), rgba(255, 85, 0, 0.03)); border: 1px solid rgba(255, 85, 0, 0.35);
+}
+.doc .contact-block h3 { margin-top: 0; font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.6rem; color: var(--text); }
+.doc .contact-block p { margin-top: 10px; }
+.doc .contact-block a { color: var(--text); font-weight: 700; text-decoration-color: var(--orange); }
+
+.doc .price-card { margin-top: 22px; padding: 30px; text-align: center; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid rgba(255, 85, 0, 0.4); }
+.doc .price-card > :first-child { margin-top: 0; }
+.doc .price { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 3.4rem; line-height: 1; color: var(--orange); margin-top: 0; }
+.doc .price-sub { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+
+.doc .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.doc .info-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+.doc .info-item strong { display: block; font-family: var(--body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.doc .info-item p { margin: 0; color: var(--text); font-size: 0.97rem; }
+
+.doc .doc-steps { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 28px); margin-top: 18px; }
+.doc .doc-steps ol { list-style: none; margin: 0; counter-reset: dstep; }
+.doc .doc-steps li { counter-increment: dstep; position: relative; padding-left: 48px; margin-top: 14px; color: var(--text); }
+.doc .doc-steps li:first-child { margin-top: 0; }
+.doc .doc-steps li::before {
+  content: counter(dstep); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--orange); color: var(--ink); display: grid; place-items: center;
+  font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.05rem;
+}
+
+.doc table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; font-size: 0.93rem; }
+.doc th { text-align: left; padding: 12px 16px; background: var(--surface-2); font-family: var(--body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+.doc td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-2); }
+.doc td:first-child { color: var(--text); font-weight: 600; }
+.doc tr:last-child td { border-bottom: 0; }
+.doc .table-wrap { overflow-x: auto; margin-top: 18px; -webkit-overflow-scrolling: touch; }
+.doc .table-wrap table { margin-top: 0; min-width: 560px; }
+
+/* Guide de compatibilité */
+.doc .brand-section h3 { margin-top: 0; font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.5rem; }
+.doc .step-block { background: var(--navy-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+.doc .step-block h4 { margin-top: 0; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); }
+.doc .step-block p { margin-top: 6px; font-size: 0.96rem; }
+.doc .step-path { color: var(--text); font-weight: 600; }
+.doc .step-action { color: var(--orange-2); font-weight: 600; }
+.doc .test-card h4 { margin-top: 0; color: var(--text); font-size: 1.05rem; }
+.doc .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.doc .docs-grid a { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; color: var(--text); font-weight: 600; text-decoration: none; transition: border-color 0.2s; }
+.doc .docs-grid a::after { content: "→"; color: var(--orange); font-weight: 700; }
+.doc .docs-grid a:hover { border-color: var(--orange); }
+
+.doc-foot { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; text-align: center; }
+.doc .back { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 22px; color: var(--text-2); text-decoration: none !important; font-weight: 600; }
+.doc .back:hover { color: var(--text); }
+
+@media (max-width: 720px) {
+  .doc .toc ol { columns: 1; }
+  .doc .info-grid, .doc .docs-grid { grid-template-columns: 1fr; }
+  .doc { font-size: 1rem; }
+}

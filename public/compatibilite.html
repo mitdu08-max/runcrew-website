@@ -1,411 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guide de compatibilité — RunCrew</title>
-  <meta name="description" content="Guide de compatibilité RunCrew — Configurer votre téléphone Android pour une expérience optimale." />
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <style>
-    :root {
-      --bg: #0B0F14;
-      --bg-alt: #0F151C;
-      --card: #151B23;
-      --border: #1E2730;
-      --accent: #8CFF3B;
-      --accent-alt: #00E676;
-      --text: #EAF1F8;
-      --muted: #8A99A8;
-      --warning: #FFAB00;
-      --danger: #FF5252;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    nav {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(11, 15, 20, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav img { height: 40px; }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    .container {
-      max-width: 860px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      color: var(--accent);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    ul, ol { margin-left: 20px; margin-bottom: 15px; }
-    li { margin-bottom: 8px; }
-
-    code {
-      background: var(--bg-alt);
-      color: var(--accent);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: "SF Mono", Monaco, monospace;
-      font-size: 0.9em;
-    }
-
-    a.link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a.link:hover { text-decoration: underline; }
-
-    .updated {
-      display: inline-block;
-      padding: 6px 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    .version-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(140, 255, 59, 0.1);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 20px;
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-left: 10px;
-      font-weight: 600;
-    }
-
-    .intro {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 30px 0 50px 0;
-    }
-
-    .intro p {
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 15px;
-    }
-
-    .intro p:last-child { margin-bottom: 0; }
-
-    .warning-box {
-      background: rgba(255, 171, 0, 0.08);
-      border: 1px solid rgba(255, 171, 0, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .warning-box p {
-      color: var(--warning);
-      margin-bottom: 8px;
-    }
-
-    .warning-box p:last-child { margin-bottom: 0; }
-
-    .danger-box {
-      background: rgba(255, 82, 82, 0.08);
-      border: 1px solid rgba(255, 82, 82, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .danger-box p {
-      color: var(--danger);
-      margin-bottom: 8px;
-    }
-
-    .danger-box p:last-child { margin-bottom: 0; }
-
-    .success-box {
-      background: rgba(140, 255, 59, 0.08);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .success-box p {
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .success-box p:last-child { margin-bottom: 0; }
-
-    .info-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 20px 0;
-    }
-
-    .brand-section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 25px 0;
-    }
-
-    .brand-section h3 {
-      margin-top: 0;
-      font-size: 1.3rem;
-    }
-
-    .brand-emoji {
-      font-size: 1.3rem;
-      margin-right: 8px;
-    }
-
-    .step-block {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin: 12px 0;
-    }
-
-    .step-block h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.95rem;
-    }
-
-    .step-block p {
-      margin-bottom: 5px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .step-block p:last-child { margin-bottom: 0; }
-
-    .step-path {
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.93rem;
-    }
-
-    .step-action {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .test-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 15px 0;
-    }
-
-    .test-card h4 {
-      margin-top: 0;
-      color: var(--accent);
-      font-size: 1rem;
-    }
-
-    .toc {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 30px 0 50px 0;
-    }
-
-    .toc h3 {
-      color: var(--text);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .toc ol {
-      margin-left: 20px;
-      color: var(--muted);
-    }
-
-    .toc a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .toc a:hover { color: var(--accent); }
-
-    .contact-block {
-      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .contact-block h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .contact-block a:hover { text-decoration: underline; }
-
-    .docs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .docs-grid a {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 15px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .docs-grid a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    footer {
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
-
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      nav { padding: 15px 20px; }
-      nav img { height: 30px; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.3rem; }
-      h3 { font-size: 1.05rem; }
-      .container { margin: 30px auto; }
-      .docs-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide de compatibilité Android — RunCrew</title>
+  <meta name="description" content="Huawei, Xiaomi, OnePlus, Oppo, Vivo, Realme, Meizu : les réglages batterie et arrière-plan pour que RunCrew fonctionne de manière fiable.">
+  <link rel="canonical" href="https://runcrew.fr/compatibilite">
+  <meta name="theme-color" content="#090E17">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RunCrew">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://runcrew.fr/compatibilite">
+  <meta property="og:title" content="Guide de compatibilité Android — RunCrew">
+  <meta property="og:description" content="Huawei, Xiaomi, OnePlus, Oppo, Vivo, Realme, Meizu : les réglages batterie et arrière-plan pour que RunCrew fonctionne de manière fiable.">
+  <meta property="og:image" content="https://runcrew.fr/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/page.css">
 </head>
-
 <body>
-  <nav>
-    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour à l'accueil</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9-1 9-4 16-9 16z"/><path d="M4 20c4-6 8-9 12-11"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="RunCrew — accueil">
+      <img src="/img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="/#vues">La course</a>
+      <a href="/#fonctionnalites">Fonctionnalités</a>
+      <a href="/#securite">Sécurité</a>
+      <a href="/club">Clubs</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-sm" href="/club?action=login">Connexion club</a>
+      <a class="btn btn-primary btn-sm" href="/#liste">Rejoindre la liste</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+  </div>
+</header>
 
-  <div class="container">
-    <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Guide de compatibilité<span class="version-badge">V1.0</span></h1>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Guide Android</span>
+      <h1 class="display">Guide de compatibilité</h1>
+      <p class="lead">Les réglages à faire sur certains téléphones Android pour que le suivi en direct et les alertes restent fiables.</p>
+      <div class="page-meta"><span class="updated">Dernière mise à jour : 19 août 2026</span><span class="version-badge">V1.0</span></div>
+    </div>
+  </section>
 
-    <div class="intro">
+  <article class="doc">
+<div class="intro">
       <p>Certains constructeurs Android appliquent des politiques d'optimisation batterie très agressives qui peuvent affecter le fonctionnement de RunCrew : notifications retardées, GPS coupé, application fermée en arrière-plan.</p>
       <p>Ce guide vous explique <strong>comment configurer votre téléphone</strong> pour améliorer la fiabilité de RunCrew.</p>
       <p><strong>Constructeurs concernés</strong> : Huawei, Honor, Xiaomi, Redmi, Poco, OnePlus, Oppo, Vivo, Realme, Meizu.</p>
     </div>
 
     <div class="danger-box">
-      <p><strong>⚠️ Avertissement légal</strong></p>
+      <p><strong>Avertissement légal</strong></p>
       <p>Ce guide est fourni à titre informatif. Les procédures peuvent varier selon les versions Android et les mises à jour constructeurs.</p>
       <p><strong>RunCrew ne peut pas garantir à 100% la fiabilité des alertes SOS sur les appareils à politique batterie restrictive</strong>, même après application de ces réglages.</p>
       <p>En cas d'urgence vitale, composez toujours les numéros officiels : <strong>15, 18, 112, 911</strong>.</p>
     </div>
 
     <div class="toc">
-      <h3>📑 Sommaire</h3>
+      <h3>Sommaire</h3>
       <ol>
         <li><a href="#s1">Pourquoi ce guide ?</a></li>
         <li><a href="#s2">Huawei / Honor</a></li>
@@ -435,7 +109,7 @@
     </div>
 
     <!-- SECTION 2 — Huawei / Honor -->
-    <h2 id="s2">2. <span class="brand-emoji">🇨🇳</span> Huawei / Honor</h2>
+    <h2 id="s2">2. Huawei / Honor</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -452,9 +126,9 @@
         <p class="step-path">Paramètres → Batterie → Démarrage d'applications</p>
         <p>→ Rechercher <strong>RunCrew</strong></p>
         <p>→ Désactiver <em>« Gérer automatiquement »</em></p>
-        <p>→ Activer : <span class="step-action">✅ Démarrage automatique</span></p>
-        <p>→ Activer : <span class="step-action">✅ Démarrage secondaire</span></p>
-        <p>→ Activer : <span class="step-action">✅ Exécution en arrière-plan</span></p>
+        <p>→ Activer : <span class="step-action">Démarrage automatique</span></p>
+        <p>→ Activer : <span class="step-action">Démarrage secondaire</span></p>
+        <p>→ Activer : <span class="step-action">Exécution en arrière-plan</span></p>
       </div>
 
       <div class="step-block">
@@ -473,7 +147,7 @@
     </div>
 
     <!-- SECTION 3 — Xiaomi / Redmi / Poco -->
-    <h2 id="s3">3. <span class="brand-emoji">🇨🇳</span> Xiaomi / Redmi / Poco (MIUI / HyperOS)</h2>
+    <h2 id="s3">3. Xiaomi / Redmi / Poco (MIUI / HyperOS)</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -514,7 +188,7 @@
     </div>
 
     <!-- SECTION 4 — OnePlus -->
-    <h2 id="s4">4. <span class="brand-emoji">🇨🇳</span> OnePlus (OxygenOS)</h2>
+    <h2 id="s4">4. OnePlus (OxygenOS)</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -546,7 +220,7 @@
     </div>
 
     <!-- SECTION 5 — Oppo / Realme -->
-    <h2 id="s5">5. <span class="brand-emoji">🇨🇳</span> Oppo / Realme (ColorOS)</h2>
+    <h2 id="s5">5. Oppo / Realme (ColorOS)</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -572,7 +246,7 @@
     </div>
 
     <!-- SECTION 6 — Vivo -->
-    <h2 id="s6">6. <span class="brand-emoji">🇨🇳</span> Vivo (FunTouch OS / OriginOS)</h2>
+    <h2 id="s6">6. Vivo (FunTouch OS / OriginOS)</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -597,7 +271,7 @@
     </div>
 
     <!-- SECTION 7 — Meizu -->
-    <h2 id="s7">7. <span class="brand-emoji">🇨🇳</span> Meizu (Flyme OS)</h2>
+    <h2 id="s7">7. Meizu (Flyme OS)</h2>
 
     <div class="brand-section">
       <h3>Configuration recommandée</h3>
@@ -616,7 +290,7 @@
     </div>
 
     <!-- SECTION 8 — Vérification -->
-    <h2 id="s8">8. 🔍 Vérification rapide</h2>
+    <h2 id="s8">8. Vérification rapide</h2>
     <p>Après avoir appliqué les réglages pour votre constructeur, effectuez les tests suivants :</p>
 
     <div class="test-card">
@@ -650,11 +324,11 @@
     </div>
 
     <div class="success-box">
-      <p>Si les 3 tests sont réussis, votre téléphone est correctement configuré pour RunCrew ! ✅</p>
+      <p>Si les 3 tests sont réussis, votre téléphone est correctement configuré pour RunCrew.</p>
     </div>
 
     <!-- SECTION 9 — Dépannage -->
-    <h2 id="s9">9. ❌ Si ça ne fonctionne toujours pas</h2>
+    <h2 id="s9">9. Si ça ne fonctionne toujours pas</h2>
     <p>Si malgré ces réglages RunCrew reste peu fiable :</p>
     <ul>
       <li><strong>Redémarrez</strong> votre téléphone après configuration</li>
@@ -664,42 +338,89 @@
     </ul>
 
     <!-- SECTION 10 — Sécurité -->
-    <h2 id="s10">10. 🚨 Rappel de sécurité essentiel</h2>
+    <h2 id="s10">10. Rappel de sécurité essentiel</h2>
     <div class="danger-box">
       <p>Même après configuration parfaite, <strong>RunCrew ne peut jamais garantir à 100%</strong> la réception des notifications sur les téléphones à politique batterie restrictive.</p>
       <p><strong>En cas d'urgence vitale, composez toujours :</strong></p>
-      <p>📞 <strong>15</strong> — SAMU</p>
-      <p>📞 <strong>18</strong> — Pompiers</p>
-      <p>📞 <strong>112</strong> — Numéro européen d'urgence</p>
-      <p>📞 <strong>911</strong> — USA / Canada</p>
+      <p><strong>15</strong> — SAMU</p>
+      <p><strong>18</strong> — Pompiers</p>
+      <p><strong>112</strong> — Numéro européen d'urgence</p>
+      <p><strong>911</strong> — USA / Canada</p>
       <p><strong>Ne vous reposez JAMAIS uniquement sur la fonction SOS de RunCrew.</strong></p>
     </div>
 
     <!-- SECTION 11 — Documents -->
-    <h2 id="s11">11. 📚 Documents associés</h2>
+    <h2 id="s11">11. Documents associés</h2>
     <div class="docs-grid">
-      <a href="privacy.html">🔒 Politique de Confidentialité</a>
-      <a href="cgu.html">📋 Conditions Générales d'Utilisation</a>
-      <a href="mentions-legales.html">⚖️ Mentions Légales</a>
-      <a href="suppression-compte.html">🗑️ Suppression de compte</a>
+      <a href="/privacy">Politique de Confidentialité</a>
+      <a href="/cgu">Conditions Générales d'Utilisation</a>
+      <a href="/mentions-legales">Mentions Légales</a>
+      <a href="/suppression-compte">Suppression de compte</a>
     </div>
 
     <div class="contact-block">
       <h3>Besoin d'aide ?</h3>
       <p style="margin-bottom: 10px; color: var(--muted);">Contactez-nous pour toute question ou difficulté :</p>
       <p><a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
-      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://www.runcrew.fr" style="color: var(--accent); text-decoration: none;">https://www.runcrew.fr</a></p>
+      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://runcrew.fr" style="color: var(--accent); text-decoration: none;">https://runcrew.fr</a></p>
     </div>
 
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 1.0</em>
-    </p>
+    <p class="doc-foot">Dernière mise à jour : 19 août 2026 — Version 1.0</p>
+    <a class="back" href="/"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg> Retour à l'accueil</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
+        <p>Courir entouré, même en solitaire. Une application française et 100 % indépendante, éditée par Le Petit Dev.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Produit</h3>
+        <ul>
+          <li><a href="/#vues">La course</a></li>
+          <li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="/#securite">Sécurité</a></li>
+          <li><a href="/#tarifs">Tarifs</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="/club">Espace clubs &amp; coachs</a></li>
+          <li><a href="/club?action=login">Connexion club</a></li>
+          <li><a href="/compatibilite">Guide de compatibilité Android</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew">Beta privée</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="/privacy">Politique de confidentialité</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/cgu">Conditions d'utilisation</a></li>
+          <li><a href="/cgv">CGV Premium</a></li>
+          <li><a href="/suppression-compte">Supprimer mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="footer-eco" aria-label="Engagements">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> Hébergé en Europe (Belgique)</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Zéro tracker publicitaire</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Données jamais revendues</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Analyses IA uniquement à la demande</li>
+    </ul>
+    <div class="footer-bottom">
+      <p>Le Petit Dev · SIRET 108 765 439 00014 · Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</p>
+      <p>© 2026 RunCrew — Tous droits réservés.</p>
+    </div>
   </div>
+</footer>
 
-  <footer>
-    <p>RunCrew — Courir entouré, même en solitaire.</p>
-    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgu.html">CGU</a></p>
-  </footer>
-
+<script src="/js/site.js" defer></script>
 </body>
 </html>

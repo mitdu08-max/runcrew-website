@@ -22,15 +22,15 @@
   <meta name="twitter:description" content="L'app running qui connecte ton crew à ta course en direct. Rejoins la liste d'attente.">
   <meta name="twitter:image" content="https://runcrew.fr/og-image.jpg">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preload" href="fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="img/hero-littoral.jpg" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/img/hero-littoral.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/css/site.css">
 
   <script type="application/ld+json">
   {
@@ -66,7 +66,7 @@
           { "@type": "Question", "name": "RunCrew est-elle payante ?", "acceptedAnswer": { "@type": "Answer", "text": "Une offre gratuite permet d'enregistrer une session par semaine avec le live tracking et le SOS. L'abonnement Premium (6,99 €/mois, 7 jours d'essai) débloque les sessions illimitées, les capteurs Bluetooth, les analyses IA et les statistiques avancées. L'application reste gratuite pour les supporters." } },
           { "@type": "Question", "name": "Sur quelles plateformes RunCrew est-elle disponible ?", "acceptedAnswer": { "@type": "Answer", "text": "RunCrew sort d'abord sur Android via Google Play. Une version iOS est prévue ensuite." } },
           { "@type": "Question", "name": "Comment fonctionne le suivi en direct par mon crew ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu invites tes proches avec un code unique à 6 caractères. Pendant ta course, ils voient ta position, ta distance, ton allure et tes données cardiaques sur une carte en temps réel." } },
-          { "@type": "Question", "name": "Mes données personnelles sont-elles protégées ?", "acceptedAnswer": { "@type": "Answer", "text": "Tes données ne sont jamais vendues et sont hébergées dans l'Union européenne (Belgique, Google Cloud / Firebase). Tu peux supprimer ton compte directement depuis l'application." } },
+          { "@type": "Question", "name": "Mes données personnelles sont-elles protégées ?", "acceptedAnswer": { "@type": "Answer", "text": "Tes données ne sont jamais vendues et sont hébergées dans l'Union européenne (Belgique, Google Cloud / Firebase). Les zones de confidentialité masquent ta position autour de chez toi avant qu'elle quitte ton téléphone, et tu peux supprimer ton compte directement depuis l'application." } },
           { "@type": "Question", "name": "Puis-je tester RunCrew avant le lancement officiel ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, un programme beta est ouvert à un nombre limité de runners. Écris à runcrew.app@gmail.com pour demander un accès." } },
           { "@type": "Question", "name": "RunCrew consomme-t-elle beaucoup de batterie ?", "acceptedAnswer": { "@type": "Answer", "text": "Sur une course d'une heure, la consommation est comparable aux principales applications de running. Un guide de compatibilité explique les réglages à faire sur certains téléphones Android." } },
           { "@type": "Question", "name": "Comment connecter mes capteurs de fréquence cardiaque ?", "acceptedAnswer": { "@type": "Answer", "text": "RunCrew se connecte en Bluetooth Low Energy aux ceintures pectorales, brassards optiques et montres compatibles, depuis l'écran de préparation de séance." } }
@@ -151,7 +151,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="#top" aria-label="RunCrew — accueil">
-      <img src="img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
+      <img src="/img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
       <a href="#vues">La course</a>
@@ -201,7 +201,7 @@
       <div class="hero-visual" aria-hidden="true">
         <div class="phone">
           <div class="screen">
-            <img src="img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" fetchpriority="high">
+            <img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" fetchpriority="high">
             <svg class="route" viewBox="0 0 300 640" preserveAspectRatio="xMidYMid slice">
               <path class="trail" d="M 62 640 C 90 560, 150 560, 170 500 S 120 400, 160 340 S 250 300, 236 230 S 190 150, 240 120"/>
               <path class="line" d="M 62 640 C 90 560, 150 560, 170 500 S 120 400, 160 340 S 250 300, 236 230 S 190 150, 240 120"/>
@@ -290,7 +290,7 @@
               </div>
               <!-- 3D -->
               <div class="panel" id="panel-3d" role="tabpanel" aria-hidden="true" aria-labelledby="tab-3d">
-                <img src="img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" loading="lazy">
+                <img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" loading="lazy">
                 <div class="marker" style="top:46%;left:62%"></div>
                 <div class="ui">
                   <div class="ui-top"><span class="pill"><span class="dot"></span> En direct</span><span class="pill code">WQK2F3</span></div>
@@ -476,9 +476,9 @@
         <h2 class="display" id="sec-title">Ton crew veille.<br>À chaque foulée.</h2>
         <p class="lead" style="margin-top:18px">Que tu partes à 6 h du matin ou à la tombée de la nuit, RunCrew garde un œil sur toi. Si quelque chose ne va pas, les bonnes personnes le savent tout de suite, et savent où tu es.</p>
         <div class="sec-extra">
-          <div><strong><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg> Crew d'urgence dédié</strong>Un cercle restreint, distinct de tes supporters, que tu modifies à tout moment.</div>
+          <div><strong><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg> Zones de confidentialité</strong>Ta position est masquée dans un rayon de 500 m autour de chez toi, directement sur ton téléphone.</div>
           <div><strong><svg class="icon" aria-hidden="true"><use href="#i-signal"/></svg> Télémétrie continue</strong>Satellites, capteur cardio, altitude et météo, visibles en permanence dans le cockpit.</div>
-          <div><strong><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg> Rien ne traîne</strong>Positions et messages supprimés automatiquement après 7 jours, vocaux après 24 heures.</div>
+          <div><strong><svg class="icon" aria-hidden="true"><use href="#i-ghost"/></svg> Mode incognito</strong>Cours sans partager ta position ni prévenir tes supporters. Le SOS, lui, reste actif.</div>
           <div><strong><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Fiable écran verrouillé</strong>Conçu pour tourner en arrière-plan. <a href="/compatibilite" style="text-decoration:underline;text-underline-offset:3px">Guide de compatibilité Android</a>.</div>
         </div>
       </div>
@@ -623,7 +623,7 @@
         </details>
         <details>
           <summary>Mes données personnelles sont-elles protégées ? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-          <div class="answer"><p>Tes données ne sont jamais vendues et sont hébergées dans l'Union européenne (Belgique, Google Cloud / Firebase). Les positions de course sont supprimées automatiquement après 7 jours, les messages vocaux après 24 heures, et tu peux supprimer ton compte directement depuis l'application. Le détail est dans la <a href="/privacy" style="text-decoration:underline">politique de confidentialité</a>.</p></div>
+          <div class="answer"><p>Tes données ne sont jamais vendues et sont hébergées dans l'Union européenne (Belgique, Google Cloud / Firebase). Les zones de confidentialité masquent ta position autour de chez toi avant même qu'elle quitte ton téléphone, le partage en direct s'efface à la fin de chaque séance, et tu peux supprimer ton compte directement depuis l'application. Le détail est dans la <a href="/privacy" style="text-decoration:underline">politique de confidentialité</a>.</p></div>
         </details>
         <details>
           <summary>Puis-je tester RunCrew avant le lancement officiel ? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -672,7 +672,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
+        <img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
         <p>Courir entouré, même en solitaire. Une application française et 100 % indépendante, éditée par Le Petit Dev.</p>
       </div>
       <div class="footer-col">
@@ -719,6 +719,6 @@
   </div>
 </footer>
 
-<script src="js/site.js" defer></script>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

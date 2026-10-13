@@ -1,243 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mentions Légales — RunCrew</title>
-  <meta name="description" content="Mentions légales de RunCrew — Éditeur, hébergement, propriété intellectuelle et responsabilités." />
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <style>
-    :root {
-      --bg: #0B0F14;
-      --bg-alt: #0F151C;
-      --card: #151B23;
-      --border: #1E2730;
-      --accent: #8CFF3B;
-      --accent-alt: #00E676;
-      --text: #EAF1F8;
-      --muted: #8A99A8;
-      --warning: #FFAB00;
-      --danger: #FF5252;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    nav {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(11, 15, 20, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav img { height: 40px; }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    .container {
-      max-width: 860px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      color: var(--accent);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    ul { margin-left: 20px; margin-bottom: 15px; }
-    li { margin-bottom: 8px; }
-
-    code {
-      background: var(--bg-alt);
-      color: var(--accent);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: "SF Mono", Monaco, monospace;
-      font-size: 0.9em;
-    }
-
-    a.link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a.link:hover { text-decoration: underline; }
-
-    .updated {
-      display: inline-block;
-      padding: 6px 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    .info-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 20px 0;
-    }
-
-    .warning-box {
-      background: rgba(255, 171, 0, 0.08);
-      border: 1px solid rgba(255, 171, 0, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .warning-box p {
-      color: var(--warning);
-      margin-bottom: 8px;
-    }
-
-    .warning-box p:last-child { margin-bottom: 0; }
-
-    .danger-box {
-      background: rgba(255, 82, 82, 0.08);
-      border: 1px solid rgba(255, 82, 82, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .danger-box p {
-      color: var(--danger);
-      margin-bottom: 8px;
-    }
-
-    .danger-box p:last-child { margin-bottom: 0; }
-
-    .success-box {
-      background: rgba(140, 255, 59, 0.08);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .success-box p {
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .success-box p:last-child { margin-bottom: 0; }
-
-    .contact-block {
-      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .contact-block h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact-block a:hover { text-decoration: underline; }
-
-    footer {
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
-
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      nav { padding: 15px 20px; }
-      nav img { height: 30px; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.3rem; }
-      h3 { font-size: 1.05rem; }
-      .container { margin: 30px auto; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales — RunCrew</title>
+  <meta name="description" content="Mentions légales du site runcrew.fr et de l'application RunCrew, éditée par Le Petit Dev (ARRAGAIN Tony), hébergée en Europe.">
+  <link rel="canonical" href="https://runcrew.fr/mentions-legales">
+  <meta name="theme-color" content="#090E17">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RunCrew">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://runcrew.fr/mentions-legales">
+  <meta property="og:title" content="Mentions légales — RunCrew">
+  <meta property="og:description" content="Mentions légales du site runcrew.fr et de l'application RunCrew, éditée par Le Petit Dev (ARRAGAIN Tony), hébergée en Europe.">
+  <meta property="og:image" content="https://runcrew.fr/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/page.css">
 </head>
-
 <body>
-  <nav>
-    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour à l'accueil</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9-1 9-4 16-9 16z"/><path d="M4 20c4-6 8-9 12-11"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="RunCrew — accueil">
+      <img src="/img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="/#vues">La course</a>
+      <a href="/#fonctionnalites">Fonctionnalités</a>
+      <a href="/#securite">Sécurité</a>
+      <a href="/club">Clubs</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-sm" href="/club?action=login">Connexion club</a>
+      <a class="btn btn-primary btn-sm" href="/#liste">Rejoindre la liste</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+  </div>
+</header>
 
-  <div class="container">
-    <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Mentions Légales</h1>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Mentions légales</span>
+      <h1 class="display">Mentions Légales</h1>
+      <p class="lead">Éditeur, hébergement et propriété intellectuelle du site et de l'application.</p>
+      <div class="page-meta"><span class="updated">Dernière mise à jour : 19 août 2026</span></div>
+    </div>
+  </section>
 
-    <!-- SECTION 1 -->
+  <article class="doc">
+<!-- SECTION 1 -->
     <h2>1. Éditeur du site et de l'application</h2>
     <div class="info-card">
-      <p>Le site <a class="link" href="https://www.runcrew.fr">www.runcrew.fr</a> et l'application mobile RunCrew sont édités par :</p>
+      <p>Le site <a class="link" href="https://runcrew.fr">runcrew.fr</a> et l'application mobile RunCrew sont édités par :</p>
       <ul>
         <li><strong>Nom légal</strong> : ARRAGAIN Tony</li>
         <li><strong>Nom commercial</strong> : Le Petit Dev (RunCrew)</li>
@@ -246,7 +77,7 @@
         <li><strong>Code APE</strong> : 6201Z — Programmation informatique</li>
         <li><strong>Adresse du siège social</strong> : Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</li>
         <li><strong>Adresse email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
-        <li><strong>Site web</strong> : <a class="link" href="https://www.runcrew.fr">https://www.runcrew.fr</a></li>
+        <li><strong>Site web</strong> : <a class="link" href="https://runcrew.fr">https://runcrew.fr</a></li>
       </ul>
       <p>En sa qualité d'entrepreneur individuel bénéficiant du régime de la franchise en base de TVA (article 293 B du Code général des impôts), l'éditeur n'est pas assujetti à la TVA. <strong>TVA non applicable, article 293 B du CGI.</strong></p>
     </div>
@@ -295,7 +126,7 @@
     <ul>
       <li><strong>Adresse email</strong> : <a class="link" href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></li>
     </ul>
-    <p>Pour les demandes relatives à vos données personnelles, consultez notre <a class="link" href="privacy.html">Politique de Confidentialité</a>.</p>
+    <p>Pour les demandes relatives à vos données personnelles, consultez notre <a class="link" href="/privacy">Politique de Confidentialité</a>.</p>
 
     <!-- SECTION 7 -->
     <h2>7. Propriété intellectuelle</h2>
@@ -338,7 +169,7 @@
     <h3>8.3 Données cardiaques (Capteurs Bluetooth et Estimations)</h3>
     <p>RunCrew permet d'afficher la fréquence cardiaque soit via un <strong>capteur externe Bluetooth BLE</strong> (ceintures pectorales, brassards, montres connectées), soit par <strong>estimation mathématique</strong> basée sur les données GPS, l'âge et le poids déclarés.</p>
     <div class="danger-box">
-      <p><strong>⚠️ AVERTISSEMENT ESSENTIEL :</strong></p>
+      <p><strong>AVERTISSEMENT ESSENTIEL :</strong></p>
       <p>Qu'elles soient mesurées par capteur grand public ou estimées mathématiquement, ces données ne sont <strong>PAS</strong> :</p>
       <p>• Des données issues d'un dispositif médical certifié</p>
       <p>• Des électrocardiogrammes (ECG) de diagnostic clinique</p>
@@ -349,7 +180,7 @@
     <h3>8.4 Fonctionnalité SOS</h3>
     <p>Le bouton SOS de l'application envoie une notification aux membres du crew de l'utilisateur avec sa position GPS. <strong>Cette fonctionnalité n'appelle pas les services de secours officiels.</strong></p>
     <div class="danger-box">
-      <p><strong>⚠️ IMPORTANT</strong> : En cas d'urgence vitale, l'utilisateur doit impérativement composer :</p>
+      <p><strong>IMPORTANT</strong> : En cas d'urgence vitale, l'utilisateur doit impérativement composer :</p>
       <p>• <strong>15</strong> (SAMU)<br>• <strong>18</strong> (Pompiers)<br>• <strong>112</strong> (numéro d'urgence européen)<br>• <strong>911</strong> (États-Unis / Canada)</p>
       <p>L'éditeur ne peut être tenu responsable en cas d'incident lié à la non-intervention des secours officiels ou au dysfonctionnement de la notification aux supporters (défaillance réseau, téléphone éteint, notifications désactivées, etc.).</p>
     </div>
@@ -362,7 +193,7 @@
       <li>Coupure de la liaison Bluetooth avec les capteurs cardiaques</li>
       <li>Fermeture inopinée de l'application en arrière-plan</li>
     </ul>
-    <p>Ces limitations sont <strong>indépendantes de la volonté de l'éditeur</strong>. Un guide de compatibilité est disponible sur <a class="link" href="https://www.runcrew.fr/compatibilite">www.runcrew.fr/compatibilite</a>.</p>
+    <p>Ces limitations sont <strong>indépendantes de la volonté de l'éditeur</strong>. Un guide de compatibilité est disponible sur <a class="link" href="/compatibilite">www.runcrew.fr/compatibilite</a>.</p>
     <p>L'éditeur ne peut être tenu responsable des dommages résultant d'un retard ou d'une non-réception d'alerte SOS liés à ces limitations techniques.</p>
 
     <h3>8.6 Contenus des utilisateurs</h3>
@@ -374,7 +205,7 @@
 
     <!-- SECTION 9 -->
     <h2>9. Données personnelles</h2>
-    <p>Le traitement des données personnelles est encadré par notre <a class="link" href="privacy.html">Politique de Confidentialité</a>, conforme au Règlement (UE) 2016/679 (RGPD).</p>
+    <p>Le traitement des données personnelles est encadré par notre <a class="link" href="/privacy">Politique de Confidentialité</a>, conforme au Règlement (UE) 2016/679 (RGPD).</p>
     <p>RunCrew traite les données physiologiques et cardiaques (mesurées par Bluetooth ou estimées) sur la base du consentement explicite de l'utilisateur (Article 9.2.a RGPD).</p>
     <p>Pour toute demande relative aux données personnelles :</p>
     <ul>
@@ -415,25 +246,65 @@
     <div class="contact-block">
       <h3>Pour toute question</h3>
       <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
-      <p>Site web : <a href="https://www.runcrew.fr">https://www.runcrew.fr</a></p>
+      <p>Site web : <a href="https://runcrew.fr">https://runcrew.fr</a></p>
     </div>
 
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026</em>
-    </p>
+    <p class="doc-foot">Dernière mise à jour : 19 août 2026</p>
+    <a class="back" href="/"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg> Retour à l'accueil</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
+        <p>Courir entouré, même en solitaire. Une application française et 100 % indépendante, éditée par Le Petit Dev.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Produit</h3>
+        <ul>
+          <li><a href="/#vues">La course</a></li>
+          <li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="/#securite">Sécurité</a></li>
+          <li><a href="/#tarifs">Tarifs</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="/club">Espace clubs &amp; coachs</a></li>
+          <li><a href="/club?action=login">Connexion club</a></li>
+          <li><a href="/compatibilite">Guide de compatibilité Android</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew">Beta privée</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="/privacy">Politique de confidentialité</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/cgu">Conditions d'utilisation</a></li>
+          <li><a href="/cgv">CGV Premium</a></li>
+          <li><a href="/suppression-compte">Supprimer mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="footer-eco" aria-label="Engagements">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> Hébergé en Europe (Belgique)</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Zéro tracker publicitaire</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Données jamais revendues</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Analyses IA uniquement à la demande</li>
+    </ul>
+    <div class="footer-bottom">
+      <p>Le Petit Dev · SIRET 108 765 439 00014 · Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</p>
+      <p>© 2026 RunCrew — Tous droits réservés.</p>
+    </div>
   </div>
+</footer>
 
-  <footer>
-    <p>RunCrew — Courir entouré, même en solitaire.</p>
-    <p>
-      <a href="index.html">Accueil</a> · 
-      <a href="privacy.html">Politique de confidentialité</a> · 
-      <a href="mentions-legales.html">Mentions légales</a> · 
-      <a href="cgu.html">CGU</a> · 
-      <a href="cgv.html">CGV</a> · 
-      <a href="suppression-compte.html">Supprimer mon compte</a>
-    </p>
-  </footer>
-
+<script src="/js/site.js" defer></script>
 </body>
 </html>

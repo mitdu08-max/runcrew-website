@@ -1,0 +1,141 @@
+/* ==========================================================================
+   RunCrew — Espace Club (portail clubs & entraîneurs). Complète css/site.css.
+   ========================================================================== */
+
+/* ---------- Vue visiteur ---------- */
+.club-hero { position: relative; overflow: hidden; padding: clamp(56px, 8vw, 110px) 0 clamp(40px, 6vw, 72px); background: var(--navy-2); border-bottom: 1px solid var(--border); }
+.club-hero::before { content: ""; position: absolute; inset: -30% -10% auto; height: 130%; background: radial-gradient(45% 45% at 80% 35%, rgba(255, 85, 0, 0.16), transparent 70%); pointer-events: none; }
+.club-hero .container { position: relative; }
+.club-hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); margin: 18px 0 20px; max-width: 16ch; }
+.club-hero h1 .accent { color: var(--orange); }
+.club-hero .lead { font-size: clamp(1.05rem, 1.4vw, 1.2rem); max-width: 60ch; }
+.club-hero .hero-facts { margin-top: 28px; }
+.club-hero .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+.auth-section { padding: clamp(40px, 6vw, 72px) 0; }
+.auth-wrap { max-width: 860px; margin: 0 auto; }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 18px; }
+.auth-tab-btn { height: 46px; border-radius: 10px; font-weight: 600; color: var(--text-2); transition: background 0.2s, color 0.2s; }
+.auth-tab-btn:hover { color: var(--text); }
+.auth-tab-btn.active { background: var(--orange); color: var(--ink); }
+.auth-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 40px); }
+.auth-header { margin-bottom: 26px; }
+.auth-header h2 { font-family: var(--display); font-style: italic; font-weight: 800; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1; }
+.auth-header p { color: var(--text-2); margin-top: 8px; }
+
+/* Formulaires */
+.form-group-title { display: flex; align-items: center; gap: 12px; margin: 30px 0 14px; font-family: var(--body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.form-group-title:first-of-type { margin-top: 0; }
+.form-group-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.form-group-title b { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.1rem; color: var(--orange); letter-spacing: 0; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 7px; }
+.field .req { color: var(--orange); }
+.field input, .field select, .field textarea {
+  width: 100%; height: 48px; padding: 0 14px; border-radius: 12px;
+  background: var(--navy-2); border: 1px solid var(--border-2); color: var(--text);
+  font: inherit; font-size: 0.97rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+.field select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) 21px, calc(100% - 14px) 21px; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+.field input::placeholder { color: var(--muted); }
+.field input:focus, .field select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-dim); }
+.field small { display: block; margin-top: 6px; font-size: 0.8rem; color: var(--muted); }
+.field input.code { font-family: ui-monospace, "SF Mono", Menlo, monospace; text-transform: uppercase; letter-spacing: 0.2em; font-size: 1.15rem; }
+.submit-btn { width: 100%; margin-top: 10px; height: 52px; }
+.submit-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+.error-msg { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: rgba(255, 59, 78, 0.08); border: 1px solid rgba(255, 59, 78, 0.35); color: #FF7482; font-size: 0.92rem; }
+.error-msg.info { background: rgba(0, 229, 255, 0.06); border-color: rgba(0, 229, 255, 0.3); color: var(--cyan); }
+.form-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; font-size: 0.88rem; color: var(--muted); }
+.link-btn { color: var(--text-2); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.link-btn:hover { color: var(--text); }
+.ok-msg { display: none; margin-top: 12px; color: var(--ok); font-weight: 600; }
+
+/* Avantages */
+.club-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.pillar-card { padding: 28px; }
+.pillar-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--orange-dim); color: var(--orange); margin-bottom: 18px; }
+.pillar-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.pillar-card p { color: var(--text-2); font-size: 0.97rem; }
+
+/* ---------- Tableau de bord ---------- */
+.dashboard { padding: clamp(32px, 5vw, 56px) 0 clamp(64px, 8vw, 100px); }
+.dash-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+.dash-club-identity { display: flex; align-items: center; gap: 18px; }
+.dash-club-avatar { width: 64px; height: 64px; border-radius: 18px; background: var(--orange); color: var(--ink); display: grid; place-items: center; font-family: var(--display); font-style: italic; font-weight: 800; font-size: 2rem; flex: none; }
+.dash-club-title h1 { font-family: var(--display); font-style: italic; font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1; }
+.dash-club-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 10px; color: var(--text-2); font-size: 0.92rem; }
+.dash-badge-status { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--orange-dim); border: 1px solid rgba(255, 85, 0, 0.4); color: var(--orange-2); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.club-code-banner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; padding: clamp(22px, 3vw, 32px); border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(255, 85, 0, 0.14), var(--surface) 60%); border: 1px solid rgba(255, 85, 0, 0.35); margin-bottom: 24px; }
+.club-code-left h3 { font-family: var(--body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.club-code-left p { color: var(--text-2); font-size: 0.97rem; }
+.club-code-display { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.code-badge-large { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; letter-spacing: 0.22em; color: var(--text); padding: 8px 18px 8px 22px; border-radius: 12px; background: var(--navy); border: 1px dashed var(--border-2); }
+.code-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
+.dash-tabs { display: flex; gap: 6px; padding: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 24px; overflow-x: auto; }
+.dash-tab-btn { flex: 1; white-space: nowrap; height: 44px; padding: 0 16px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; color: var(--text-2); transition: background 0.2s, color 0.2s; }
+.dash-tab-btn:hover { color: var(--text); }
+.dash-tab-btn.active { background: var(--orange); color: var(--ink); }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fade 0.3s var(--ease); }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.tab-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
+.tab-head h2 { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.7rem; line-height: 1; }
+.tab-head p { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
+
+.coaches-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.coach-card { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.coach-card-top { display: flex; align-items: center; gap: 12px; }
+.coach-avatar { width: 44px; height: 44px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border-2); display: grid; place-items: center; font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.3rem; color: var(--text); flex: none; }
+.coach-name { font-weight: 700; }
+.coach-role { color: var(--muted); font-size: 0.85rem; }
+.coach-details { margin-top: 12px; font-size: 0.88rem; color: var(--text-2); display: grid; gap: 4px; }
+.coach-details .on { color: var(--ok); font-weight: 600; font-size: 0.8rem; }
+.coach-actions { display: flex; justify-content: flex-end; }
+.empty-state { grid-column: 1 / -1; padding: 32px; text-align: center; border: 1px dashed var(--border-2); border-radius: var(--radius); color: var(--muted); }
+.empty-state .btn { margin-top: 14px; }
+
+.sessions-list { display: grid; gap: 10px; }
+.session-item { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.session-main { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.session-date-badge { min-width: 76px; padding: 8px 10px; text-align: center; border-radius: 12px; background: var(--orange-dim); border: 1px solid rgba(255, 85, 0, 0.3); }
+.session-date-day { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.05rem; color: var(--orange-2); text-transform: uppercase; line-height: 1; }
+.session-date-hour { font-size: 0.8rem; color: var(--text-2); margin-top: 4px; }
+.session-info h4 { font-size: 1.02rem; font-weight: 700; }
+.session-info p { color: var(--muted); font-size: 0.88rem; margin-top: 3px; }
+
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.kpi { padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.kpi-val { display: block; font-family: var(--display); font-style: italic; font-weight: 800; font-size: 2.4rem; line-height: 1; color: var(--orange); }
+.kpi-label { display: block; margin-top: 8px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+.btn-danger { border: 1px solid rgba(255, 59, 78, 0.4); color: #FF7482; background: transparent; }
+.btn-danger:hover { background: rgba(255, 59, 78, 0.1); }
+.btn-xs { height: 34px; padding: 0 12px; font-size: 0.82rem; border-radius: 8px; }
+.nav-club-name { color: var(--text-2); font-weight: 600; font-size: 0.9rem; max-width: 22ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Modales */
+.modal-overlay { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(3, 6, 10, 0.78); backdrop-filter: blur(6px); }
+.modal-overlay.active { display: flex; }
+.modal-box { width: min(520px, 100%); max-height: calc(100vh - 40px); overflow: auto; padding: 28px; background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--radius-lg); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9); animation: fade 0.25s var(--ease); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; }
+.modal-header h3 { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 1.6rem; line-height: 1; }
+.btn-modal-close { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border-2); color: var(--text-2); font-size: 1.4rem; line-height: 1; display: grid; place-items: center; }
+.btn-modal-close:hover { color: var(--text); border-color: var(--text-2); }
+
+@media (max-width: 860px) {
+  .club-code-banner { grid-template-columns: 1fr; }
+  .club-code-display { align-items: flex-start; }
+  .code-actions { justify-content: flex-start; }
+  .kpis { grid-template-columns: 1fr; }
+  .club-pillars { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .auth-tabs { grid-template-columns: 1fr; }
+  .dash-tab-btn { flex: none; }
+  .nav-club-name { display: none; }
+}

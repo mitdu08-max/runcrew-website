@@ -1,362 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suppression de compte — RunCrew</title>
-  <meta name="description" content="Comment supprimer votre compte RunCrew et vos données personnelles." />
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <style>
-    :root {
-      --bg: #0B0F14;
-      --bg-alt: #0F151C;
-      --card: #151B23;
-      --border: #1E2730;
-      --accent: #8CFF3B;
-      --accent-alt: #00E676;
-      --text: #EAF1F8;
-      --muted: #8A99A8;
-      --warning: #FFAB00;
-      --danger: #FF5252;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    nav {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(11, 15, 20, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav img { height: 40px; }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    .container {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      color: var(--accent);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    ul { margin-left: 20px; margin-bottom: 15px; }
-    li { margin-bottom: 8px; }
-
-    a.link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a.link:hover { text-decoration: underline; }
-
-    .updated {
-      display: inline-block;
-      padding: 6px 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    .version-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(140, 255, 59, 0.1);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 20px;
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-left: 10px;
-      font-weight: 600;
-    }
-
-    .intro {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 30px 0 50px 0;
-    }
-
-    .intro p {
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 0;
-    }
-
-    .steps {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 20px 0;
-    }
-
-    .steps ol {
-      counter-reset: step;
-      list-style: none;
-      margin-left: 0;
-    }
-
-    .steps ol li {
-      counter-increment: step;
-      position: relative;
-      padding-left: 45px;
-      margin-bottom: 20px;
-      color: var(--text);
-    }
-
-    .steps ol li:before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 30px;
-      height: 30px;
-      background: var(--accent);
-      color: var(--bg);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .warning-box {
-      background: rgba(255, 171, 0, 0.08);
-      border: 1px solid rgba(255, 171, 0, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .warning-box p {
-      color: var(--warning);
-      margin-bottom: 8px;
-    }
-
-    .warning-box p:last-child { margin-bottom: 0; }
-
-    .danger-box {
-      background: rgba(255, 82, 82, 0.08);
-      border: 1px solid rgba(255, 82, 82, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .danger-box p {
-      color: var(--danger);
-      margin-bottom: 8px;
-    }
-
-    .danger-box p:last-child { margin-bottom: 0; }
-
-    .success-box {
-      background: rgba(140, 255, 59, 0.08);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .success-box p {
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .success-box p:last-child { margin-bottom: 0; }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .info-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 15px;
-    }
-
-    .info-item strong {
-      color: var(--accent);
-      font-size: 0.85rem;
-      display: block;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-
-    .info-item p {
-      color: var(--text);
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    th {
-      background: var(--bg-alt);
-      color: var(--accent);
-      padding: 14px 16px;
-      text-align: left;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.92rem;
-      vertical-align: top;
-    }
-
-    td:first-child {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    tr:last-child td { border-bottom: none; }
-
-    .contact-block {
-      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .contact-block h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .contact-block a:hover { text-decoration: underline; }
-
-    .info-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 20px 0;
-    }
-
-    footer {
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
-
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      nav { padding: 15px 20px; }
-      nav img { height: 30px; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.3rem; }
-      h3 { font-size: 1.05rem; }
-      .container { margin: 30px auto; }
-      .info-grid { grid-template-columns: 1fr; }
-      table { font-size: 0.85rem; }
-      th, td { padding: 10px 12px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supprimer mon compte — RunCrew</title>
+  <meta name="description" content="Comment supprimer votre compte RunCrew et vos données personnelles : depuis l'application en quelques étapes, ou par email.">
+  <link rel="canonical" href="https://runcrew.fr/suppression-compte">
+  <meta name="theme-color" content="#090E17">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RunCrew">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://runcrew.fr/suppression-compte">
+  <meta property="og:title" content="Supprimer mon compte — RunCrew">
+  <meta property="og:description" content="Comment supprimer votre compte RunCrew et vos données personnelles : depuis l'application en quelques étapes, ou par email.">
+  <meta property="og:image" content="https://runcrew.fr/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/page.css">
 </head>
-
 <body>
-  <nav>
-    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour à l'accueil</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9-1 9-4 16-9 16z"/><path d="M4 20c4-6 8-9 12-11"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="RunCrew — accueil">
+      <img src="/img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="/#vues">La course</a>
+      <a href="/#fonctionnalites">Fonctionnalités</a>
+      <a href="/#securite">Sécurité</a>
+      <a href="/club">Clubs</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-sm" href="/club?action=login">Connexion club</a>
+      <a class="btn btn-primary btn-sm" href="/#liste">Rejoindre la liste</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+  </div>
+</header>
 
-  <div class="container">
-    <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Supprimer mon compte RunCrew<span class="version-badge">V2.0</span></h1>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Vos droits</span>
+      <h1 class="display">Supprimer mon compte RunCrew</h1>
+      <p class="lead">Supprimer votre compte et vos données depuis l'application, ou en nous écrivant.</p>
+      <div class="page-meta"><span class="updated">Dernière mise à jour : 19 août 2026</span><span class="version-badge">V2.0</span></div>
+    </div>
+  </section>
 
-    <div class="intro">
+  <article class="doc">
+<div class="intro">
       <p>Cette page explique comment supprimer votre compte RunCrew et vos données personnelles, conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong> et aux exigences de <strong>Google Play</strong>. Le Service est édité par ARRAGAIN Tony (Le Petit Dev / RunCrew), micro-entreprise (Entrepreneur individuel) immatriculée sous le numéro SIRET <strong>108 765 439 00014</strong>. Chez RunCrew, nous respectons votre droit à contrôler vos données. La suppression de votre compte est <strong>simple, immédiate et gratuite</strong>.</p>
     </div>
 
@@ -364,7 +73,7 @@
     <h2>1. Comment supprimer votre compte entièrement</h2>
 
     <h3>Option 1 — Depuis l'application (recommandé)</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application <strong>RunCrew</strong> sur votre téléphone</li>
         <li>Rendez-vous dans <strong>Paramètres</strong> (icône en haut à droite)</li>
@@ -397,7 +106,7 @@
 
     <h3>Supprimer une session individuelle</h3>
     <p>Une session correspond à une activité sportive enregistrée (course à pied, vélo ou randonnée).</p>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application RunCrew</li>
         <li>Accédez à votre <strong>historique de sessions</strong></li>
@@ -410,7 +119,7 @@
     </div>
 
     <h3>Supprimer une paire de chaussures</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application RunCrew</li>
         <li>Rendez-vous dans <strong>Chaussures</strong></li>
@@ -420,7 +129,7 @@
     </div>
 
     <h3>Quitter un crew (en tant que supporter)</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application RunCrew</li>
         <li>Rendez-vous dans la section <strong>Crew</strong> ou <strong>Coureurs suivis</strong></li>
@@ -430,7 +139,7 @@
     </div>
 
     <h3>Retirer un supporter (en tant que coureur)</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application RunCrew</li>
         <li>Rendez-vous dans <strong>Mon crew</strong></li>
@@ -441,7 +150,7 @@
     <p>Cette action est bidirectionnelle et immédiate.</p>
 
     <h3>Supprimer votre photo de profil</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Paramètres → Profil</li>
         <li>Appuyez sur votre photo de profil</li>
@@ -450,7 +159,7 @@
     </div>
 
     <h3>Modifier ou supprimer votre prénom / nom d'affichage</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Paramètres → Profil</li>
         <li>Modifiez ou effacez le champ concerné</li>
@@ -459,7 +168,7 @@
     </div>
 
     <h3>Désactiver les métriques de santé estimées</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Paramètres → Application</li>
         <li>Section <strong>Intelligence artificielle et métriques</strong></li>
@@ -469,7 +178,7 @@
     <p>Les métriques ne seront plus affichées ni calculées. Les données existantes seront masquées.</p>
 
     <h3>Désactiver l'intelligence artificielle</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Paramètres → Application</li>
         <li>Section <strong>Intelligence artificielle et métriques</strong></li>
@@ -520,9 +229,9 @@
 
     <h3>Retrait des relations crew</h3>
     <div class="success-box">
-      <p>✅ Vous êtes <strong>retiré de tous les crews</strong> où vous étiez supporter</p>
-      <p>✅ Les supporters de votre crew sont <strong>détachés</strong> de vous</p>
-      <p>✅ Cette action est effectuée <strong>dans les deux sens</strong> de manière atomique</p>
+      <p><svg class="icon ok" aria-hidden="true"><use href="#i-check"/></svg>Vous êtes <strong>retiré de tous les crews</strong> où vous étiez supporter</p>
+      <p><svg class="icon ok" aria-hidden="true"><use href="#i-check"/></svg>Les supporters de votre crew sont <strong>détachés</strong> de vous</p>
+      <p><svg class="icon ok" aria-hidden="true"><use href="#i-check"/></svg>Cette action est effectuée <strong>dans les deux sens</strong> de manière atomique</p>
     </div>
 
     <h3>Données anonymisées (conservées sans identification)</h3>
@@ -533,13 +242,13 @@
 
     <h3>Ce qui n'est PAS conservé</h3>
     <div class="danger-box">
-      <p>❌ Aucun email</p>
-      <p>❌ Aucun identifiant technique lié à vous</p>
-      <p>❌ Aucune photo</p>
-      <p>❌ Aucune donnée GPS</p>
-      <p>❌ Aucune métrique santé estimée</p>
-      <p>❌ Aucune analyse IA</p>
-      <p>❌ Aucune donnée de compte</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucun email</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucun identifiant technique lié à vous</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucune photo</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucune donnée GPS</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucune métrique santé estimée</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucune analyse IA</p>
+      <p><svg class="icon no" aria-hidden="true"><use href="#i-x"/></svg>Aucune donnée de compte</p>
     </div>
 
     <!-- SECTION 4 -->
@@ -586,11 +295,11 @@
     <!-- SECTION 6 -->
     <h2>6. Suppression de votre abonnement Premium</h2>
     <div class="warning-box">
-      <p><strong>⚠️ Important</strong> : Si vous êtes abonné à <strong>RunCrew Premium</strong>, la suppression de votre compte RunCrew <strong>n'annule pas automatiquement</strong> votre abonnement Google Play. Vous devez résilier votre abonnement séparément.</p>
+      <p><strong>Important</strong> : Si vous êtes abonné à <strong>RunCrew Premium</strong>, la suppression de votre compte RunCrew <strong>n'annule pas automatiquement</strong> votre abonnement Google Play. Vous devez résilier votre abonnement séparément.</p>
     </div>
 
     <h3>Depuis Google Play Store</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application <strong>Google Play Store</strong></li>
         <li>Menu → <strong>Abonnements</strong></li>
@@ -600,21 +309,21 @@
     </div>
 
     <h3>Depuis un navigateur web</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Rendez-vous sur <a class="link" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">https://play.google.com/store/account/subscriptions</a></li>
         <li>Sélectionnez <strong>RunCrew Premium</strong></li>
         <li>Cliquez sur <strong>« Résilier »</strong></li>
       </ol>
     </div>
-    <p>Pour plus de détails sur la résiliation et le remboursement, consultez nos <a class="link" href="cgv.html">Conditions Générales de Vente</a>.</p>
+    <p>Pour plus de détails sur la résiliation et le remboursement, consultez nos <a class="link" href="/cgv">Conditions Générales de Vente</a>.</p>
 
     <!-- SECTION 7 -->
     <h2>7. Télécharger vos données avant suppression</h2>
     <p>Avant de supprimer votre compte, vous pouvez télécharger l'ensemble de vos données personnelles au format standard (droit à la portabilité — RGPD Article 20).</p>
 
     <h3>Comment demander l'export de vos données</h3>
-    <div class="steps">
+    <div class="doc-steps">
       <ol>
         <li>Ouvrez l'application RunCrew</li>
         <li>Rendez-vous dans <strong>Paramètres → Application</strong></li>
@@ -659,7 +368,7 @@
     <h2>8. Vos droits RGPD</h2>
     <p>En complément du droit à l'effacement, vous disposez des droits suivants sur vos données personnelles :</p>
 
-    <table>
+    <div class="table-wrap"><table>
       <thead>
         <tr>
           <th>Droit</th>
@@ -696,9 +405,9 @@
           <td>À tout moment, y compris pour les métriques santé estimées</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <p>Pour plus de détails, consultez notre <a class="link" href="privacy.html">Politique de Confidentialité</a>.</p>
+    <p>Pour plus de détails, consultez notre <a class="link" href="/privacy">Politique de Confidentialité</a>.</p>
 
     <!-- SECTION 9 -->
     <h2>9. Réclamation</h2>
@@ -717,18 +426,65 @@
       <h3>Besoin d'aide ?</h3>
       <p>Nous répondons sous <strong>72 heures ouvrées</strong> en moyenne.</p>
       <p><a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
-      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://www.runcrew.fr" style="color: var(--accent); text-decoration: none;">https://www.runcrew.fr</a></p>
+      <p style="margin-top: 10px; font-size: 0.9rem;"><a href="https://runcrew.fr" style="color: var(--accent); text-decoration: none;">https://runcrew.fr</a></p>
     </div>
 
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 2.0</em>
-    </p>
+    <p class="doc-foot">Dernière mise à jour : 19 août 2026 — Version 2.0</p>
+    <a class="back" href="/"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg> Retour à l'accueil</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
+        <p>Courir entouré, même en solitaire. Une application française et 100 % indépendante, éditée par Le Petit Dev.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Produit</h3>
+        <ul>
+          <li><a href="/#vues">La course</a></li>
+          <li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="/#securite">Sécurité</a></li>
+          <li><a href="/#tarifs">Tarifs</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="/club">Espace clubs &amp; coachs</a></li>
+          <li><a href="/club?action=login">Connexion club</a></li>
+          <li><a href="/compatibilite">Guide de compatibilité Android</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew">Beta privée</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="/privacy">Politique de confidentialité</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/cgu">Conditions d'utilisation</a></li>
+          <li><a href="/cgv">CGV Premium</a></li>
+          <li><a href="/suppression-compte">Supprimer mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="footer-eco" aria-label="Engagements">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> Hébergé en Europe (Belgique)</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Zéro tracker publicitaire</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Données jamais revendues</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Analyses IA uniquement à la demande</li>
+    </ul>
+    <div class="footer-bottom">
+      <p>Le Petit Dev · SIRET 108 765 439 00014 · Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</p>
+      <p>© 2026 RunCrew — Tous droits réservés.</p>
+    </div>
   </div>
+</footer>
 
-  <footer>
-    <p>RunCrew — Courir entouré, même en solitaire.</p>
-    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgu.html">CGU</a></p>
-  </footer>
-
+<script src="/js/site.js" defer></script>
 </body>
 </html>

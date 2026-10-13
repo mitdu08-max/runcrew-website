@@ -1,316 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conditions Générales de Vente — RunCrew Premium</title>
-  <meta name="description" content="Conditions Générales de Vente de l'abonnement RunCrew Premium — Prix, souscription, résiliation et remboursement." />
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <style>
-    :root {
-      --bg: #0B0F14;
-      --bg-alt: #0F151C;
-      --card: #151B23;
-      --border: #1E2730;
-      --accent: #8CFF3B;
-      --accent-alt: #00E676;
-      --text: #EAF1F8;
-      --muted: #8A99A8;
-      --warning: #FFAB00;
-      --danger: #FF5252;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    nav {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(11, 15, 20, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav img { height: 40px; }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    .container {
-      max-width: 860px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      color: var(--accent);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    ul, ol { margin-left: 20px; margin-bottom: 15px; }
-    li { margin-bottom: 8px; }
-
-    a.link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a.link:hover { text-decoration: underline; }
-
-    .updated {
-      display: inline-block;
-      padding: 6px 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    .version-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(140, 255, 59, 0.1);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 20px;
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-left: 10px;
-      font-weight: 600;
-    }
-
-    .intro {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 30px 0 50px 0;
-    }
-
-    .intro p {
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 0;
-    }
-
-    .price-card {
-      background: linear-gradient(135deg, rgba(140, 255, 59, 0.12), rgba(0, 230, 118, 0.04));
-      border: 1px solid rgba(140, 255, 59, 0.35);
-      border-radius: 20px;
-      padding: 34px;
-      text-align: center;
-      margin: 28px 0;
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--accent);
-      letter-spacing: -1px;
-      margin-bottom: 4px;
-    }
-
-    .price-sub {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .warning-box {
-      background: rgba(255, 171, 0, 0.08);
-      border: 1px solid rgba(255, 171, 0, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .warning-box p {
-      color: var(--warning);
-      margin-bottom: 8px;
-    }
-
-    .warning-box p:last-child { margin-bottom: 0; }
-
-    .danger-box {
-      background: rgba(255, 82, 82, 0.08);
-      border: 1px solid rgba(255, 82, 82, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .danger-box p {
-      color: var(--danger);
-      margin-bottom: 8px;
-    }
-
-    .danger-box p:last-child { margin-bottom: 0; }
-
-    .success-box {
-      background: rgba(140, 255, 59, 0.08);
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .success-box p {
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .success-box p:last-child { margin-bottom: 0; }
-
-    .info-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 20px 0;
-    }
-
-    .toc {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 30px 0 50px 0;
-    }
-
-    .toc h3 {
-      color: var(--text);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .toc ol {
-      margin-left: 20px;
-      color: var(--muted);
-    }
-
-    .toc a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .toc a:hover { color: var(--accent); }
-
-    .contact-block {
-      background: linear-gradient(135deg, rgba(140, 255, 59, 0.08), rgba(0, 230, 118, 0.04));
-      border: 1px solid rgba(140, 255, 59, 0.3);
-      border-radius: 16px;
-      padding: 30px;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .contact-block h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact-block a:hover { text-decoration: underline; }
-
-    footer {
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
-
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      nav { padding: 15px 20px; }
-      nav img { height: 30px; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.3rem; }
-      h3 { font-size: 1.05rem; }
-      .container { margin: 30px auto; }
-      .price { font-size: 2.4rem; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditions générales de vente Premium — RunCrew</title>
+  <meta name="description" content="CGV de l'abonnement RunCrew Premium à 6,99 €/mois : essai gratuit de 7 jours, renouvellement, résiliation et remboursement via Google Play.">
+  <link rel="canonical" href="https://runcrew.fr/cgv">
+  <meta name="theme-color" content="#090E17">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RunCrew">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://runcrew.fr/cgv">
+  <meta property="og:title" content="Conditions générales de vente Premium — RunCrew">
+  <meta property="og:description" content="CGV de l'abonnement RunCrew Premium à 6,99 €/mois : essai gratuit de 7 jours, renouvellement, résiliation et remboursement via Google Play.">
+  <meta property="og:image" content="https://runcrew.fr/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/page.css">
 </head>
-
 <body>
-  <nav>
-    <a href="index.html"><img src="runcrew-logo.png" alt="RunCrew"></a>
-    <a href="index.html">← Retour à l'accueil</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9-1 9-4 16-9 16z"/><path d="M4 20c4-6 8-9 12-11"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="RunCrew — accueil">
+      <img src="/img/brand/runcrew-lockup-white.svg" alt="" width="106" height="30">
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="/#vues">La course</a>
+      <a href="/#fonctionnalites">Fonctionnalités</a>
+      <a href="/#securite">Sécurité</a>
+      <a href="/club">Clubs</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-sm" href="/club?action=login">Connexion club</a>
+      <a class="btn btn-primary btn-sm" href="/#liste">Rejoindre la liste</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu"><span></span></button>
+    </div>
+  </div>
+</header>
 
-  <div class="container">
-    <span class="updated">Dernière mise à jour : 19 août 2026</span>
-    <h1>Conditions Générales de Vente<span class="version-badge">Premium V2.0</span></h1>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Abonnement Premium</span>
+      <h1 class="display">Conditions Générales de Vente</h1>
+      <p class="lead">Souscription, essai gratuit, résiliation et remboursement de l'abonnement Premium via Google Play.</p>
+      <div class="page-meta"><span class="updated">Dernière mise à jour : 19 août 2026</span><span class="version-badge">Premium V2.0</span></div>
+    </div>
+  </section>
 
-    <div class="intro">
+  <article class="doc">
+<div class="intro">
       <p>Les présentes Conditions Générales de Vente (ci-après « <strong>CGV</strong> ») régissent la souscription et l'utilisation de l'abonnement Premium à l'application mobile RunCrew, édité par <strong>ARRAGAIN Tony (Le Petit Dev / RunCrew)</strong>, micro-entreprise (Entrepreneur individuel), immatriculée sous le numéro SIRET <strong>108 765 439 00014</strong>, dont le siège social est situé <strong>Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</strong> (ci-après « l'<strong>Éditeur</strong> »).</p>
     </div>
 
     <p>Elles s'appliquent à tout Utilisateur (ci-après « le <strong>Client</strong> ») qui souscrit un abonnement Premium via le Google Play Store.</p>
-    <p>Les présentes CGV complètent les <a class="link" href="cgu.html">Conditions Générales d'Utilisation (CGU)</a> applicables à l'ensemble du Service RunCrew.</p>
+    <p>Les présentes CGV complètent les <a class="link" href="/cgu">Conditions Générales d'Utilisation (CGU)</a> applicables à l'ensemble du Service RunCrew.</p>
 
     <div class="toc">
-      <h3>📑 Sommaire</h3>
+      <h3>Sommaire</h3>
       <ol>
         <li><a href="#s1">Description et Limitations des Offres (Gratuit vs Premium)</a></li>
         <li><a href="#s2">Tarif et modalités de paiement</a></li>
@@ -425,7 +188,7 @@
     <h4>Depuis le Play Store :</h4>
     <ol>
       <li>Ouvrez l'application Google Play Store sur votre smartphone</li>
-      <li>Appuyez sur votre profil (en haut à droite) puis sélectionnez <strong>Paiements et abonnements > Abonnements</strong></li>
+      <li>Appuyez sur votre profil (en haut à droite) puis sélectionnez <strong>Paiements et abonnements &gt; Abonnements</strong></li>
       <li>Sélectionnez <strong>RunCrew Premium</strong></li>
       <li>Cliquez sur <strong>« Résilier l'abonnement »</strong> et suivez les instructions à l'écran</li>
     </ol>
@@ -445,7 +208,7 @@
     <p>L'Éditeur se réserve le droit d'ajuster les présentes CGV à tout moment. Les conditions applicables sont celles acceptées par l'Utilisateur lors de sa souscription ou lors du renouvellement mensuel de son abonnement.</p>
 
     <h2 id="s10">10. Données personnelles</h2>
-    <p>Le traitement des données personnelles liées à la facturation de l'Abonnement Premium est encadré par notre <a class="link" href="privacy.html">Politique de Confidentialité</a>. RunCrew n'accède à aucune donnée bancaire, celles-ci étant cryptées et traitées uniquement par Google Play.</p>
+    <p>Le traitement des données personnelles liées à la facturation de l'Abonnement Premium est encadré par notre <a class="link" href="/privacy">Politique de Confidentialité</a>. RunCrew n'accède à aucune donnée bancaire, celles-ci étant cryptées et traitées uniquement par Google Play.</p>
 
     <h2 id="s11">11. Responsabilité</h2>
     <p>La responsabilité de l'Éditeur est strictement limitée à la délivrance technique des fonctionnalités Premium. L'Éditeur ne peut être tenu responsable des dysfonctionnements du système de paiement Google Play Billing ou de la perte de connectivité réseau de l'Utilisateur.</p>
@@ -471,19 +234,66 @@
     <div class="contact-block">
       <h3>Pour toute question relative aux présentes CGV</h3>
       <p>Email : <a href="mailto:runcrew.app@gmail.com">runcrew.app@gmail.com</a></p>
-      <p>Site web : <a href="https://www.runcrew.fr">https://www.runcrew.fr</a></p>
+      <p>Site web : <a href="https://runcrew.fr">https://runcrew.fr</a></p>
       <p>Pour les demandes de remboursement, contactez directement <a href="https://support.google.com/googleplay" target="_blank" rel="noopener">Google Play</a>.</p>
     </div>
 
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 60px;">
-      <em>Dernière mise à jour : 19 août 2026 — Version 2.0</em>
-    </p>
+    <p class="doc-foot">Dernière mise à jour : 19 août 2026 — Version 2.0</p>
+    <a class="back" href="/"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg> Retour à l'accueil</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/img/brand/runcrew-lockup-white.svg" alt="RunCrew" width="99" height="28" loading="lazy">
+        <p>Courir entouré, même en solitaire. Une application française et 100 % indépendante, éditée par Le Petit Dev.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Produit</h3>
+        <ul>
+          <li><a href="/#vues">La course</a></li>
+          <li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="/#securite">Sécurité</a></li>
+          <li><a href="/#tarifs">Tarifs</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="/club">Espace clubs &amp; coachs</a></li>
+          <li><a href="/club?action=login">Connexion club</a></li>
+          <li><a href="/compatibilite">Guide de compatibilité Android</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com?subject=Demande%20beta%20RunCrew">Beta privée</a></li>
+          <li><a href="mailto:runcrew.app@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="/privacy">Politique de confidentialité</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/cgu">Conditions d'utilisation</a></li>
+          <li><a href="/cgv">CGV Premium</a></li>
+          <li><a href="/suppression-compte">Supprimer mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="footer-eco" aria-label="Engagements">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> Hébergé en Europe (Belgique)</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Zéro tracker publicitaire</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Données jamais revendues</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Analyses IA uniquement à la demande</li>
+    </ul>
+    <div class="footer-bottom">
+      <p>Le Petit Dev · SIRET 108 765 439 00014 · Quartier Le Perrussier, 83520 Roquebrune-sur-Argens, France</p>
+      <p>© 2026 RunCrew — Tous droits réservés.</p>
+    </div>
   </div>
+</footer>
 
-  <footer>
-    <p>RunCrew — Courir entouré, même en solitaire.</p>
-    <p><a href="index.html">Retour à l'accueil</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgu.html">CGU</a></p>
-  </footer>
-
+<script src="/js/site.js" defer></script>
 </body>
 </html>
