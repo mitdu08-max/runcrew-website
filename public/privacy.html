@@ -60,7 +60,7 @@
       <span class="eyebrow">Confidentialité</span>
       <h1 class="display">Politique de Confidentialité</h1>
       <p class="lead">Ce que RunCrew collecte, pourquoi, combien de temps, et comment exercer vos droits.</p>
-      <div class="page-meta"><span class="updated">Dernière mise à jour : 14 octobre 2026</span><span class="version-badge">V2.5</span></div>
+      <div class="page-meta"><span class="updated">Dernière mise à jour : 14 octobre 2026</span><span class="version-badge">V2.6</span></div>
     </div>
   </section>
 
@@ -228,6 +228,7 @@
         <tr><td>Déblocage complet et gestion technique des accès Premium (6,99 €/mois)</td><td>Token d'achat Google Play, statut Premium</td><td>Exécution du contrat</td></tr>
         <tr><td>Analyse IA (à la demande)</td><td>Données anonymisées</td><td>Consentement explicite</td></tr>
         <tr><td>Liste d'attente du site web (information au lancement)</td><td>Adresse email, formulaire d'origine, date d'inscription</td><td>Consentement (art. 6.1.a) — retirable à tout moment</td></tr>
+        <tr><td>Séances de club : encadrement en direct par l'entraîneur et bilan de séance pour la structure</td><td>Présence, chronos, allure et position pendant la séance ; fréquence cardiaque si un capteur est connecté</td><td>Exécution du contrat (art. 6.1.b) ; consentement explicite pour les données cardiaques (art. 9.2.a)</td></tr>
         <tr><td>Espace Club : création et gestion de l'espace d'une structure</td><td>Données de la structure et de son responsable, entraîneurs, séances planifiées</td><td>Exécution du contrat / mesures précontractuelles (art. 6.1.b)</td></tr>
         <tr><td>Sécurité, disponibilité et bon fonctionnement du site</td><td>Journaux techniques (adresse IP, horodatage, page demandée, navigateur)</td><td>Intérêt légitime (art. 6.1.f)</td></tr>
         <tr><td>Réponse aux demandes reçues par email (contact, beta, droits RGPD)</td><td>Adresse email, contenu de la demande</td><td>Intérêt légitime / obligation légale (art. 12 à 22 RGPD)</td></tr>
@@ -294,19 +295,21 @@
         <tr><td>Code club</td><td>Rattachement des adhérents à la structure dans l'application</td><td>Généré, personnalisable par le club</td></tr>
         <tr><td>Entraîneurs : prénom, nom et numéro de téléphone (facultatifs), spécialité</td><td>Désignation des coachs habilités à animer les séances et à utiliser le cockpit terrain</td><td>Le responsable du club, qui s'assure d'en avoir informé les personnes concernées</td></tr>
         <tr><td>Séances : intitulé, jour, heure, lieu, entraîneur</td><td>Affichage du planning aux adhérents du club dans l'application</td><td>Le responsable du club</td></tr>
+        <tr><td>Participation des membres aux séances de club : présence, chronos, allure et position pendant la séance, fréquence cardiaque si capteur connecté ; bilan de séance archivé (présences, chronos, cardio)</td><td>Suivi en direct par l'entraîneur qui anime la séance (cockpit terrain) et bilan de séance pour la structure</td><td>L'application du membre, lorsqu'il rejoint une séance de club</td></tr>
       </tbody>
     </table></div>
     <div class="info-card">
       <ul>
         <li><strong>Base légale</strong> : exécution du contrat conclu avec la structure (accès pilote), ou mesures précontractuelles prises à sa demande.</li>
         <li><strong>Hébergement</strong> : Google Cloud / Firebase, région <strong>europe-west1 (Belgique)</strong>, comme les données de l'application. Le portail charge le kit de développement Firebase depuis les serveurs de Google (<code>gstatic.com</code>), ce qui implique la transmission de votre adresse IP à Google lors de l'affichage de la page.</li>
-        <li><strong>Destinataires</strong> : le responsable connecté de la structure ; les adhérents du club voient, dans l'application, le nom du club, le planning des séances et le prénom des entraîneurs. L'éditeur accède aux données pour l'administration technique et le support.</li>
+        <li><strong>Destinataires</strong> : le responsable connecté de la structure ; les adhérents du club voient, dans l'application, le nom du club, le planning des séances et le prénom des entraîneurs ; l'entraîneur qui anime une séance voit les données de participation des membres présents, et la structure accède aux bilans de séance archivés. L'éditeur accède aux données pour l'administration technique et le support.</li>
         <li><strong>Durée</strong> : pendant toute la durée d'inscription de la structure, puis suppression sur demande ou au plus tard 24 mois après la dernière connexion au portail.</li>
         <li><strong>Exercice des droits</strong> : le responsable peut modifier les coordonnées de la structure, les entraîneurs et les séances directement dans le portail. La suppression complète de l'espace club s'obtient par email à <a class="link" href="mailto:runcrew.app@gmail.com?subject=Suppression%20Espace%20Club">runcrew.app@gmail.com</a>, envoyé depuis l'adresse du club.</li>
       </ul>
     </div>
     <div class="warning-box">
-      <p><strong>Responsabilité des structures</strong> : en saisissant les informations de ses entraîneurs, la structure garantit les avoir informés de ce traitement et disposer d'un fondement pour le faire. L'Espace Club n'est pas destiné à la collecte de données relatives aux adhérents eux-mêmes : ceux-ci rejoignent le club depuis leur propre compte dans l'application, selon les règles décrites aux sections 3 à 6.</p>
+      <p><strong>Responsabilité des structures</strong> : en saisissant les informations de ses entraîneurs, la structure garantit les avoir informés de ce traitement et disposer d'un fondement pour le faire. Les adhérents eux-mêmes ne sont pas saisis dans l'Espace Club : ils rejoignent la structure depuis leur propre compte dans l'application, avec le code club, selon les règles décrites aux sections 3 à 6.</p>
+      <p><strong>Ce que voit l'entraîneur pendant une séance de club</strong> : lorsqu'un membre rejoint une séance de club, l'entraîneur qui l'anime voit en direct sa présence et, le cas échéant, sa position, son allure et sa fréquence cardiaque ; à la clôture de la séance, un bilan (présences, chronos, données cardiaques des participants équipés d'un capteur) est archivé pour la structure. Ce partage repose sur le choix du membre de rejoindre chaque séance et sur l'article 5 des <a class="link" href="/cgu#s5">CGU</a> ; la fréquence cardiaque n'est transmise que si le membre a activé les métriques cardiaques (consentement explicite, section 4) et connecté un capteur. Le partage est limité à la durée de la séance, ne concerne jamais les sorties personnelles du membre et cesse dès qu'il se détache de la structure (depuis l'application ou sur simple demande). La structure ne peut utiliser ces données que pour l'organisation et l'encadrement sportif de ses séances. En cas de suppression de son compte, le membre est anonymisé dans les bilans archivés.</p>
     </div>
 
     <h3>7.3 Hébergement du site et journaux techniques</h3>
@@ -355,6 +358,7 @@
         <tr><td>Codes OTP</td><td>10 minutes maximum</td></tr>
         <tr><td>Archives d'export de données</td><td>48 heures maximum</td></tr>
         <tr><td>Adresse email de la liste d'attente (site web)</td><td>Jusqu'au lancement de l'application, puis suppression dans les 3 mois ; retrait possible à tout moment</td></tr>
+        <tr><td>Bilans de séance de club (présences, chronos, cardio)</td><td>Durée d'inscription de la structure ; supprimés avec l'espace club ; membre anonymisé en cas de suppression de son compte</td></tr>
         <tr><td>Données de l'Espace Club (structure, responsable, entraîneurs, séances)</td><td>Durée d'inscription de la structure ; suppression sur demande ou au plus tard 24 mois après la dernière connexion</td></tr>
         <tr><td>Journaux techniques du site web (hébergeur)</td><td>Durée limitée, de quelques jours au maximum, fixée par l'hébergeur à des fins de sécurité</td></tr>
         <tr><td>Emails de contact et demandes d'exercice de droits</td><td>Temps de traitement de la demande, puis archivage de 3 ans maximum</td></tr>
@@ -425,7 +429,7 @@
       <p>Site web : <a href="https://runcrew.fr">https://runcrew.fr</a></p>
     </div>
 
-    <p class="doc-foot">Dernière mise à jour : 14 octobre 2026 — Version 2.5 (ajout des traitements liés au site web, à la liste d'attente et à l'Espace Club)</p>
+    <p class="doc-foot">Dernière mise à jour : 14 octobre 2026 — Version 2.6 (site web, liste d'attente, Espace Club et données partagées pendant les séances de club)</p>
     <a class="back" href="/"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg> Retour à l'accueil</a>
   </article>
 </main>
