@@ -146,6 +146,8 @@ h3 { font-size: 1.25rem; }
 .hero-bg {
   position: absolute; inset: 0; z-index: -2;
   background: url("../img/hero-littoral.jpg") center 40% / cover no-repeat;
+  background-image: -webkit-image-set(url("../img/hero-littoral.webp") type("image/webp"), url("../img/hero-littoral.jpg") type("image/jpeg"));
+  background-image: image-set(url("../img/hero-littoral.webp") type("image/webp"), url("../img/hero-littoral.jpg") type("image/jpeg"));
   opacity: 0.55;
 }
 .hero::after {
@@ -194,6 +196,7 @@ h3 { font-size: 1.25rem; }
 }
 .phone::after { content: ""; position: absolute; top: 22px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: #05080C; box-shadow: 0 0 0 2px #1a2230; z-index: 5; }
 .screen { position: absolute; inset: 10px; border-radius: 37px; overflow: hidden; background: #0E141D; font-size: 11px; }
+.screen picture { display: block; width: 100%; height: 100%; }
 .screen img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Live UI overlay inside the screen */
@@ -474,6 +477,10 @@ h3 { font-size: 1.25rem; }
 .band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
 .band .stores { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 22px; font-weight: 600; font-size: 0.95rem; }
 .band .stores li { display: inline-flex; align-items: center; gap: 8px; }
+/* Badge officiel Google Play (activé au lancement, voir README) */
+.store-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.store-badges img, .band .stores img { display: block; height: 60px; width: auto; }
+.store-badges a:focus-visible, .band .stores a:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 8px; }
 
 /* ---------- Footer ---------- */
 .site-footer { padding: 64px 0 32px; border-top: 1px solid var(--border); background: var(--navy); }

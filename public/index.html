@@ -29,9 +29,17 @@
 
   <link rel="preload" href="/fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/img/hero-littoral.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="/img/hero-littoral.webp" as="image" type="image/webp" fetchpriority="high">
+  <!-- LANCEMENT GOOGLE PLAY : décommenter la ligne suivante quand la fiche est publiée.
+  <meta name="google-play-app" content="app-id=fr.runcrew.app">
+  -->
   <link rel="stylesheet" href="/css/site.css">
 
+  <!-- LANCEMENT GOOGLE PLAY : ajouter dans l'objet SoftwareApplication ci-dessous
+       "installUrl": "https://play.google.com/store/apps/details?id=fr.runcrew.app",
+       "downloadUrl": "https://play.google.com/store/apps/details?id=fr.runcrew.app",
+       "softwareVersion": "1.0.0"  (version publiée)
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -190,6 +198,9 @@
         </form>
         <p class="form-status" role="status" aria-live="polite"></p>
         <p class="form-note">Aucun spam. Un seul email : celui du lancement sur Google Play.</p>
+        <!-- LANCEMENT GOOGLE PLAY : remplacer le formulaire ci-dessus par ce bloc (badge officiel à déposer dans /img/badges/, voir README).
+        <p class="store-badges"><a href="https://play.google.com/store/apps/details?id=fr.runcrew.app" rel="noopener"><img src="/img/badges/google-play-badge-fr.png" alt="Disponible sur Google Play" width="155" height="60" loading="lazy"></a></p>
+        -->
 
         <ul class="hero-facts" aria-label="En bref">
           <li><svg class="icon" aria-hidden="true"><use href="#i-live"/></svg> Suivi en direct par tes proches</li>
@@ -201,7 +212,7 @@
       <div class="hero-visual" aria-hidden="true">
         <div class="phone">
           <div class="screen">
-            <img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" fetchpriority="high">
+            <picture><source type="image/webp" srcset="/img/app/vue-3d-relief-352.webp 352w, /img/app/vue-3d-relief.webp 704w" sizes="300px"><img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" fetchpriority="high" decoding="async"></picture>
             <svg class="route" viewBox="0 0 300 640" preserveAspectRatio="xMidYMid slice">
               <path class="trail" d="M 62 640 C 90 560, 150 560, 170 500 S 120 400, 160 340 S 250 300, 236 230 S 190 150, 240 120"/>
               <path class="line" d="M 62 640 C 90 560, 150 560, 170 500 S 120 400, 160 340 S 250 300, 236 230 S 190 150, 240 120"/>
@@ -290,7 +301,7 @@
               </div>
               <!-- 3D -->
               <div class="panel" id="panel-3d" role="tabpanel" aria-hidden="true" aria-labelledby="tab-3d">
-                <img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" loading="lazy">
+                <picture><source type="image/webp" srcset="/img/app/vue-3d-relief-352.webp 352w, /img/app/vue-3d-relief.webp 704w" sizes="300px"><img src="/img/app/vue-3d-relief.jpg" alt="" width="704" height="1504" loading="lazy" decoding="async"></picture>
                 <div class="marker" style="top:46%;left:62%"></div>
                 <div class="ui">
                   <div class="ui-top"><span class="pill"><span class="dot"></span> En direct</span><span class="pill code">WQK2F3</span></div>
@@ -649,6 +660,9 @@
         <p class="lead" style="margin-top:18px">Inscris-toi et reçois l'annonce du lancement sur Google Play. Les early adopters ont un accès prioritaire à la beta.</p>
         <ul class="stores" aria-label="Disponibilité">
           <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Bientôt sur Google Play</li>
+          <!-- LANCEMENT GOOGLE PLAY : remplacer la ligne ci-dessus par
+          <li><a href="https://play.google.com/store/apps/details?id=fr.runcrew.app" rel="noopener"><img src="/img/badges/google-play-badge-fr.png" alt="Disponible sur Google Play" width="155" height="60" loading="lazy"></a></li>
+          -->
           <li><svg class="icon" aria-hidden="true"><use href="#i-timer"/></svg> iOS prévu ensuite</li>
         </ul>
       </div>
