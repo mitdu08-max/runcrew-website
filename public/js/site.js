@@ -109,10 +109,21 @@
       btn.textContent = "Envoi…";
       if (status) { status.textContent = ""; status.className = "form-status"; }
 
+      var emailInput = form.querySelector("input[name=email]");
+      var gotchaInput = form.querySelector("input[name=_gotcha]");
+      var sourceInput = form.querySelector("input[name=source]");
+
       fetch(form.action, {
         method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          email: emailInput ? emailInput.value : "",
+          _gotcha: gotchaInput ? gotchaInput.value : "",
+          source: sourceInput ? sourceInput.value : "web"
+        })
       }).then(function (r) {
         if (!r.ok) throw new Error("http " + r.status);
         form.reset();
